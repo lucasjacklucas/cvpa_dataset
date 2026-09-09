@@ -8789,7 +8789,7 @@ survey(
 
       # Keep monarch as head of state
       # q52: 1=Queen remain 2=Constitution 3=DK/NA
-      bri_intd_008 = recode_values(q52, 1 ~ 0, 2 ~ 1, 3 ~ 9999)
+      bri_intd_008 = recode_values(q52, 1 ~ 1, 2 ~ 0, 3 ~ 9999)
     )
   }
 )
@@ -9349,7 +9349,7 @@ survey(
 
       # Keep monarch as head of state
       # q29: 1=British monarch remain 2=Canadian head of state 3=DK/NA
-      bri_intd_008 = recode_values(q29, 1 ~ 0, 2 ~ 1, 3 ~ 9999),
+      bri_intd_008 = recode_values(q29, 1 ~ 1, 2 ~ 0, 3 ~ 9999),
 
       # Own province independence
       # q62: 1=Strongly support 2=Somewhat support 3=Somewhat oppose 4=Strongly oppose 5=DK/NA

@@ -3374,9 +3374,10 @@ survey(
   },
   issues = function(d) {
     d %>% transmute(
-      # Larger/smaller Cdn population
+      # Want larger Cdn population
       # q2a: 0=NOT STATED 1=SMALLER 2=LARGER 3=ABOUT RIGHT 4=NO OPINION
-      gal_idim_001 = recode_values(q2a, 0 ~ 9999, 1 ~ -1, 2 ~ 1, 3 ~ 0, 4 ~ 9999),
+      # the only wave offering SMALLER; it joins ABOUT RIGHT at 0 (not larger)
+      bri_idim_001 = recode_values(q2a, 1 ~ 0, 2 ~ 1, 3 ~ 0, c(0, 4) ~ 9999),
 
       # Compulsory military training at 18
       # q8: 0=NOT STATED 1=WOULD FAVOUR 2=WOULD NOT FAVOUR 3=NO OPINION
@@ -5318,9 +5319,10 @@ survey(
   },
   issues = function(d) {
     d %>% transmute(
-      # Larger/smaller Cdn population
+      # Want larger Cdn population
       # q4: 1=YES 2=NO 3=QUALIFIED 4=CAN'T SAY
-      gal_idim_001 = recode_values(q4, 1 ~ 1, 2 ~ -1, 3 ~ 0, 4 ~ 9999)
+      # NO and QUALIFIED both -> 0 (not larger); can't say -> 9999
+      bri_idim_001 = recode_values(q4, 1 ~ 1, c(2, 3) ~ 0, 4 ~ 9999)
     )
   }
 )
@@ -11424,9 +11426,10 @@ survey(
       # q5: 1=GOOD IDEA 2=NOT A GOOD IDEA 3=QUALIFIED 4=DON'T KNOW 5=NOT STATED
       gal_hwps_007 = recode_values(q5, 1 ~ 1, 2 ~ -1, 3 ~ 0, c(4, 5) ~ 9999),
 
-      # Larger/smaller Cdn population
+      # Want larger Cdn population
       # q12: 1=YES 2=NO, STAY SAME 3=QUALIFIED 4=DON'T KNOW 5=NOT STATED
-      gal_idim_001 = recode_values(q12, 1 ~ 1, 2 ~ -1, 3 ~ 0, c(4, 5) ~ 9999)
+      # stay same and QUALIFIED both -> 0 (not larger); DK/not stated -> 9999
+      bri_idim_001 = recode_values(q12, 1 ~ 1, c(2, 3) ~ 0, c(4, 5) ~ 9999)
     )
   }
 )
@@ -14127,9 +14130,10 @@ survey(
       # q4b: 1=SHOULD PERMIT 2=SHOULD NOT 3=DON'T KNOW 4=NOT STATED
       gal_intd_005 = recode_values(q4b, 1 ~ 1, 2 ~ 0, c(3, 4) ~ 9999),
 
-      # Larger/smaller Cdn population
+      # Want larger Cdn population
       # q9: 1=YES, MUCH LARGER 2=JUST ABOUT RIGHT 3=QUALIFIED 4=DON'T KNOW
-      gal_idim_001 = recode_values(q9, 1 ~ 1, 2 ~ -1, 3 ~ 0, 4 ~ 9999)
+      # about right and QUALIFIED both -> 0 (not larger); DK -> 9999
+      bri_idim_001 = recode_values(q9, 1 ~ 1, c(2, 3) ~ 0, 4 ~ 9999)
     )
   }
 )

@@ -141,9 +141,10 @@ survey(
       # pes19_tieus
       bri_intd_005 = recode_values(pes19_tieus, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 6 ~ 9999),
 
-      # Abortion legal in all/some/no cases
-      # pes19_abort2
-      bri_soim_005 = recode_values(pes19_abort2, 1 ~ 0, 2 ~ 1, 3 ~ 2, 4 ~ 9999),
+      # Abortion banned: yes/some/no cases
+      # pes19_abort2 -- "Should abortion be banned?", a different question from the
+      # all/some/none wording in bri_soim_005, so it carries its own id
+      ces_soim_028 = recode_values(pes19_abort2, 1 ~ 0, 2 ~ 1, 3 ~ 2, 4 ~ 9999),
 
       # Living standard if QC separates
       # pes19_qcsol
@@ -369,9 +370,10 @@ survey(
       # pes21_tieus
       bri_intd_005 = recode_values(pes21_tieus, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 6 ~ 9999),
 
-      # Abortion legal in all/some/no cases
-      # pes21_abort2
-      bri_soim_005 = recode_values(pes21_abort2, 1 ~ 0, 2 ~ 1, 3 ~ 2, 4 ~ 9999),
+      # Abortion banned: yes/some/no cases
+      # pes21_abort2 -- "Should abortion be banned?", a different question from the
+      # all/some/none wording in bri_soim_005, so it carries its own id
+      ces_soim_028 = recode_values(pes21_abort2, 1 ~ 0, 2 ~ 1, 3 ~ 2, 4 ~ 9999),
 
       # Living standard if QC separates
       # pes21_qcsol

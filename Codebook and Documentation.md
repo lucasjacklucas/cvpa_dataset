@@ -301,8 +301,10 @@ To go from the data to the codebook, join `dataset.parquet$question_id` to `ques
 | `fallback_variable`, `fallback_recoded` | for a coalesce, the variable used when the first yields nothing, and its own rule |
 | `rule_kind` | how to read `question_recoded` |
 | `recode_type` | every value the item is allowed to take |
+| `value_labels` | a short label for each substantive value, in ascending order |
+| `middle_category_varies` | `TRUE` where some surveys of the item lack the middle category |
 
-`issue_question_id` **is** the harmonised item. Where the same question was asked by different houses in different decades, all of them carry one id. Of the 630 policy items, 552 appear in a single source, 72 in two and 6 in three. 
+`issue_question_id` **is** the harmonised item. Where the same question was asked by different houses in different decades, all of them carry one id. Of the 630 policy items, 552 appear in a single source, 73 in two and 5 in three. 
 
 ### Reading `question_recoded`
 
@@ -334,13 +336,23 @@ The common form is a value map, `1:2=1; 3=0; 9999=9999`, read as "source codes 1
 
 The two vote items use the party frame instead, documented under Vote above.
 
+### Value labels
+
+`value_labels` names each substantive value, comma-separated, **in ascending order of the value** — so `-1/0/1` reads `Less, Same, More` and `0/1` reads `Disagree, Agree`. Missing codes are not labelled: `9999` and `NA` have no entry, and the label count therefore matches the number of substantive values, not the length of `recode_type`. The labels are a property of the item, so every row of an `issue_question_id` carries the same string. They are written for plotting, not for quotation: where an item's wording drifts across surveys they follow the synthesised `question_wording`.
+
+Where a source offered an explicit "neither" that the recode folds into one pole, the label says so — `Disagree/Neither, Agree` rather than `Disagree, Agree` — so that the fence-sitters inside that category are visible.
+
+**`middle_category_varies` marks the ten items whose surveys disagree about whether a middle category exists.** Gallup routinely offered a "qualified" answer that Environics and the CES did not, so an item such as `bri_idim_002` is three-category in its Gallup waves and two-category everywhere else. For these ten the labels describe the union — all three — and the app must map **by value, not by position**: a two-category survey uses the first and last labels, never the first two. Which rows are affected is recoverable from `recode_type`, where a row lacking the middle carries only two substantive values. Everywhere else the row's own `recode_type` and the label count agree.
+
+A middle that appears and disappears down a series is a property of the questionnaire, not a gap in the data, and is better suppressed than plotted as zero in the waves that never offered it.
+
 ### Domains
 
 | code | domain | items |
 |---|---|---|
 | `econ` | Economy and Taxation | 139 |
-| `soim` | Social Issues, Rights and Justice | 123 |
-| `idim` | Immigration, Diversity and Federalism | 119 |
+| `soim` | Social Issues, Rights and Justice | 124 |
+| `idim` | Immigration, Diversity and Federalism | 118 |
 | `hwps` | Health, Education and Social Programs | 85 |
 | `intd` | Foreign Policy and Identity | 73 |
 | `ener` | Energy and Environment | 57 |
