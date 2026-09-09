@@ -17,6 +17,32 @@
 library(tidyverse)
 library(haven)
 
+# ---------------------------------------------------------------- which recode_values?
+#
+# The survey blocks are written against dplyr's recode_values(), which arrived
+# in dplyr 1.2.0. Two things can go wrong on someone else's machine:
+#
+#   * an older dplyr does not have it at all;
+#   * datawizard exports a function of the same name and different semantics.
+#     Handed dplyr-style formulas it returns the input unchanged with only a
+#     warning, so a session with datawizard attached after dplyr would produce
+#     raw source codes instead of recoded values and never fail.
+#
+# The second is the dangerous one, so the functions the blocks rely on are bound
+# here explicitly. A block's enclosing environment is the global environment, so
+# these bindings win over anything on the search path, whatever the user has
+# attached and in whatever order.
+
+if (utils::packageVersion("dplyr") < "1.2.0")
+  stop("This build needs dplyr >= 1.2.0 for recode_values(). You have ",
+       utils::packageVersion("dplyr"),
+       ". Run install.packages(\"dplyr\") and start a fresh session.", call. = FALSE)
+
+recode_values <- dplyr::recode_values
+coalesce      <- dplyr::coalesce
+case_when     <- dplyr::case_when
+transmute     <- dplyr::transmute
+
 `%||%` <- function(a, b) if (is.null(a)) b else a
 
 # the directory holding the file being run, whether by Rscript or by source()
