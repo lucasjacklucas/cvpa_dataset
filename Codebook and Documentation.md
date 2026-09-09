@@ -8,11 +8,13 @@ The dataset holds 9,198,156 rows: 1,010,004 respondents across 672 surveys, 1945
 |---|---|
 | Gallup Canada | 1945–2000 |
 | Canadian Election Study and C-DEM Democracy Checkup | 1965–2024 |
-| Environics Focus Canada | 1978–2013 |
+| Environics Focus Canada | 1978–2012 |
 | Pollara Perspectives Canada | 1992–2002 |
 | CVPA Bridge Survey | 2026 |
 
-Year coverage is not continuous. Gallup is missing 1946–1948, 1950 and 1952. Environics ends in 2013 and the Democracy Checkup begins in 2019, so 2014 and 2016–2018 have no data.
+Year coverage is not continuous: 71 of the 82 calendar years carry data. Gallup is missing 1946–1948, 1950 and 1952. Environics ends in 2012 and the Democracy Checkup begins in 2019, so 2013, 2014 and 2016–2018 are empty — 2015 is carried by the Canadian Election Study alone. 2025 is also empty, between the last Democracy Checkup wave and the 2026 bridge survey.
+
+The missing years in full are 1946, 1947, 1948, 1950, 1952, 2013, 2014, 2016, 2017, 2018 and 2025.
 
 Throughout, a value that a survey does not supply is `NA`. Codes such as 97, 98 and 99 mean the respondent was asked and gave a non-substantive answer; they are not the same as `NA` and should usually be excluded before analysis.
 
