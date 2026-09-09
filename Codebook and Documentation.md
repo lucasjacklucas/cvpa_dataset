@@ -346,9 +346,3 @@ The two vote items use the party frame instead, documented under Vote above.
 | `ener` | Energy and Environment | 57 |
 | `dpin` | Democracy and Institutions | 34 |
 | `vote` | Vote Intention & Choice | 2 |
-
----
-
-## How to add data
-
-Two ways: build `response_id`s and left join for your own copy, or add a block to the recode code so the variable becomes part of the dataset for everyone. Both, with a worked example that adds a 22-survey Gallup series, are in **`How to Add Data.md`**.
