@@ -20,10 +20,18 @@ library(haven)
 # recode_values() must be dplyr's: datawizard exports one that silently returns
 # the input unchanged. Bound below so it wins whatever else the session attaches.
 
-if (utils::packageVersion("dplyr") < "1.2.0")
-  stop("This build needs dplyr >= 1.2.0 for recode_values(). You have ",
-       utils::packageVersion("dplyr"),
-       ". Run install.packages(\"dplyr\") and start a fresh session.", call. = FALSE)
+# Test for the function itself, not the version number: install.packages() does
+# not replace a package already loaded, so the new dplyr can be on disk while
+# the old one is still in the session and packageVersion() reports the new one.
+if (!"recode_values" %in% getNamespaceExports("dplyr"))
+  stop("This build needs dplyr's recode_values(), added in dplyr 1.2.0.\n",
+       "  loaded dplyr:    ", getNamespaceVersion("dplyr"),
+       "  from ", dirname(getNamespaceInfo("dplyr", "path")), "\n",
+       "  installed dplyr: ", utils::packageVersion("dplyr"), "\n",
+       "  If those two versions differ, restart R -- install.packages() cannot\n",
+       "  replace a package that is already loaded. If they are the same and\n",
+       "  below 1.2.0, run install.packages(\"dplyr\") in a fresh session.",
+       call. = FALSE)
 
 recode_values <- dplyr::recode_values
 coalesce      <- dplyr::coalesce
