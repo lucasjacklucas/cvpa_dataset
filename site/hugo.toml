@@ -14,9 +14,6 @@ disableKinds = ["taxonomy", "term"]
   lang = "en"
   author = "Jack Lucas"
   description = "Canadian Voting and Policy Attitudes Project"
-  [params.footer]
-    text = "By Jack Lucas. Based on Hugo Researcher"
-    url = "https://github.com/ojroques/hugo-researcher"
   # Sized to match lucasjacklucas.github.io. Link colour and the remaining
   # personal-site tweaks live in assets/css/custom.css.
   [params.style]

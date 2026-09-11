@@ -77,12 +77,7 @@ body > .container.mt-5 {
 #content h4 { font-size: 1em;    margin: 1.33em 0; }
 #content p  { margin: 1em 0; }
 
-/* Footer rule spans the text column, not the whole window */
-#footer > hr {
-    width: calc(100% - 30px);
-    max-width: 700px;
-    margin: 0.5em auto;
-}
-#footer > .container {
-    padding-top: 0.5em;
+/* No footer. Without its text the theme would still draw the rule above it. */
+#footer {
+    display: none;
 }
