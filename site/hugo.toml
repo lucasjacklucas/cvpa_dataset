@@ -37,13 +37,9 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/team"
     weight = 3
   [[menu.main]]
-    name = "Updates"
-    pageRef = "/updates"
-    weight = 4
-  [[menu.main]]
     name = "Tutorials"
     pageRef = "/tutorials"
-    weight = 5
+    weight = 4
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files, as on the personal site
