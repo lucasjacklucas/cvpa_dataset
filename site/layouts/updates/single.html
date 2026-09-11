@@ -1,0 +1,8 @@
+{{/* A single Updates post: title and date above the post body. */}}
+{{ define "main" }}
+<div class="container">
+    <h2>{{ .Title }}</h2>
+    <p><small>{{ .Date.Format "January 2, 2006" }}</small></p>
+    {{ .Content }}
+</div>
+{{ end }}

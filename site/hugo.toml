@@ -1,0 +1,52 @@
+# Hugo config for the CVPA project site (theme: ojroques/hugo-researcher).
+#
+# This is a GitHub Pages project site, so everything is served under
+# /cvpa_dataset/. All internal links are built from baseURL, so moving to a
+# custom domain later only means changing this line (the deploy workflow
+# passes the live Pages URL in with --baseURL anyway).
+baseURL = "https://lucasjacklucas.github.io/cvpa_dataset/"
+title = "Canadian Voting and Policy Attitudes Project"
+theme = "researcher"
+locale = "en-ca"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  lang = "en"
+  author = "Jack Lucas"
+  description = "Canadian Voting and Policy Attitudes Project"
+  [params.footer]
+    text = "By Jack Lucas. Based on Hugo Researcher"
+    url = "https://github.com/ojroques/hugo-researcher"
+  # Sized to match lucasjacklucas.github.io. Link colour and the remaining
+  # personal-site tweaks live in assets/css/custom.css.
+  [params.style]
+    fontFamily = "Inconsolata"
+    fontSize = "12pt"      # 16px body text
+    pageWidth = "730px"    # 700px text column + Bootstrap's 15px side padding
+    colorBlack = "#000000"
+
+# pageRef (not url) so each link resolves to the page's path under baseURL
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Data"
+    pageRef = "/data"
+    weight = 2
+  [[menu.main]]
+    name = "Team"
+    pageRef = "/team"
+    weight = 3
+  [[menu.main]]
+    name = "Updates"
+    pageRef = "/updates"
+    weight = 4
+  [[menu.main]]
+    name = "Tutorials"
+    pageRef = "/tutorials"
+    weight = 5
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow raw HTML in markdown files, as on the personal site

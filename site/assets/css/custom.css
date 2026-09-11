@@ -1,0 +1,88 @@
+/*
+ * CVPA overrides, loaded after the theme's stylesheet (see
+ * layouts/partials/head.html). The theme files themselves are untouched.
+ */
+
+/*
+ * Links: dark blue instead of the theme's red. The theme sets link colour
+ * with $red in themes/researcher/assets/sass/researcher.scss, through the
+ * %link-default placeholder that .nav-link and #content a extend. These
+ * selectors mirror that one for one so every state gets the new colour.
+ */
+:root {
+    --cvpa-link: #0b3d91;
+}
+.nav-link,
+.nav-link *,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:focus,
+#content a,
+#content a *,
+#content a:visited,
+#content a:hover,
+#content a:focus {
+    color: var(--cvpa-link);
+}
+
+/*
+ * Everything below brings the Hugo port closer to lucasjacklucas.github.io,
+ * which runs the original Jekyll version of the theme.
+ */
+
+* {
+    line-height: normal;
+}
+hr {
+    margin: 0.5em 0;
+}
+
+/* Header: 30px title in #272727, spaced as on the personal site */
+body > .container.mt-5 {
+    margin-top: 50px !important;  /* beats Bootstrap's .mt-5 utility */
+    margin-bottom: 25px;
+}
+.navbar .navbar-brand {
+    font-size: 30px;
+    color: #272727;
+    padding: 0;
+    white-space: normal;  /* let a long title wrap instead of overflowing */
+}
+.navbar .navbar-brand:hover {
+    color: #272727;
+}
+@media (max-width: 575.98px) {
+    .navbar .navbar-brand {
+        text-align: center;
+    }
+}
+/* Nav links on their own line, centred under the title. On phones the
+   theme already stacks them; this does the same on wider screens. */
+@media (min-width: 576px) {
+    .navbar.navbar-expand-sm {
+        flex-wrap: wrap;
+    }
+    .navbar-nav {
+        flex-basis: 100%;
+    }
+}
+.navbar-nav {
+    padding-top: 10px;
+}
+
+/* Headings and paragraphs at browser-default sizes, as on the personal site */
+#content h1 { font-size: 2em;    margin: 0.67em 0; }
+#content h2 { font-size: 1.5em;  margin: 0.83em 0; }
+#content h3 { font-size: 1.17em; margin: 1em 0; }
+#content h4 { font-size: 1em;    margin: 1.33em 0; }
+#content p  { margin: 1em 0; }
+
+/* Footer rule spans the text column, not the whole window */
+#footer > hr {
+    width: calc(100% - 30px);
+    max-width: 700px;
+    margin: 0.5em auto;
+}
+#footer > .container {
+    padding-top: 0.5em;
+}

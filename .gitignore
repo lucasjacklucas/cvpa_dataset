@@ -47,3 +47,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Hugo build output and cache for the project website (site/)
+/site/public/
+/site/resources/_gen/
+.hugo_build.lock
