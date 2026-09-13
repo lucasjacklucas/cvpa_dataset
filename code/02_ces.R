@@ -1867,9 +1867,9 @@ survey(
       # cpsk2a
       ces_soim_002 = recode_values(cpsk2a, 0 ~ 9999, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 8 ~ 9999, 9 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # cpsg7b
-      ces_soim_009 = recode_values(cpsg7b, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
+      bri_soim_014 = recode_values(cpsg7b, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
 
       # Gone too far pushing equal rights
       # mbsa1
@@ -2108,9 +2108,9 @@ survey(
       # pese1
       ces_soim_002 = recode_values(pese1, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 8 ~ 9999, 9 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # mbsg3
-      ces_soim_009 = recode_values(mbsg3, c(1, 2) ~ 1, c(3, 4) ~ 0, 8 ~ 9999),
+      bri_soim_014 = recode_values(mbsg3, c(1, 2) ~ 1, c(3, 4) ~ 0, 8 ~ 9999),
 
       # Gone too far pushing equal rights
       # mbsa1
@@ -2410,9 +2410,9 @@ survey(
       # cpsc10
       ces_soim_002 = recode_values(cpsc10, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 8 ~ 9999, 9 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # cpsf18
-      ces_soim_009 = recode_values(cpsf18, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
+      bri_soim_014 = recode_values(cpsf18, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
 
       # Discrimination blocks women's jobs
       # mbsa5
@@ -2782,9 +2782,9 @@ survey(
       # ces04_cps_f7
       ces_soim_002 = recode_values(ces04_cps_f7, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 8 ~ 9999, 9 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # ces04_pes_g12_3
-      ces_soim_009 = recode_values(ces04_pes_g12_3, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
+      bri_soim_014 = recode_values(ces04_pes_g12_3, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
 
       # Discrimination blocks women's jobs
       # ces04_mbs_a5
@@ -3130,9 +3130,9 @@ survey(
       # ces06_pes_i4
       ces_soim_002 = recode_values(ces06_pes_i4, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 98 ~ 9999, 99 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # ces06_pes_g7
-      ces_soim_009 = recode_values(ces06_pes_g7, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
+      bri_soim_014 = recode_values(ces06_pes_g7, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
 
       # French language threatened in QC
       # ces06_pes_c11
@@ -3420,9 +3420,9 @@ survey(
       # ces08_pes_i4
       ces_soim_002 = recode_values(ces08_pes_i4, c(1, 2) ~ 1, 3 ~ 0, c(4, 5) ~ -1, 8 ~ 9999, 9 ~ NA_real_),
 
-      # Homosexual couples allowed to marry
+      # Support gay/lesbian couples marrying
       # ces08_pes_g5
-      ces_soim_009 = recode_values(ces08_pes_g5, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
+      bri_soim_014 = recode_values(ces08_pes_g5, c(1, 3) ~ 1, c(5, 7) ~ 0, 8 ~ 9999, 9 ~ NA_real_),
 
       # Discrimination blocks women's jobs
       # ces08_mbs_a5

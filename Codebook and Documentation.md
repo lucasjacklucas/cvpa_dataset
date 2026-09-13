@@ -279,7 +279,7 @@ Excluding 95 through 99 before analysis, as recommended above, sidesteps this.
 
 ## Policy issues
 
-The individual items are not documented here. There are 632 distinct items and they are described, survey by survey, in **`question_codebook.csv`** — 4,799 rows covering 672 surveys. This section explains how to read that file.
+The individual items are not documented here. There are 631 distinct items and they are described, survey by survey, in **`question_codebook.csv`** — 4,799 rows covering 672 surveys. This section explains how to read that file.
 
 ### Policy Codebook Rows
 
@@ -306,7 +306,7 @@ To go from the data to the codebook, join `dataset.parquet$question_id` to `ques
 | `value_labels` | a short label for each substantive value, in ascending order |
 | `middle_category_varies` | `TRUE` where some surveys of the item lack the middle category |
 
-`issue_question_id` **is** the harmonised item. Where the same question was asked by different houses in different decades, all of them carry one id. Of the 630 policy items, 552 appear in a single source, 73 in two and 5 in three. 
+`issue_question_id` **is** the harmonised item. Where the same question was asked by different houses in different decades, all of them carry one id. Of the 629 policy items, 551 appear in a single source, 72 in two and 6 in three. 
 
 ### Reading `question_recoded`
 
