@@ -1,10 +1,10 @@
 # Hugo config for the CVPA project site (theme: ojroques/hugo-researcher).
 #
-# This is a GitHub Pages project site, so everything is served under
-# /cvpa_dataset/. All internal links are built from baseURL, so moving to a
-# custom domain later only means changing this line (the deploy workflow
-# passes the live Pages URL in with --baseURL anyway).
-baseURL = "https://lucasjacklucas.github.io/cvpa_dataset/"
+# Served by GitHub Pages at the custom domain policyattitudes.ca (set in the
+# repo's Settings -> Pages, DNS at Hover). All internal links are built from
+# baseURL; the deploy workflow passes the live Pages URL in with --baseURL
+# anyway, so this line mainly keeps local builds matching the live site.
+baseURL = "https://policyattitudes.ca/"
 title = "Canadian Voting and Policy Attitudes Project"
 theme = "researcher"
 locale = "en-ca"

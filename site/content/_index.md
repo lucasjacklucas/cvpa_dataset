@@ -6,7 +6,7 @@ Welcome to the Canadian Voting and Policy Attitudes (CVPA) project. This project
 
 This website is designed to provide information about [our data]({{< relref "data" >}}), [our research team]({{< relref "team" >}}), and [research using the dataset]({{< relref "research" >}}), and to provide answers to questions and [useful tutorials]({{< relref "tutorials" >}}) for how you can use CVPA in your work.
 
-**Interactive App.** If you are looking for the interactive app, which allows users to explore long-term changes in policy attitudes and voting in an accessible online application, please visit the [Canadian Voting and Policy Attitudes Project's web application](https://www.quantoid.ca/files/cp3/).
+**Interactive App.** If you are looking for the interactive app, which allows users to explore long-term changes in policy attitudes and voting in an accessible online application, please visit [this link](https://www.quantoid.ca/files/cp3/).
 
 **R Package.** If you are interested in the CVPA's R package, which allows users to easily generate weighted annual estimates for each policy attitude and voting variable, including sub-group breakdowns, please start with [this tutorial on how to download and use the package](https://github.com/davidaarmstrong/cvpa).
 
