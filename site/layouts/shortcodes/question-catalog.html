@@ -1,0 +1,124 @@
+{{/* Searchable, sortable table of every question in the dataset, built from
+     data/question_catalog.json (written by scripts/build_question_catalog.R
+     from cvpa::question_catalog()). Usage: {{< question-catalog >}} */}}
+{{- $rows := hugo.Data.question_catalog -}}
+{{- $types := dict
+    "b" "Binary"
+    "lsm" "Less / same / more"
+    "nsa" "Never / sometimes / always"
+    "party" "Party"
+-}}
+{{- $domains := slice -}}
+{{- range $rows }}{{ $domains = $domains | append .domain_label }}{{ end -}}
+<style>
+.qc-controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 1em 0 0.5em; }
+.qc-controls input, .qc-controls select {
+    font: inherit; font-size: 0.9em; padding: 4px 6px;
+    border: 1px solid #bbb; border-radius: 3px; background: #fff;
+}
+.qc-controls input { flex: 1 1 220px; min-width: 0; }
+.qc-controls select { flex: 0 1 auto; max-width: 100%; }
+.qc-count { font-size: 0.85em; color: #555; margin-bottom: 0.5em; }
+.qc-wrap { overflow-x: auto; }
+.qc-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+.qc-table th, .qc-table td {
+    padding: 6px 8px; border-bottom: 1px solid #e3e3e3;
+    vertical-align: top; text-align: left;
+}
+.qc-table th { border-bottom: 2px solid #999; white-space: nowrap; }
+.qc-table th button {
+    font: inherit; font-weight: 700; color: inherit;
+    background: none; border: 0; padding: 0; cursor: pointer;
+}
+.qc-table th button::after { content: " \2195"; color: #aaa; }
+.qc-table th[aria-sort="ascending"] button::after { content: " \2191"; color: inherit; }
+.qc-table th[aria-sort="descending"] button::after { content: " \2193"; color: inherit; }
+.qc-table td.qc-num, .qc-table th.qc-num { text-align: right; }
+.qc-label { font-weight: 700; }
+.qc-wording { margin-top: 2px; }
+.qc-id, .qc-values { margin-top: 2px; color: #666; font-size: 0.9em; }
+.qc-table td:nth-child(2), .qc-table td:nth-child(3) { min-width: 120px; }
+</style>
+<div class="qc">
+    <div class="qc-controls">
+        <input type="search" id="qc-search" placeholder="Search wording, labels or IDs" aria-label="Search questions">
+        <select id="qc-domain" aria-label="Filter by domain">
+            <option value="">All domains</option>
+            {{- range sort (uniq $domains) }}
+            <option>{{ . }}</option>
+            {{- end }}
+        </select>
+    </div>
+    <div class="qc-count" id="qc-count" aria-live="polite">{{ len $rows }} questions</div>
+    <div class="qc-wrap">
+        <table class="qc-table" id="qc-table">
+            <thead>
+                <tr>
+                    <th data-key="label"><button type="button">Question</button></th>
+                    <th data-key="domain"><button type="button">Domain</button></th>
+                    <th data-key="type"><button type="button">Responses</button></th>
+                    <th data-key="waves" class="qc-num"><button type="button">Waves</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{- range $rows }}
+                {{- $type := index $types .type | default .type }}
+                <tr data-label="{{ .issue_label }}" data-domain="{{ .domain_label }}" data-type="{{ $type }}" data-waves="{{ .n_waves }}"
+                    data-search="{{ lower (delimit (slice .question .issue_label (.question_wording | default "") (.value_labels | default "")) " ") }}">
+                    <td>
+                        <div class="qc-label">{{ .issue_label }}</div>
+                        {{- with .question_wording }}<div class="qc-wording">{{ . }}</div>{{ end }}
+                        <div class="qc-id"><code>{{ .question }}</code></div>
+                    </td>
+                    <td>{{ .domain_label }}</td>
+                    <td>{{ $type }}{{ with .value_labels }}<div class="qc-values">{{ . }}</div>{{ end }}</td>
+                    <td class="qc-num">{{ .n_waves }}</td>
+                </tr>
+                {{- end }}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+(function () {
+    var table = document.getElementById("qc-table");
+    var tbody = table.tBodies[0];
+    var rows = Array.prototype.slice.call(tbody.rows);
+    var search = document.getElementById("qc-search");
+    var domain = document.getElementById("qc-domain");
+    var count = document.getElementById("qc-count");
+
+    function filter() {
+        var terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+        var d = domain.value;
+        var shown = 0;
+        rows.forEach(function (row) {
+            var ok = (!d || row.dataset.domain === d) &&
+                terms.every(function (t) { return row.dataset.search.indexOf(t) !== -1; });
+            row.hidden = !ok;
+            if (ok) shown++;
+        });
+        count.textContent = shown === rows.length
+            ? rows.length + " questions"
+            : "Showing " + shown + " of " + rows.length + " questions";
+    }
+
+    table.querySelectorAll("th[data-key]").forEach(function (th) {
+        th.querySelector("button").addEventListener("click", function () {
+            var key = th.dataset.key;
+            var dir = th.getAttribute("aria-sort") === "ascending" ? -1 : 1;
+            table.querySelectorAll("th[aria-sort]").forEach(function (h) { h.removeAttribute("aria-sort"); });
+            th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+            rows.sort(function (a, b) {
+                var x = a.dataset[key], y = b.dataset[key];
+                var c = key === "waves" ? x - y : x.localeCompare(y);
+                return dir * c;
+            });
+            rows.forEach(function (row) { tbody.appendChild(row); });
+        });
+    });
+
+    search.addEventListener("input", filter);
+    domain.addEventListener("change", filter);
+})();
+</script>
