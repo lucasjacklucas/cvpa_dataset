@@ -1,0 +1,152 @@
+---
+title: "Shifting Opinion in Canada"
+subtitle: "Canadian Voting and Policy Attitudes Project"
+institute: "policyattitudes.ca"
+format:
+  beamer:
+    aspectratio: 169
+    fontsize: 10pt
+    include-in-header:
+      text: |
+        \setbeamertemplate{navigation symbols}{}
+        \setbeamertemplate{footline}{}
+        \setbeamercolor{frametitle}{fg=black,bg=white}
+        \setbeamercolor{title}{fg=black}
+        \setbeamercolor{subtitle}{fg=black!65}
+        \setbeamercolor{institute}{fg=black!65}
+        \setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+        \setbeamerfont{title}{size=\LARGE,series=\bfseries}
+        \setbeamertemplate{frametitle}{\vspace{0.6em}\insertframetitle\par}
+        \setlength{\parskip}{0pt}
+        \usepackage{xcolor}
+        \definecolor{wording}{gray}{0.35}
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+#| include: false
+# Slides for the "Shifting Opinion" resource page: questions whose overall
+# distribution changed notably over time, as weighted shares from the cvpa
+# R package.
+#
+# Render from the repository root with:
+#   bash site/scripts/render_slides.sh
+
+library(cvpa)
+library(tidyverse)
+
+knitr::opts_chunk$set(fig.width = 6.1, fig.height = 2.8, out.width = "\\linewidth",
+                      fig.align = "center", dev = "pdf")
+
+# the questions, and for two-category questions the response plotted (NA
+# plots every response category)
+slides <- tribble(
+  ~question,       ~response,
+  "gal_econ_006",  "Better off",
+  "env_intd_003",  "Favourable",
+  "bri_ener_001",  NA,
+  "bri_idim_010",  NA,
+  "bri_soim_011",  "Favour",
+  "bri_soim_002",  "Favour",
+  "ces_soim_004",  "Confident"
+)
+
+update_cvpa_data(questions = slides$question, quiet = TRUE)
+catalog <- question_catalog()
+
+# one line: blue. Three ordered categories: low in orange, middle in grey,
+# high in blue.
+single  <- "#2a78d6"
+ordered <- c("#eb6834", "#8a8a85", "#2a78d6")
+
+latex_escape <- function(x) {
+  x <- gsub("\\\\", "\\\\textbackslash{}", x)
+  x <- gsub("([&%$#_{}])", "\\\\\\1", x)
+  x <- gsub("~", "\\\\textasciitilde{}", x)
+  x <- gsub('"([^"]*)"', "``\\1''", x)
+  x
+}
+
+slide_data <- function(question, response) {
+  w <- wtd_response(question_data(question))
+  if (!is.na(response)) w <- filter(w, response == !!response)
+  w %>% mutate(response = droplevels(response))
+}
+
+# spread label positions apart so no two are closer than `gap`, keeping
+# them as close as possible to where the lines end
+spread_labels <- function(y, gap = 0.065) {
+  o <- order(y); z <- y[o]
+  for (k in seq_along(z)[-1]) z[k] <- max(z[k], z[k - 1] + gap)
+  over <- max(0, z[length(z)] - 1)          # shift down if pushed past 100%
+  z <- z - over
+  for (k in rev(seq_along(z))[-1]) z[k] <- min(z[k], z[k + 1] - gap)
+  y[o] <- z
+  y
+}
+
+slide_plot <- function(dat, colours) {
+  span <- range(dat$year)
+  ends <- dat %>%
+    group_by(response) %>%
+    filter(year == max(year)) %>%
+    ungroup() %>%
+    mutate(label_x = span[2] + diff(span) * 0.025,
+           label_y = spread_labels(response_share))
+  ggplot(dat, aes(year, response_share, colour = response)) +
+    geom_line(linewidth = 0.9) +
+    geom_point(size = 1.6) +
+    # each line is labelled just past its last point, in place of a legend
+    geom_text(data = ends, aes(x = label_x, y = label_y, label = response),
+              hjust = 0, size = 3.4) +
+    scale_colour_manual(values = colours, guide = "none") +
+    scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks = seq(0, 1, 0.25)) +
+    scale_x_continuous(breaks = function(l) { b <- scales::breaks_pretty(6)(span); b[b >= span[1] & b <= span[2]] },
+                       expand = expansion(mult = c(0.02, 0.2))) +
+    coord_cartesian(clip = "off") +
+    labs(x = NULL, y = NULL) +
+    theme_minimal(base_size = 10) +
+    theme(panel.grid.minor = element_blank(),
+          panel.grid.major.x = element_blank(),
+          axis.text = element_text(colour = "grey35"),
+          plot.margin = margin(4, 4, 2, 2))
+}
+```
+
+```{r}
+#| results: asis
+for (i in seq_len(nrow(slides))) {
+  s <- slides[i, ]
+  q <- catalog[catalog$question == s$question, ]
+  dat <- slide_data(s$question, s$response)
+  levs <- levels(dat$response)
+  colours <- if (length(levs) == 1) single else ordered[seq_along(levs)]
+  names(colours) <- levs
+  shown <- if (is.na(s$response)) "Weighted share giving each answer." else
+    paste0("Weighted share answering ``", latex_escape(s$response), "''.")
+
+  cat("\n\n## ", latex_escape(q$issue_label), "\n\n", sep = "")
+  cat("```{=latex}\n{\\footnotesize\\color{wording} ", latex_escape(q$question_wording),
+      " \\textit{", shown, "}",
+      " (\\texttt{", latex_escape(s$question), "})\\par}\n\\vspace{0.3em}\n```\n\n", sep = "")
+  print(slide_plot(dat, colours))
+  cat("\n\n")
+}
+```
+
+## More to explore
+
+\vspace{1em}
+
+These slides show questions from the Canadian Voting and Policy Attitudes dataset on which Canadian opinion changed notably over time. Figures are weighted shares of respondents who gave an answer, computed with the `cvpa` R package. Points are survey years; where the line crosses a long gap, no surveys asked the question in between.
+
+\vspace{1em}
+
+Some questions were asked by different survey organizations at different times. Part of a change between two surveys can come from differences between the surveys themselves, so changes within a single source are the safest to interpret.
+
+\vspace{1em}
+
+For more questions to explore, and for the data, the interactive app, and the R package, visit **policyattitudes.ca/resources**.
