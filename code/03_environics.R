@@ -10500,15 +10500,17 @@ survey(
   }
 )
 
-# cora-efc2000-E-2000-2_F1.dta -- Environics, 14 demographic variables, 22 issue questions
+# cora-efc2000-E-2000-2_F1.dta -- Environics, 15 demographic variables, 22 issue questions
 survey(
   survey_id = "cora-efc2000-E-2000-2_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2000-E-2000-2_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- qmrec | [EFC002-QMREC] In what year were you born?
+      age = in_range(..d[["qmrec"]], 18, 100),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # com_100 <- commsize | [EFC002-COMMSIZE] Community Size
       com_100 = recode_values(as.numeric(..d[["commsize"]]), 1 ~ 1, 2:5 ~ 0, 6:9 ~ 1),
       # degree <- qf | [EFC002-QF] What is the highest level of education that you have reached?
@@ -11298,15 +11300,17 @@ survey(
   }
 )
 
-# cora-efc2003-E-2003-1_F1.dta -- Environics, 11 demographic variables, 22 issue questions
+# cora-efc2003-E-2003-1_F1.dta -- Environics, 12 demographic variables, 22 issue questions
 survey(
   survey_id = "cora-efc2003-E-2003-1_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2003-E-2003-1_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- age | [EFC031-AGE] Age
+      age = in_range(..d[["age"]], 18, 103),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # degree <- qf | [EFC031-QF] What is the HIGHEST LEVEL of education that you have reached?
       degree = recode_values(as.numeric(..d[["qf"]]), 1:6 ~ 0, 7:8 ~ 1),
       # gender <- gender | [EFC031-GENDER] gender
@@ -11614,15 +11618,17 @@ survey(
   }
 )
 
-# cora-efc2003-E-2003-4_F1.dta -- Environics, 11 demographic variables, 10 issue questions
+# cora-efc2003-E-2003-4_F1.dta -- Environics, 12 demographic variables, 10 issue questions
 survey(
   survey_id = "cora-efc2003-E-2003-4_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2003-E-2003-4_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- o_r2 | [EFC034-O_R2] In what year were you born? Age
+      age = in_range(..d[["o_r2"]], 18, 103),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # degree <- g | [EFC034-G] What is the highest level of education that you have reached?
       degree = recode_values(as.numeric(..d[["g"]]), 1:6 ~ 0, 7:8 ~ 1),
       # gender <- gen | [EFC034-GEN] Gender
@@ -12690,15 +12696,17 @@ survey(
   }
 )
 
-# cora-efc2006-E-2006-3_F1.dta -- Environics, 13 demographic variables, 23 issue questions
+# cora-efc2006-E-2006-3_F1.dta -- Environics, 14 demographic variables, 23 issue questions
 survey(
   survey_id = "cora-efc2006-E-2006-3_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2006-E-2006-3_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- qh | [EFC063-QH] Age
+      age = in_range(..d[["qh"]], 18, 105),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # com_100 <- csize | [EFC063-CSIZE] C size
       com_100 = recode_values(as.numeric(..d[["csize"]]), 1 ~ 1, 2:5 ~ 0, 6:9 ~ 1),
       # degree <- qg | [EFC063-QG] QG What is the highest level of education that you have reached?
@@ -12920,15 +12928,17 @@ survey(
   }
 )
 
-# cora-efc2007-E-2007-1_F1.dta -- Environics, 12 demographic variables, 14 issue questions
+# cora-efc2007-E-2007-1_F1.dta -- Environics, 13 demographic variables, 14 issue questions
 survey(
   survey_id = "cora-efc2007-E-2007-1_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2007-E-2007-1_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- age | [EFC071] Age
+      age = in_range(..d[["age"]], 18, 97),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # degree <- qg | [EFC071] QG What is the highest level of education that you have reached?
       degree = recode_values(as.numeric(..d[["qg"]]), 1:6 ~ 0, 7:8 ~ 1),
       # gender <- gender | [EFC071] Gender
@@ -13944,15 +13954,17 @@ survey(
   }
 )
 
-# cora-efc2009-E-2009-4_F1.dta -- Environics, 12 demographic variables, 7 issue questions
+# cora-efc2009-E-2009-4_F1.dta -- Environics, 13 demographic variables, 7 issue questions
 survey(
   survey_id = "cora-efc2009-E-2009-4_F1.dta",
   source    = "Environics",
   file_name = "cora-efc2009-E-2009-4_F1.dta",
   demographics = function(..d) {
     ..d %>% transmute(
-      # age_cats <- not available | no continuous age and no usable age band in the survey file
-      age_cats = NA_real_,
+      # age <- AGE | [EFC094] Age converted
+      age = in_range(..d[["AGE"]], 18, 102),
+      # age_cats <- age | constructed from continuous age
+      age_cats = recode_values(as.numeric(age), 0:29 ~ 1, 30:49 ~ 2, 50:125 ~ 3),
       # com_100 <- Csize | [EFC094] Csize
       com_100 = recode_values(as.numeric(..d[["Csize"]]), 1 ~ 1, 2:5 ~ 0, 6:11 ~ 1),
       # degree <- B | [EFC094] B. What was the last level of schooling that you, yourself attended and
