@@ -13,3 +13,4 @@ aliases: ["/tutorials/"]
 ### Data Analysis
 
 - [CVPA R Package: Getting Started]({{< relref "cvpa-r-package" >}}): install the `cvpa` R package, download data for a question, compute weighted responses by year and by group, and plot the results.
+- [Adding Variables from the Original Surveys]({{< relref "adding-variables" >}}): add a question CVPA doesn't include by downloading the original survey files and linking them to CVPA respondents with `response_id`.
