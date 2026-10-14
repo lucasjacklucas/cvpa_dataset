@@ -1,5 +1,7 @@
 ---
 title: 'CVPA R Package: Getting Started'
+aliases:
+  - /tutorials/cvpa-r-package/
 format:
   html:
     toc: true

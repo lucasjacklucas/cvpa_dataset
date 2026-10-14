@@ -1,12 +1,13 @@
 ---
 title: "Demographic Divides: Where to Start"
+aliases: ["/tutorials/where-to-start/"]
 ---
 
 The CVPA dataset has more than 600 policy questions, each of which can be broken down by gender, age, education, language, region, religion, union membership, and community size. If you're interested in one of these groups and aren't sure where to begin, the questions below offer some good starting points for exploration. 
 
 These questions work well alongside our [interactive app](https://www.quantoid.ca/files/app-js-remote/), which lets you explore long-term changes in policy attitudes and voting without writing any code. In the app, you choose a policy domain first and then an issue within it. For each question below we give both, in the form *Domain* → **Issue**.
 
-We also give each question's code (which you can look up on the [Data page](/data/) or pass to the [R package](/tutorials/cvpa-r-package/)), the years it's available, and a hint about what to look for. We leave the findings for you to discover! 
+We also give each question's code (which you can look up on the [Data page](/data/) or pass to the [R package](/resources/cvpa-r-package/)), the years it's available, and a hint about what to look for. We leave the findings for you to discover! 
 
 ## Gender
 
@@ -79,4 +80,4 @@ Comparing respondents in communities of more than 100,000 people with those in s
 
 ## Next steps
 
-To compute these gaps yourself and plot how they changed, see [CVPA R Package: Getting Started](/tutorials/cvpa-r-package/). Pass any of the question codes above to `question_data()`, and the group variable to `wtd_response()`.
+To compute these gaps yourself and plot how they changed, see [CVPA R Package: Getting Started](/resources/cvpa-r-package/). Pass any of the question codes above to `question_data()`, and the group variable to `wtd_response()`.

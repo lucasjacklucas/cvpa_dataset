@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Renders each Quarto tutorial in site/tutorials/ to a Hugo page bundle at
-# site/content/tutorials/<name>/ (index.md plus its figures), along with
+# site/content/resources/<name>/ (index.md plus its figures), along with
 # <name>.R, the tutorial's code as a downloadable script (see qmd_to_r.R).
 #
 # Run from the repository root whenever a tutorial changes, then commit the
@@ -11,7 +11,7 @@
 set -euo pipefail
 
 src_dir="site/tutorials"
-out_dir="site/content/tutorials"
+out_dir="site/content/resources"
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 

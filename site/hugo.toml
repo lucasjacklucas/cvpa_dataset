@@ -41,8 +41,8 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/research"
     weight = 4
   [[menu.main]]
-    name = "Tutorials"
-    pageRef = "/tutorials"
+    name = "Resources"
+    pageRef = "/resources"
     weight = 5
 
 [markup.goldmark.renderer]

@@ -1,8 +1,15 @@
 ---
-title: "Tutorials"
+title: "Resources"
+aliases: ["/tutorials/"]
 ---
 
-## Tutorials
+## Resources
+
+### Exploration and Learning
 
 - [Demographic Divides: Where to Start]({{< relref "where-to-start" >}}): recommended questions to explore for each demographic group, with notable gaps between groups and how those gaps changed over time.
+- [Shifting Opinion: Where to Start]({{< relref "shifting-opinion" >}}): recommended questions for exploring how Canadian opinion has changed over time, including steady shifts, reversals, and sharp changes around particular events.
+
+### Data Analysis
+
 - [CVPA R Package: Getting Started]({{< relref "cvpa-r-package" >}}): install the `cvpa` R package, download data for a question, compute weighted responses by year and by group, and plot the results.

@@ -12,7 +12,7 @@ lines <- readLines(args[1])
 title <- sub('^title: *"?(.*?)"?$', "\\1", grep("^title:", lines, value = TRUE)[1])
 name <- tools::file_path_sans_ext(basename(args[1]))
 out <- c(paste("#", title),
-         paste0("# Code from https://policyattitudes.ca/tutorials/", name, "/"),
+         paste0("# Code from https://policyattitudes.ca/resources/", name, "/"),
          "")
 pending_heading <- NULL  # emitted only once code follows it
 

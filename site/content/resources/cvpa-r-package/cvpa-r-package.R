@@ -1,5 +1,5 @@
 # CVPA R Package: Getting Started
-# Code from https://policyattitudes.ca/tutorials/cvpa-r-package/
+# Code from https://policyattitudes.ca/resources/cvpa-r-package/
 
 # Installing and loading the package --------------------------------------
 
