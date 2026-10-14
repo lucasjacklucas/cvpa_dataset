@@ -40,7 +40,8 @@ Two CES files are panels, each a single file holding several waves:
 
 - Gallup and the older CES files are on Borealis (https://borealisdata.ca). Download a file with `https://borealisdata.ca/api/access/datafile/<file_id>?format=original`. Many older CES files come inside a `_STATA.zip`.
 - Recent CES and Democracy Checkup files are on Harvard Dataverse (https://dataverse.harvard.edu).
-- Pollara surveys are restricted, and the 2026 Bridge Survey has not been deposited. They cannot be joined this way.
+- Pollara surveys are restricted, so they cannot be joined this way.
+- The 2026 Bridge Survey is not publicly archived yet. The CVPA repository has a minimal version (`bridge_survey/bridge_clean.csv`), but it contains only the variables already in CVPA, so there are no further Bridge questions to add from it.
 
 ## Rules you must always follow
 

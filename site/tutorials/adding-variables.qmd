@@ -324,7 +324,7 @@ ggplot(mp_by_language, aes(x = year, y = low_share, colour = language)) +
 
 ## Next steps
 
-- The same approach works for other surveys in CVPA. Find the file name from the `response_id`, download the original file, and build the IDs the same way. Most of the surveys are publicly archived, including every Gallup survey. The exceptions are the Pollara surveys, which are restricted, and the 2026 Bridge Survey, which hasn't been deposited yet.
+- The same approach works for other surveys in CVPA. Find the file name from the `response_id`, download the original file, and build the IDs the same way. Most of the surveys are publicly archived, including every Gallup survey. The exceptions are the Pollara surveys, which are restricted, and the 2026 Bridge Survey, which isn't publicly archived yet. (Our repository includes a minimal version of the Bridge Survey, but it contains only the variables already in CVPA.)
 - Some original files contain rows that aren't in CVPA, so the check in Step 5 won't always come to zero. For those files, check the match from the other direction: every CVPA respondent from that survey should find a row in your file. The Canadian Election Study panel files, covered in the next section, are the main example.
 - You can also join your new variable to CVPA's policy questions and vote intention, as long as they were asked in the same surveys. Filter `dataset.parquet` to the `question_id` you want, and join on `response_id`.
 - If you add a question that you think others would find useful, let us know. We may be able to include it in a future release of the dataset.

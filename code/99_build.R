@@ -66,7 +66,8 @@ if (length(missing_files())) {
 
 # ---------------------------------------------------------------- assemble
 
-domains <- read_csv(question_codebook_file, show_col_types = FALSE, progress = FALSE) %>%
+domains <- read_csv(question_codebook_file, show_col_types = FALSE, progress = FALSE,
+                    guess_max = Inf) %>%
   distinct(question_id = issue_question_id, policy_domain, policy_domain_label, issue_label)
 stopifnot(!any(duplicated(domains$question_id)))
 
