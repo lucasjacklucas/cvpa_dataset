@@ -10,6 +10,8 @@ execute:
 ---
 
 
+**Download the code:** [cvpa-r-package.R](cvpa-r-package.R) contains all of the R code from this tutorial.
+
 The `cvpa` R package is the easiest way to do data analysis in R using the Canadian Voting and Policy Attitudes (CVPA) dataset. The package downloads the necessary data for you, creates response categories and demographic variables as labelled factors, and computes annually-weighted estimates over time, either for the whole population or broken down by demographic group.
 
 This tutorial provides a basic overview of how to install and load the package, identify a question and download its data, compute weighted responses by year, compute weighted responses by year, broken down by group, and plot the results.
@@ -48,28 +50,19 @@ question_catalog(domain = "intd") %>%
   head(10)
 ```
 
-           question                          issue_label
-    1  env_intd_016        Appr fed govt: defence policy
-    2  env_intd_003             Opinion of US favourable
-    3  bri_intd_007  Support reducing aid to Third World
-    4  bri_intd_005     Ties with US closer/more distant
-    5  env_intd_013               Cdn identity: the flag
-    6  env_intd_018        Appr fed govt: foreign policy
-    7  env_intd_017 Appr fed govt: promoting world peace
-    8  env_intd_047 Appr Cdn military action Afghanistan
-    9  bri_intd_004                Fed spending: defence
-    10 env_intd_022       Cda spending on poor countries
-                             value_labels n_waves
-    1                 Disapprove, Approve      37
-    2    Unfavourable/Neither, Favourable      18
-    3             Do not support, Support      13
-    4          More distant, Same, Closer      12
-    5            Not important, Important      11
-    6                 Disapprove, Approve      10
-    7                 Disapprove, Approve      10
-    8                 Disapprove, Approve       9
-    9                    Less, Same, More       9
-    10 Too much, Right amount, Not enough       8
+    # A tibble: 10 × 4
+       question     issue_label                          value_labels        n_waves
+       <chr>        <chr>                                <chr>                 <int>
+     1 env_intd_016 Appr fed govt: defence policy        Disapprove, Approve      37
+     2 env_intd_003 Opinion of US favourable             Unfavourable/Neith…      18
+     3 bri_intd_007 Support reducing aid to Third World  Do not support, Su…      13
+     4 bri_intd_005 Ties with US closer/more distant     More distant, Same…      12
+     5 env_intd_013 Cdn identity: the flag               Not important, Imp…      11
+     6 env_intd_018 Appr fed govt: foreign policy        Disapprove, Approve      10
+     7 env_intd_017 Appr fed govt: promoting world peace Disapprove, Approve      10
+     8 env_intd_047 Appr Cdn military action Afghanistan Disapprove, Approve       9
+     9 bri_intd_004 Fed spending: defence                Less, Same, More          9
+    10 env_intd_022 Cda spending on poor countries       Too much, Right am…       8
 
 For this tutorial we'll use `bri_intd_005`, a question on Canada's relationship with the United States. This question was asked in twelve survey years between 1988 and 2026:
 
@@ -81,7 +74,7 @@ question_catalog() %>%
 
     [1] "Do you think Canada's ties with the United States should be closer or more distant?"
 
-Our [Data page](./data/) has the same catalog as a searchable table, if you'd rather browse there.
+Our [Data page](https://policyattitudes.ca/data/) has the same catalog as a searchable table, if you'd rather browse there.
 
 ## Loading the data
 
@@ -134,30 +127,20 @@ demographic_vars %>%
   select(variable, description)
 ```
 
-              variable
-    1           region
-    2         province
-    3          com_500
-    4          com_100
-    5           gender
-    6         age_cats
-    7         religion
-    8           degree
-    9         language
-    10 union_household
-    11      occupation
-                                                                                                                                                                                                                                                 description
-    1                                                                                                                                                                                                                                    Region of residence
-    2                                                                                                                                                                                                                     Province or territory of residence
-    3                                                                                                                                                                                                            Community size, split at 500,000 population
-    4                                                                                                                                                                                                            Community size, split at 100,000 population
-    5  Respondent gender. Binary Man/Woman only -- a non-binary/other response option exists in some surveys from 2019 onward but is too sparse to include here; see the Canadian Opinion Research Archive (https://www.queensu.ca/cora/) for the full data.
-    6                                                                                                                                                                                                                                           Age category
-    7                                                                                                                                                                                                                                  Religious affiliation
-    8                                                                                                                                                                                                                           University degree attainment
-    9                                                                                                                                                                                                                                        Language spoken
-    10                                                                                                                                                                                                                     Union membership in the household
-    11                                                                                                                                                                                                                               Respondent's occupation
+    # A tibble: 11 × 2
+       variable        description                                                  
+       <chr>           <chr>                                                        
+     1 region          Region of residence                                          
+     2 province        Province or territory of residence                           
+     3 com_500         Community size, split at 500,000 population                  
+     4 com_100         Community size, split at 100,000 population                  
+     5 gender          Respondent gender. Binary Man/Woman only -- a non-binary/oth…
+     6 age_cats        Age category                                                 
+     7 religion        Religious affiliation                                        
+     8 degree          University degree attainment                                 
+     9 language        Language spoken                                              
+    10 union_household Union membership in the household                            
+    11 occupation      Respondent's occupation                                      
 
 ## Weighted responses by year
 
@@ -244,7 +227,7 @@ ggplot(overall, aes(x = year, y = response_share, colour = response)) +
   theme(legend.position = "top", panel.grid.minor = element_blank())
 ```
 
-<img src="cvpa-r-package.markdown_strict_files/figure-markdown_strict/unnamed-chunk-12-1.png" width="768" />
+<img src="cvpa-r-package.markdown_strict_files/figure-markdown_strict/unnamed-chunk-13-1.png" width="768" />
 
 For roughly three decades, Canadians mostly wanted ties to stay the same or get closer. Then, in 2026, a majority wanted them to be more distant.
 
@@ -271,7 +254,7 @@ by_party %>%
   theme(legend.position = "top", panel.grid.minor = element_blank())
 ```
 
-<img src="cvpa-r-package.markdown_strict_files/figure-markdown_strict/unnamed-chunk-13-1.png" width="768" />
+<img src="cvpa-r-package.markdown_strict_files/figure-markdown_strict/unnamed-chunk-14-1.png" width="768" />
 
 Conservative supporters have usually been the most likely to want closer ties with the United States. In 2026 the gap became much wider. Liberal and NDP supporters who wanted closer ties fell to the lowest levels in the series, while Conservative support for closer ties held steady.
 
@@ -279,5 +262,5 @@ To see every response category at once, drop the `response == "Closer"` conditio
 
 ## Next steps
 
-- Swap in any question code from `question_catalog()` or the [Data page](./data/). The same three steps work for every question: `update_cvpa_data(questions = ...)`, `question_data()`, then `wtd_response()`.
+- Swap in any question code from `question_catalog()` or the [Data page](https://policyattitudes.ca/data/). The same three steps work for every question: `update_cvpa_data(questions = ...)`, `question_data()`, then `wtd_response()`.
 - Vote choice and vote intention are treated as questions too: `question_data("vote_choice")` followed by `wtd_response()` gives weighted vote shares by year.

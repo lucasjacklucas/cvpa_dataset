@@ -9,6 +9,19 @@ execute:
   warning: false
 ---
 
+```{r}
+#| include: false
+#| purl: false
+# Keep printed output narrow enough for the page, and print data frames as
+# tibbles so long text columns are truncated rather than wrapped.
+options(width = 80)
+registerS3method("knit_print", "data.frame", envir = asNamespace("knitr"), function(x, ...) {
+  knitr::normal_print(tibble::as_tibble(x))
+})
+```
+
+**Download the code:** [cvpa-r-package.R](cvpa-r-package.R) contains all of the R code from this tutorial.
+
 The `cvpa` R package is the easiest way to do data analysis in R using the Canadian Voting and Policy Attitudes (CVPA) dataset. The package downloads the necessary data for you, creates response categories and demographic variables as labelled factors, and computes annually-weighted estimates over time, either for the whole population or broken down by demographic group. 
 
 This tutorial provides a basic overview of how to install and load the package, identify a question and download its data, compute weighted responses by year, compute weighted responses by year, broken down by group, and plot the results. 
@@ -56,7 +69,7 @@ question_catalog() %>%
   pull(question_wording)
 ```
 
-Our [Data page](/data/) has the same catalog as a searchable table, if you'd rather browse there.
+Our [Data page](https://policyattitudes.ca/data/) has the same catalog as a searchable table, if you'd rather browse there.
 
 ## Loading the data
 
@@ -173,5 +186,5 @@ To see every response category at once, drop the `response == "Closer"` conditio
 
 ## Next steps
 
-- Swap in any question code from `question_catalog()` or the [Data page](/data/). The same three steps work for every question: `update_cvpa_data(questions = ...)`, `question_data()`, then `wtd_response()`.
+- Swap in any question code from `question_catalog()` or the [Data page](https://policyattitudes.ca/data/). The same three steps work for every question: `update_cvpa_data(questions = ...)`, `question_data()`, then `wtd_response()`.
 - Vote choice and vote intention are treated as questions too: `question_data("vote_choice")` followed by `wtd_response()` gives weighted vote shares by year.

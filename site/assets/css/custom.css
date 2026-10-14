@@ -87,3 +87,23 @@ body > .container.mt-5 {
     max-width: 100%;
     height: auto;
 }
+
+/*
+ * Code blocks: highlighted code (div.highlight > pre, coloured inline by
+ * Hugo) and plain R output blocks share a light grey box. Long lines scroll
+ * sideways instead of wrapping; output is set slightly smaller than code.
+ */
+#content pre {
+    background-color: #f6f8fa !important;  /* beats Hugo's inline style */
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    padding: 8px 10px;
+    overflow-x: auto;
+    white-space: pre;
+}
+#content pre code {
+    white-space: pre;
+}
+#content > pre {
+    font-size: 0.85em;
+}

@@ -47,3 +47,7 @@ disableKinds = ["taxonomy", "term"]
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files, as on the personal site
+
+# Light code highlighting (Hugo's default, monokai, is a dark theme)
+[markup.highlight]
+  style = "github"

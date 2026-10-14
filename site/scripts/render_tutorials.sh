@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Renders each Quarto tutorial in site/tutorials/ to a Hugo page bundle at
-# site/content/tutorials/<name>/ (index.md plus its figures).
+# site/content/tutorials/<name>/ (index.md plus its figures), along with
+# <name>.R, the tutorial's code as a downloadable script (see qmd_to_r.R).
 #
 # Run from the repository root whenever a tutorial changes, then commit the
 # rendered bundle:
@@ -24,5 +25,6 @@ for qmd in "$src_dir"/*.qmd; do
   mkdir -p "$bundle"
   cp "$work/$name.md" "$bundle/index.md"
   cp -R "$work/$name.markdown_strict_files" "$bundle/"
+  Rscript site/scripts/qmd_to_r.R "$qmd" "$bundle/$name.R"
   echo "Rendered $qmd -> $bundle"
 done
