@@ -12,6 +12,8 @@ execute:
 
 **Download the code:** [adding-variables.R](adding-variables.R) contains all of the R code from this tutorial.
 
+**Using an AI assistant?** [AGENTS.md](AGENTS.md) contains instructions for AI coding assistants such as Claude Code and Codex. Save it in your project folder. Codex reads it automatically; for Claude Code, rename it `CLAUDE.md`, or ask Claude to read it. It tells the assistant how CVPA's IDs work, and to check with you before making substantive choices, such as how to recode a question.
+
 The CVPA dataset harmonizes more than 600 policy questions, but the surveys it draws on include many questions beyond those included in the harmonized dataset. We've designed the CVPA dataset to make it as easy as possible for you to add a question to our data: you simply need to download the original survey files, pull out the new question you're interested in, and link it to the CPVA "backbone" database. Once it's linked, you can analyze your new question alongside everything CVPA already provides: harmonized demographics, vote intention, and the other policy questions.
 
 This tutorial walks through a complete example. We start by adding a question from a single Gallup survey, then show how to add the same question from several surveys at once.
