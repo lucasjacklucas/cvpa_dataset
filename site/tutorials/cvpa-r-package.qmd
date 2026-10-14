@@ -1,0 +1,177 @@
+---
+title: "CVPA R Package: Getting Started"
+format:
+  html:
+    toc: true
+  hugo-md: default
+execute:
+  message: false
+  warning: false
+---
+
+The `cvpa` R package is the easiest way to do data analysis in R using the Canadian Voting and Policy Attitudes (CVPA) dataset. The package downloads the necessary data for you, creates response categories and demographic variables as labelled factors, and computes annually-weighted estimates over time, either for the whole population or broken down by demographic group. 
+
+This tutorial provides a basic overview of how to install and load the package, identify a question and download its data, compute weighted responses by year, compute weighted responses by year, broken down by group, and plot the results. 
+
+## Installing and loading the package
+
+`cvpa` is hosted on GitHub. Install it with the `remotes` package (you only need to do this once):
+
+```{r}
+#| eval: false
+install.packages("remotes")
+remotes::install_github("davidaarmstrong/cvpa")
+```
+
+Then load it, along with `tidyverse` and `ggplot2`, which we'll use for data handling and plotting:
+
+```{r}
+library(cvpa)
+library(tidyverse)
+library(ggplot2)
+```
+
+## Finding a question
+
+Next, use `update_cvpa_data()` to download the question catalog (a small file listing every question in the dataset) to a local cache:
+
+```{r}
+update_cvpa_data(quiet = TRUE)
+```
+
+`question_catalog()` returns one row per question, with its code, policy domain, a short label, the full question wording, the response categories, and the number of survey waves that asked it. You can filter it to a single domain. Here we look at questions on international affairs and defence (`"intd"`):
+
+```{r}
+question_catalog(domain = "intd") %>%
+  select(question, issue_label, value_labels, n_waves) %>%
+  arrange(desc(n_waves)) %>%
+  head(10)
+```
+
+For this tutorial we'll use `bri_intd_005`, a question on Canada's relationship with the United States. This question was asked in twelve survey years between 1988 and 2026:
+
+```{r}
+question_catalog() %>%
+  filter(question == "bri_intd_005") %>%
+  pull(question_wording)
+```
+
+Our [Data page](/data/) has the same catalog as a searchable table, if you'd rather browse there.
+
+## Loading the data
+
+The catalog is only an index. To get the respondent-level data for a question, pass its code to `update_cvpa_data()`. Questions you've already downloaded are skipped, so this is safe to rerun.
+
+```{r}
+update_cvpa_data(questions = "bri_intd_005", quiet = TRUE)
+```
+
+`question_data()` then reads that question from the cache:
+
+```{r}
+us_ties <- question_data("bri_intd_005")
+glimpse(us_ties)
+```
+
+There is one row per respondent per survey. The columns are:
+
+- `response`: the respondent's answer, as a factor (`More distant`, `Same`, `Closer`)
+- `weight`: the survey weight
+- `year`: the year of the survey
+- `response_id` and `survey_id`: identifiers for the respondent and the source survey
+- vote intention, vote choice, and eleven demographic variables, all as factors. These are the variables you can break results down by.
+
+The `demographic_vars` table describes each demographic variable and lists its categories:
+
+```{r}
+demographic_vars %>%
+  select(variable, description)
+```
+
+## Weighted responses by year
+
+`wtd_response()` computes the weighted share of respondents choosing each response category in each year. With no other arguments, it gives one set of estimates per year for the full sample:
+
+```{r}
+overall <- wtd_response(us_ties)
+overall
+```
+
+`count` is the sum of the survey weights for that response in that year, and `response_share` is the share of the year's total, so the three shares in each year add up to 1. When a question was asked in more than one survey in the same year, `wtd_response()` pools those surveys.
+
+To limit the estimates to particular years, use the `years` argument, e.g. `wtd_response(us_ties, years = 2000:2026)`.
+
+## Weighted responses by group
+
+To break the estimates down by group, name the variable in `grouping_vars`. Here we use vote intention, which lets us compare the supporters of different parties:
+
+```{r}
+by_party <- wtd_response(us_ties, grouping_vars = "vote_intention")
+by_party
+```
+
+Now `response_share` is calculated within each year and party, so the shares in each year–party combination add up to 1. The demographic variables in `demographic_vars` work the same way. The full list of valid grouping variables is in `cvpa_grouping_vars`:
+
+```{r}
+cvpa_grouping_vars
+```
+
+You can also pass more than one variable, e.g. `grouping_vars = c("region", "gender")`, but be aware that cell sizes can get small quickly when you use more than one variable.
+
+## Plotting the results
+
+Because `wtd_response()` returns a tidy data frame, it goes straight into `ggplot2`. First, the overall trend:
+
+```{r}
+#| fig-width: 8
+#| fig-height: 4.5
+response_colours <- c("More distant" = "#eb6834", "Same" = "#8a8a85", "Closer" = "#2a78d6")
+
+ggplot(overall, aes(x = year, y = response_share, colour = response)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2) +
+  scale_colour_manual(values = response_colours) +
+  scale_y_continuous(labels = scales::percent, limits = c(0, NA)) +
+  labs(
+    title = "Should Canada's ties with the United States be closer or more distant?",
+    x = NULL, y = "Weighted share of respondents", colour = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+```
+
+For roughly three decades, Canadians mostly wanted ties to stay the same or get closer. Then, in 2026, a majority wanted them to be more distant.
+
+The party breakdown has many more lines. Plotting every response category for every party would be hard to read, so we use `dplyr::filter()` to keep a single response category (`Closer`) and the three parties that ran candidates in every year (vote intention also includes smaller parties and undecided respondents):
+
+```{r}
+#| fig-width: 8
+#| fig-height: 4.5
+party_colours <- c("Liberal" = "#d71920", "PC/Conservative" = "#1a4782", "CCF/NDP" = "#f37021")
+
+by_party %>%
+  filter(
+    response == "Closer",
+    vote_intention %in% names(party_colours)
+  ) %>%
+  ggplot(aes(x = year, y = response_share, colour = vote_intention)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2) +
+  scale_colour_manual(values = party_colours) +
+  scale_y_continuous(labels = scales::percent, limits = c(0, NA)) +
+  labs(
+    title = "Share who want closer ties with the United States, by vote intention",
+    x = NULL, y = "Weighted share of respondents", colour = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+```
+
+Conservative supporters have usually been the most likely to want closer ties with the United States. In 2026 the gap became much wider. Liberal and NDP supporters who wanted closer ties fell to the lowest levels in the series, while Conservative support for closer ties held steady.
+
+To see every response category at once, drop the `response == "Closer"` condition and add `facet_wrap(~ response)` to the plot.
+
+## Next steps
+
+- Swap in any question code from `question_catalog()` or the [Data page](/data/). The same three steps work for every question: `update_cvpa_data(questions = ...)`, `question_data()`, then `wtd_response()`.
+- Vote choice and vote intention are treated as questions too: `question_data("vote_choice")` followed by `wtd_response()` gives weighted vote shares by year.

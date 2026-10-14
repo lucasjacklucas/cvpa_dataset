@@ -8,6 +8,6 @@ This website is designed to provide information about [our data]({{< relref "dat
 
 **Interactive App.** If you are looking for the interactive app, which allows users to explore long-term changes in policy attitudes and voting in an accessible online application, please visit [this link](https://www.quantoid.ca/files/app-js-remote/).
 
-**R Package.** If you are interested in the CVPA's R package, which allows users to easily generate weighted annual estimates for each policy attitude and voting variable, including sub-group breakdowns, please start with [this tutorial on how to download and use the package](https://github.com/davidaarmstrong/cvpa).
+**R Package.** If you are interested in the CVPA's R package, which allows users to easily generate weighted annual estimates for each policy attitude and voting variable, including sub-group breakdowns, please start with [this tutorial on how to download and use the package]({{< relref "tutorials/cvpa-r-package" >}}).
 
 **Raw Data.** If you are interested in the CVPA's raw data, please [click here](https://github.com/lucasjacklucas/cvpa_dataset) to access the github repository where the dataset is stored and [click here]({{< relref "tutorials" >}}) for a tutorial on how to download, open, and use the data.

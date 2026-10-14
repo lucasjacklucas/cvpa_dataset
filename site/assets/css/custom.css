@@ -81,3 +81,9 @@ body > .container.mt-5 {
 #footer {
     display: none;
 }
+
+/* Tutorial figures are rendered wider than the text column; scale them down */
+#content img {
+    max-width: 100%;
+    height: auto;
+}
