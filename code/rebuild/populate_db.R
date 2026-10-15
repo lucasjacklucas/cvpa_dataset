@@ -483,7 +483,7 @@ dbWriteTable(con, "vbl_data", vbl_data, overwrite = TRUE, temporary = FALSE)
 # separately) is still an open decision; this step just produces it.
 # ---------------------------------------------------------------------------
 
-parquet_dir <- "cp3_parquet"
+parquet_dir <- "site/data/cp3_parquet"
 resp_parquet_dir <- file.path(parquet_dir, "resp")
 if (dir.exists(resp_parquet_dir)) unlink(resp_parquet_dir, recursive = TRUE)
 dir.create(resp_parquet_dir, recursive = TRUE, showWarnings = FALSE)
