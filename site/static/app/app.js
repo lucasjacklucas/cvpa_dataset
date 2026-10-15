@@ -62,7 +62,7 @@ const DATA_BASE_URL = new URL("../cp3_parquet/", import.meta.url).href;
 // even across a hard refresh or a new GitHub Pages build. Appending this
 // to every data URL means a data refresh always hits a URL nothing has
 // cached before.
-const DATA_VERSION = "2026-10-15.1";
+const DATA_VERSION = "2026-10-15.2";
 const VBL_DATA_URL = `${DATA_BASE_URL}vbl_data.parquet?v=${DATA_VERSION}`;
 const CODE_LABELS_URL = `${DATA_BASE_URL}code_labels.parquet?v=${DATA_VERSION}`;
 function respUrlFor(question) {

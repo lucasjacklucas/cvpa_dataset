@@ -53,7 +53,7 @@ resp3 <- resp2 %>%
 # already in hand.
 #
 # Two things kept deliberately separate from the join above:
-#  - region/age_cats/woman are already on resp3 from the join above (that
+#  - region/age_cats/gender are already on resp3 from the join above (that
 #    one exists only to key the weight lookup and must stay untouched); they
 #    are simply no longer dropped in the final select() below.
 #  - year is re-joined here from `survey`, not reused from the indiv-sourced
@@ -181,10 +181,10 @@ com_100_labels <- tribble(
   "com_100", 1,     "Population > 100k",     2
 )
 
-woman_labels <- tribble(
+gender_labels <- tribble(
   ~variable, ~code, ~label,  ~sort_order,
-  "woman",   0,     "Man",   1,
-  "woman",   1,     "Woman", 2
+  "gender",  0,     "Man",   1,
+  "gender",  1,     "Woman", 2
 )
 
 age_cats_labels <- tribble(
@@ -296,7 +296,7 @@ code_labels <- bind_rows(
   region_labels,
   com_500_labels,
   com_100_labels,
-  woman_labels,
+  gender_labels,
   age_cats_labels,
   religion_labels,
   degree_labels,
