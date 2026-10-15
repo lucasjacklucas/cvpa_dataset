@@ -434,7 +434,7 @@ dbWriteTable(con, "vbl_data", vbl_data, overwrite = TRUE, temporary = FALSE)
 # Export Parquet files for the planned remote/bundled deployment.
 #
 # IMPORTANT after every run of this section: bump DATA_VERSION near the top
-# of app-js-remote/app.js. The app reads these files at a fixed URL
+# of site/static/app/app.js. The app reads these files at a fixed URL
 # (cp3_parquet/vbl_data.parquet etc.) - a browser or the GitHub Pages CDN
 # that already cached that exact URL from a previous deploy has no reason
 # to re-fetch it, cache-Control headers or a hard refresh notwithstanding,
