@@ -65,7 +65,7 @@
     "domain_label": "Democracy and Institutions",
     "issue_label": "Appr prov govt: ethical govt",
     "question_wording": "Do you approve or disapprove of the way your current provincial government is handling running an honest, ethical government?",
-    "n_waves": 34,
+    "n_waves": 24,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -84,7 +84,7 @@
     "domain": "dpin",
     "domain_label": "Democracy and Institutions",
     "issue_label": "Change electoral system to prop rep",
-    "question_wording": "Canada should change its electoral system from \"\"First Past the Post\"\" to a \"\"proportional representation\"\" system.",
+    "question_wording": "Canada should change its electoral system from \"First Past the Post\" to a \"proportional representation\" system.",
     "n_waves": 2,
     "type": "b",
     "value_labels": "Disagree, Agree"
@@ -155,7 +155,7 @@
     "domain_label": "Democracy and Institutions",
     "issue_label": "Constit priority: Senate reform",
     "question_wording": "In your opinion, how important is reforming the Senate of Canada?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -305,7 +305,7 @@
     "domain_label": "Democracy and Institutions",
     "issue_label": "Senate: pop-based or equal",
     "question_wording": "If the Senate were to be elected, which of the following arrangements would you prefer?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "Equal per province, Based on population"
   },
@@ -325,7 +325,7 @@
     "domain_label": "Democracy and Institutions",
     "issue_label": "Support prop representation, depends opt",
     "question_wording": "Would you support or oppose moving towards a system of proportional representation in Canadian elections? (6-point scale)",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Oppose, Depends, Support"
   },
@@ -355,7 +355,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Appr cutting federal taxes",
     "question_wording": "Do you approve or disapprove of the federal government making a tax cut?",
-    "n_waves": 12,
+    "n_waves": 9,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -395,7 +395,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Appr prov govt: deficit reduction",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling deficit reduction?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -425,7 +425,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Appr prov govt: taxation",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling taxation?",
-    "n_waves": 43,
+    "n_waves": 35,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -545,7 +545,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Cdns pay too little tax",
     "question_wording": "Do you feel that Canadians pay too much, about the right amount, or too little in taxes?",
-    "n_waves": 7,
+    "n_waves": 6,
     "type": "lsm",
     "value_labels": "Too much, About right, Too little"
   },
@@ -565,7 +565,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Concern: cost of housing",
     "question_wording": "How concerned are you about the cost of housing?",
-    "n_waves": 6,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Not concerned, Concerned"
   },
@@ -665,7 +665,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Corp profits good or bad",
     "question_wording": "When you hear stories today about some corporations making large profits, is this, in your opinion, a good thing, a bad thing or neither good nor bad?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Bad thing, Neither, Good thing"
   },
@@ -825,7 +825,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Favour free trade Can-US-Mexico",
     "question_wording": "Are you in favour of or opposed to a free trade agreement among Canada, the United States and Mexico?",
-    "n_waves": 6,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Oppose, Favour"
   },
@@ -905,7 +905,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Fin dereg: more/fewer choices",
     "question_wording": "Do you think deregulation of financial services will likely lead to more choices or fewer choices of products and services?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Fewer, Same, More"
   },
@@ -915,7 +915,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Financially better off than parents",
     "question_wording": "Financially speaking, do you feel that you are better off, worse off, or about the same as your parents were at your age?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Worse off, Same, Better off"
   },
@@ -1055,7 +1055,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Govt intervention vs free market",
     "question_wording": "There are different views about the role of market forces in society: some say the market should be completely free and unrestricted by government, others say government should intervene. Which view is closer to your own?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Free market, Govt intervention"
   },
@@ -1105,7 +1105,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Govt waste important in spending",
     "question_wording": "How important a factor do you think government waste is in government spending?",
-    "n_waves": 9,
+    "n_waves": 8,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -1245,7 +1245,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "More concerned: services vs taxes",
     "question_wording": "I am more concerned about shortfalls in needed government services than I am about the amount of taxes I pay.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Disagree, Neither, Agree"
   },
@@ -1255,7 +1255,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "NAFTA helped/hurt Cdn economy",
     "question_wording": "On balance, do you think NAFTA has helped the Canadian economy or hurt the Canadian economy?",
-    "n_waves": 6,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "Hurt/Neither, Helped"
   },
@@ -1485,7 +1485,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Reduce fed debt important",
     "question_wording": "Although the deficit has been eliminated, the federal government still has a debt, which consists of past deficits that have accumulated. How important is it that the federal government try to reduce the federal debt?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -1545,7 +1545,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Tax cuts stimulate growth/revenue",
     "question_wording": "Cutting taxes would stimulate economic growth and increase overall government revenues.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Disagree, Neither, Agree"
   },
@@ -1585,7 +1585,7 @@
     "domain_label": "Economy and Taxation",
     "issue_label": "Too little regulation of business",
     "question_wording": "Overall, do you think there is too much, too little, or about the right amount of government regulation of business in Canada?",
-    "n_waves": 7,
+    "n_waves": 5,
     "type": "lsm",
     "value_labels": "Too much, About right, Too little"
   },
@@ -1835,7 +1835,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Concern: nuclear energy cost",
     "question_wording": "How concerned are you about the cost of nuclear energy?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not concerned, Concerned"
   },
@@ -1855,7 +1855,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Concern: the environment",
     "question_wording": "How concerned are you about the environment?",
-    "n_waves": 6,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Not concerned, Concerned"
   },
@@ -1865,7 +1865,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Concern: water quality",
     "question_wording": "How concerned are you about the quality of water?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "Not concerned, Concerned"
   },
@@ -1885,7 +1885,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Economy vs environment priority",
     "question_wording": "In your opinion, should the development of the economy take priority over environmental concerns, or should environmental concerns have priority over economic growth?",
-    "n_waves": 7,
+    "n_waves": 6,
     "type": "lsm",
     "value_labels": "Environment, Both equally, Economy"
   },
@@ -1935,7 +1935,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Enviro problems affect own health",
     "question_wording": "How much, if at all, do you believe environmental problems now affect your own health?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not much, A lot"
   },
@@ -1955,7 +1955,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Familiar with Kyoto commitments",
     "question_wording": "How familiar are you with the commitments Canada has made under the Kyoto Accord?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not familiar, Familiar"
   },
@@ -2005,7 +2005,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Fed spending: energy development",
     "question_wording": "Do you think the federal government should spend more, less or the same on energy development?",
-    "n_waves": 6,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2015,7 +2015,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Fed spending: enviro protection",
     "question_wording": "Do you think the federal government should spend more, less or the same on environmental protection?",
-    "n_waves": 9,
+    "n_waves": 6,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2115,7 +2115,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Neighbourhood pollution trend",
     "question_wording": "Would you say that the level of pollution in your neighbourhood has increased, decreased or remained the same over the past two years?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Decreased, Same, Increased"
   },
@@ -2245,7 +2245,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Support/oppose Kyoto Accord",
     "question_wording": "Based on what you know about the Kyoto Accord, do you support or oppose it?",
-    "n_waves": 5,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Oppose, Support"
   },
@@ -2285,7 +2285,7 @@
     "domain_label": "Energy and Environment",
     "issue_label": "Willing to restrict cars in cities",
     "question_wording": "To improve the environment, would you be willing to support greater restrictions on the use of cars in urban areas? (6-point scale)",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Not willing, Depends, Willing"
   },
@@ -2305,7 +2305,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Access to family physician trend",
     "question_wording": "Compared to five years ago, is access to your family physician better, worse, or the same?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Worse, Same, Better"
   },
@@ -2325,7 +2325,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Appr fed govt: cities issues",
     "question_wording": "Generally speaking, do you approve or disapprove of the way the current federal government is handling the issues facing Canada's cities?",
-    "n_waves": 12,
+    "n_waves": 8,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -2355,7 +2355,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Appr prov govt: education",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling education in the province?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -2365,7 +2365,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Appr prov govt: roads/highways",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling roads and highways?",
-    "n_waves": 11,
+    "n_waves": 9,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -2375,7 +2375,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Appr prov govt: social programs",
     "question_wording": "Do you approve or disapprove of the way your current provincial government is handling social programs?",
-    "n_waves": 42,
+    "n_waves": 33,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -2535,7 +2535,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Fed spending: assistance to cities",
     "question_wording": "Do you think the federal government should spend more, less or the same on assistance to Canada's cities?",
-    "n_waves": 7,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2555,7 +2555,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Fed spending: employment insurance",
     "question_wording": "Keeping in mind that increasing services could increase taxes, do you think the federal government should spend more, less or the same on employment insurance?",
-    "n_waves": 8,
+    "n_waves": 5,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2575,7 +2575,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Fed spending: homelessness",
     "question_wording": "Do you think the federal government should spend more, less or the same on dealing with homelessness?",
-    "n_waves": 5,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2585,7 +2585,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Fed spending: reducing child poverty",
     "question_wording": "Do you think the federal government should spend more, less or the same on reducing child poverty?",
-    "n_waves": 8,
+    "n_waves": 5,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -2595,7 +2595,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Fed transfers: catastrophic drug costs",
     "question_wording": "Keeping in mind that this may result in higher taxes, would you support or oppose the federal government increasing health transfers to the provinces to reimburse individuals for catastrophic drug costs?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Oppose, Support"
   },
@@ -2735,7 +2735,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Health costs: limit patients per doctor",
     "question_wording": "Would you support or oppose limiting the number of patients an individual doctor can have, as a way of dealing with health care costs in your province?",
-    "n_waves": 6,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Oppose, Support"
   },
@@ -2765,7 +2765,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Health problems: mgmt vs funding",
     "question_wording": "In your opinion, are problems in the health care system mainly due to not enough funding for the system, or inefficient management of the system?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not enough funding, Poor management"
   },
@@ -2795,7 +2795,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Health: user fee per visit (2007-12)",
     "question_wording": "Having people pay a small user fee every time they use the health care system, such as when they go to a physician or visit an emergency room.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Oppose, Neither, Support"
   },
@@ -2965,7 +2965,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Private delivery, tax-funded as now",
     "question_wording": "Would you support or oppose having health care services provided by the private sector, if patients did not have to pay for these services and the services were covered by tax dollars exactly the same way they are now?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Oppose/Neither, Support"
   },
@@ -2995,7 +2995,7 @@
     "domain_label": "Health, Education and Social Programs",
     "issue_label": "Rich provs give too little",
     "question_wording": "Do you think that the better-off provinces currently give too much, too little, or about the right amount of money to the less well-off provinces?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Too much, About right, Too little"
   },
@@ -3275,7 +3275,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Appr prov govt: fed-prov relations",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling federal-provincial relations?",
-    "n_waves": 75,
+    "n_waves": 65,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -3285,7 +3285,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Appr prov govt: Indigenous affairs",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling Indigenous affairs?",
-    "n_waves": 61,
+    "n_waves": 51,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -3325,7 +3325,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Ban non-white immigration",
     "question_wording": "Non-whites should not be allowed to immigrate to Canada.",
-    "n_waves": 14,
+    "n_waves": 13,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -3475,7 +3475,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Familiar w Aboriginal issues",
     "question_wording": "How familiar are you with Aboriginal issues in Canada?",
-    "n_waves": 4,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not familiar, Familiar"
   },
@@ -3525,7 +3525,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Fed govt attention to Quebec: not enough",
     "question_wording": "Thinking about the current federal government, is it giving too much attention to Quebec, not enough attention, or is its approach about right?",
-    "n_waves": 7,
+    "n_waves": 5,
     "type": "lsm",
     "value_labels": "Too much, About right, Not enough"
   },
@@ -3575,7 +3575,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Fed spending: Aboriginal peoples",
     "question_wording": "Keeping in mind that increasing services could increase taxes, do you think the federal government should spend more, less or the same on Aboriginal peoples?",
-    "n_waves": 7,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -3605,7 +3605,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Fiscal imbalance exists or not",
     "question_wording": "Some people say there is a fiscal imbalance in this country. Other people say there is no fiscal imbalance. Which view is closer to your own?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "No imbalance, Depends, Is an imbalance"
   },
@@ -3635,7 +3635,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "French in QC secure",
     "question_wording": "How secure is the future of the French language and culture in Quebec?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not secure, Secure"
   },
@@ -3655,7 +3655,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "French outside QC secure",
     "question_wording": "How secure is the future of the French language and culture in Canada outside of Quebec?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not secure, Secure"
   },
@@ -3745,7 +3745,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Govts not gone far enough: Aboriginal",
     "question_wording": "Have governments in Canada gone too far or not gone far enough in trying to reach an understanding with Aboriginal peoples?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Gone too far, About right, Not far enough"
   },
@@ -3765,7 +3765,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Health stds: fed alone vs fed+prov",
     "question_wording": "Should the federal and provincial governments together set national standards for health care, or should the federal government alone continue to set them?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Fed and provinces, Federal alone"
   },
@@ -3775,7 +3775,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Health stds: prov vs fed set",
     "question_wording": "Some say the federal government should continue to set standards in health care. Others say the provinces should set their own health care standards. Which view is closer to your own?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Federal sets, Both, Provinces set"
   },
@@ -3805,7 +3805,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Immigrants not adopting Cdn values",
     "question_wording": "There are too many immigrants coming into this country who are not adopting Canadian values.",
-    "n_waves": 8,
+    "n_waves": 7,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -3815,7 +3815,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Immigrants take jobs from Cdns",
     "question_wording": "Immigrants take away jobs from other Canadians.",
-    "n_waves": 17,
+    "n_waves": 14,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -3825,7 +3825,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Immigration good for Cdn economy",
     "question_wording": "Overall, immigration has a positive impact on the economy of Canada.",
-    "n_waves": 9,
+    "n_waves": 6,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -3865,7 +3865,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Important: settle native land claims",
     "question_wording": "How important do you personally think it is to resolve the issue of settling native land claims?",
-    "n_waves": 5,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -3875,7 +3875,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Important: speak both off langs",
     "question_wording": "How important is it to be able to speak both of Canada's official languages?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -3935,7 +3935,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Many refugees not real refugees",
     "question_wording": "Many people claiming to be refugees are not real refugees.",
-    "n_waves": 18,
+    "n_waves": 15,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -3975,7 +3975,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "More power: fed vs prov govts",
     "question_wording": "Overall, would you like to see the federal government have more powers, the provincial governments have more powers, or the division of powers remain the same as now?",
-    "n_waves": 15,
+    "n_waves": 14,
     "type": "lsm",
     "value_labels": "Provinces, As is, Federal"
   },
@@ -4025,7 +4025,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Natl health stds: fed vs provs (2000s)",
     "question_wording": "Do you think it is possible for the provinces, working together, to set national standards for health care across the country, or is only the federal government able to do so?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Provinces can, Only federal"
   },
@@ -4045,7 +4045,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Own province independence",
     "question_wording": "Thinking about your own province, do you favour or oppose your province becoming an independent country?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Oppose, Support"
   },
@@ -4085,7 +4085,7 @@
     "domain_label": "Immigration, Diversity and Federalism",
     "issue_label": "Prov opt out of new natl programs",
     "question_wording": "Should provinces be allowed to opt out of any new national program and be entitled to receive national funding if they were to set up their own similar program?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -4335,7 +4335,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Afghan mission likely successful",
     "question_wording": "Do you think it is likely that the Canadian mission in Afghanistan will be successful by the time it ends?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "lsm",
     "value_labels": "Not likely, Depends, Likely"
   },
@@ -4375,7 +4375,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Appr Cdn military action Afghanistan",
     "question_wording": "Do you approve or disapprove of Canada's participation in military action in Afghanistan?",
-    "n_waves": 9,
+    "n_waves": 7,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -4425,7 +4425,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Appr prov govt: dom security",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling domestic security?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -4435,7 +4435,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Boycott vs trade to promote rights",
     "question_wording": "A number of countries in the world are non-democratic and violate the human rights of their citizens. Which do you think is a better way for Canada to promote human rights in these countries?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Increase trade, Boycott"
   },
@@ -4445,7 +4445,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Canada adopt US dollar",
     "question_wording": "Do you think it would be a good idea for Canada to use the U.S. dollar as its currency?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Bad idea, Good idea"
   },
@@ -4475,7 +4475,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Canada should improve border security",
     "question_wording": "Canada needs to improve the security of the nation's borders.",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -4485,7 +4485,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Canada-US common currency",
     "question_wording": "Do you think it would be a good idea for Canada and the United States to have a common currency - the same dollar?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Bad idea, Good idea"
   },
@@ -4505,7 +4505,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda join US missile defence",
     "question_wording": "The United States is currently developing a new national missile defence system. In general, do you favour or oppose Canada becoming involved with this new missile defence system?",
-    "n_waves": 6,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "Oppose, Favour"
   },
@@ -4515,7 +4515,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda keeps criminals out well",
     "question_wording": "Canada is doing a good job keeping criminals and suspected criminals out of the country.",
-    "n_waves": 6,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Disagree/Neither, Agree"
   },
@@ -4525,7 +4525,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda more/less like US last 10 yrs",
     "question_wording": "Over the last 10 years, do you think Canada has become more like the United States, less like the United States, or has there been no change?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Less like US, No change, More like US"
   },
@@ -4535,7 +4535,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda prepared for terrorist attack",
     "question_wording": "Thinking about Canada's response to a terrorist attack, how well prepared do you think we are?",
-    "n_waves": 4,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not prepared, Prepared"
   },
@@ -4545,7 +4545,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda should aid poor countries",
     "question_wording": "How important is it that Canada promote assistance to poor countries in the world?",
-    "n_waves": 3,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -4555,7 +4555,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda spending on poor countries",
     "question_wording": "Do you think Canada spends too much money assisting poor countries around the world, the right amount, or not enough?",
-    "n_waves": 8,
+    "n_waves": 6,
     "type": "lsm",
     "value_labels": "Too much, Right amount, Not enough"
   },
@@ -4565,7 +4565,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda-US common border policy",
     "question_wording": "Canada and the United States should adopt a common policy regarding immigration and border control.",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -4575,7 +4575,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cda-US econ relations closer/less",
     "question_wording": "Considering economic relations between Canada and the U.S., which would be best for Canada: closer economic relations, less close relations, or about the same as now?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less close, Same, Closer"
   },
@@ -4595,7 +4595,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cdn identity: the flag",
     "question_wording": "How important is the Canadian flag to Canadian identity?",
-    "n_waves": 11,
+    "n_waves": 9,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -4615,7 +4615,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Cdn values similar to my own",
     "question_wording": "The values driving Canadian society today are similar to my own.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -4685,7 +4685,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Favourable opinion of Cdn Forces",
     "question_wording": "Generally speaking, how favourable is your opinion of the Canadian Forces?",
-    "n_waves": 7,
+    "n_waves": 5,
     "type": "b",
     "value_labels": "Unfavourable, Favourable"
   },
@@ -4695,7 +4695,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Favourable opinion of US Pres Bush",
     "question_wording": "Generally speaking, what is your opinion of US President George W. Bush?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Unfavourable, Favourable"
   },
@@ -4730,22 +4730,12 @@
     "value_labels": "Too much, Just enough, Not enough"
   },
   {
-    "question": "env_intd_045",
-    "domain": "intd",
-    "domain_label": "Foreign Policy and Identity",
-    "issue_label": "Fed spending: amateur athletes",
-    "question_wording": "Keeping in mind that increasing services could increase taxes, do you think the federal government should spend more, less or the same on assistance to amateur athletes?",
-    "n_waves": 3,
-    "type": "lsm",
-    "value_labels": "Less, Same, More"
-  },
-  {
     "question": "env_intd_040",
     "domain": "intd",
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Fed spending: arts and culture",
     "question_wording": "Keeping in mind that increasing services could increase taxes, do you think the federal government should spend more, less or the same on arts and culture?",
-    "n_waves": 7,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -4755,7 +4745,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Fed spending: coastal sovereignty",
     "question_wording": "Keeping in mind that increasing services could increase taxes, do you think the federal government should spend more, less or the same on asserting Canadian sovereignty in coastal waters?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -4775,7 +4765,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Fed spending: domestic security",
     "question_wording": "Do you think the federal government should spend more, less or the same on domestic security?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -4785,7 +4775,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Fed spending: foreign aid",
     "question_wording": "Do you think the federal government should spend more, less or the same on foreign aid?",
-    "n_waves": 7,
+    "n_waves": 4,
     "type": "lsm",
     "value_labels": "Less, Same, More"
   },
@@ -4825,7 +4815,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Important: Cda promote world peace",
     "question_wording": "How important is it that Canada promotes world peace?",
-    "n_waves": 4,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -4895,7 +4885,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Opinion of US favourable",
     "question_wording": "In general, what is your opinion of the United States?",
-    "n_waves": 18,
+    "n_waves": 15,
     "type": "b",
     "value_labels": "Unfavourable/Neither, Favourable"
   },
@@ -4934,7 +4924,7 @@
     "domain": "intd",
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Require Cdn content on TV/radio",
-    "question_wording": "Are you personally for or against the Canadian government requiring radio and TV stations to broadcast a certain number of programs that are \"\"made in Canada\"\"?",
+    "question_wording": "Are you personally for or against the Canadian government requiring radio and TV stations to broadcast a certain number of programs that are \"made in Canada\"?",
     "n_waves": 5,
     "type": "b",
     "value_labels": "Against, For"
@@ -4965,7 +4955,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Terrorist attack in Cda in 2 yrs",
     "question_wording": "How likely do you think it is that Canada will be the victim of a major terrorist attack within the next two years?",
-    "n_waves": 5,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Not likely, Likely"
   },
@@ -5005,7 +4995,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "Urban/rural Cdns same values",
     "question_wording": "Canadians basically have the same values regardless of whether they live in urban or rural areas.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -5015,7 +5005,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "US security co-op erodes sovrgnty",
     "question_wording": "Increased co-operation with the United States on security issues will seriously erode Canada's national sovereignty.",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -5045,7 +5035,7 @@
     "domain_label": "Foreign Policy and Identity",
     "issue_label": "World more/less peaceful than 5 yrs",
     "question_wording": "Do you think the world in general is a more peaceful place to live in than it was five years ago, is it less peaceful, or is it about the same?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "lsm",
     "value_labels": "Less peaceful, Same, More peaceful"
   },
@@ -5225,7 +5215,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Appr prov govt: crime/justice",
     "question_wording": "Generally speaking, do you approve or disapprove of the way your current provincial government is handling crime and justice?",
-    "n_waves": 16,
+    "n_waves": 13,
     "type": "b",
     "value_labels": "Disapprove, Approve"
   },
@@ -5245,7 +5235,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Approve of homosexuality",
     "question_wording": "Do you personally approve or disapprove of homosexuality?",
-    "n_waves": 8,
+    "n_waves": 6,
     "type": "b",
     "value_labels": "Disapprove/Neither, Approve"
   },
@@ -5365,7 +5355,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Confid: lawyers",
     "question_wording": "In general, how much confidence do you have in lawyers?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "b",
     "value_labels": "Not confident, Confident"
   },
@@ -5385,7 +5375,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Confid: parole boards",
     "question_wording": "In general, how much confidence do you have in parole boards?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "Not confident, Confident"
   },
@@ -5405,7 +5395,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Confid: RCMP",
     "question_wording": "In general, how much confidence do you have in the RCMP?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Not confident, Confident"
   },
@@ -5505,7 +5495,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Crime a problem in community",
     "question_wording": "How important a problem is crime in your community?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -5525,7 +5515,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Crime cause: low moral stds",
     "question_wording": "How important a cause of crime in Canada are low moral standards in society?",
-    "n_waves": 4,
+    "n_waves": 3,
     "type": "b",
     "value_labels": "Not important, Important"
   },
@@ -5615,7 +5605,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Doctors may end life: mercy killing",
     "question_wording": "When a person has an incurable disease that causes great suffering, do you think competent doctors should be allowed by law to end the patient's life through mercy killing, if the patient has made a formal request in writing?",
-    "n_waves": 7,
+    "n_waves": 6,
     "type": "lsm",
     "value_labels": "Should not, Qualified, Should"
   },
@@ -5655,7 +5645,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Favour capital punishment",
     "question_wording": "Would you say that you are in favour of capital punishment for certain crimes, or are you against capital punishment under any circumstances?",
-    "n_waves": 16,
+    "n_waves": 15,
     "type": "b",
     "value_labels": "Oppose, Favour"
   },
@@ -5665,7 +5655,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Favour legal marijuana, medical uses",
     "question_wording": "Do you favour or oppose legalizing the use of marijuana for medically approved purposes, such as cancer, AIDS, and epilepsy?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Oppose, Favour"
   },
@@ -5795,7 +5785,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Govt ban cigarettes in public places",
     "question_wording": "Governments should ban cigarette smoking in any public place.",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -5846,16 +5836,6 @@
     "issue_label": "Gun registry should be scrapped",
     "question_wording": "The gun registry should be scrapped entirely.",
     "n_waves": 3,
-    "type": "b",
-    "value_labels": "Disagree, Agree"
-  },
-  {
-    "question": "ces_soim_009",
-    "domain": "soim",
-    "domain_label": "Social Issues, Rights and Justice",
-    "issue_label": "Homosexual couples allowed to marry",
-    "question_wording": "Homosexual couples should be allowed to get legally married.",
-    "n_waves": 6,
     "type": "b",
     "value_labels": "Disagree, Agree"
   },
@@ -6045,7 +6025,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Murder: death penalty vs life",
     "question_wording": "Which of the following do you think is the most appropriate punishment for someone convicted of murder?",
-    "n_waves": 3,
+    "n_waves": 2,
     "type": "b",
     "value_labels": "Life imprisonment, Death penalty"
   },
@@ -6095,7 +6075,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Personal rights protected or in danger",
     "question_wording": "Do you think personal rights are being fully protected in Canada, or do you think they are in danger?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "In danger, Fully protected"
   },
@@ -6195,7 +6175,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Serious crime in neighbourhood",
     "question_wording": "Do you think there is a serious crime problem in your neighbourhood, or not?",
-    "n_waves": 5,
+    "n_waves": 4,
     "type": "b",
     "value_labels": "No, Yes"
   },
@@ -6235,7 +6215,7 @@
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Support fed firearms ownership laws",
     "question_wording": "In general, do you support or oppose the federal laws in Canada concerning the ownership of firearms?",
-    "n_waves": 2,
+    "n_waves": 1,
     "type": "lsm",
     "value_labels": "Oppose, Neither, Support"
   },
@@ -6244,8 +6224,8 @@
     "domain": "soim",
     "domain_label": "Social Issues, Rights and Justice",
     "issue_label": "Support gay/lesbian couples marrying",
-    "question_wording": "Do you support or oppose allowing gay and lesbian couples to marry?",
-    "n_waves": 5,
+    "question_wording": "Support or oppose allowing same-sex couples to marry",
+    "n_waves": 8,
     "type": "b",
     "value_labels": "Oppose, Support"
   },
@@ -6305,7 +6285,7 @@
     "domain_label": "Vote Intention & Choice",
     "issue_label": "Vote choice",
     "question_wording": "",
-    "n_waves": 475,
+    "n_waves": 471,
     "type": "party",
     "value_labels": "Liberal, Conservative, NDP, Social Credit, Labour Progressive, Bloc Quebecois, Bloc Populaire, Reform/Alliance, Other, Green"
   },
@@ -6315,7 +6295,7 @@
     "domain_label": "Vote Intention & Choice",
     "issue_label": "Vote intention",
     "question_wording": "",
-    "n_waves": 656,
+    "n_waves": 642,
     "type": "party",
     "value_labels": "Liberal, Conservative, NDP, Social Credit, Labour Progressive, Bloc Quebecois, Bloc Populaire, Reform/Alliance, Other, Green"
   }

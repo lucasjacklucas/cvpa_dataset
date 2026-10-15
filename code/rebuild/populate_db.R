@@ -420,9 +420,36 @@ vbl_data <- codebook |>
     domain_label      = policy_domain_label,
     issue_label       = issue_label,
     question_wording  = question_wording,
-    value_labels      = value_labels, 
+    value_labels      = value_labels,
     type = type
   )
+
+# Only list (survey, question) combinations that actually have respondent
+# data in resp3 (i.e. that survived the !is.na(weight) filter above).
+# vbl_data comes from the codebook, which knows nothing about weighting, so
+# without this it kept listing surveys whose respondents were all dropped -
+# most importantly the 17 surveys with no region variable at all (CIPO
+# 1956-1991, Environics 2003-2007), which can't be post-stratified on
+# year x region x age x gender. Effects of leaving them in: the catalog
+# overstated n_waves (the package counts vbl_data rows per question), and a
+# question asked only in such surveys (env_intd_045) was listed even though
+# it has no resp file and 404s. Survey IDs in codebook and resp3 were
+# checked to match exactly (no resp survey_id is missing from the codebook),
+# so this can't silently drop legitimate rows on an ID-format mismatch.
+resp_pairs <- distinct(resp3, survey_id, question)
+vbl_all <- vbl_data
+vbl_data <- semi_join(vbl_data, resp_pairs, by = c("survey_id", "question"))
+n_dropped_pairs <- nrow(distinct(anti_join(vbl_all, vbl_data, by = c("survey_id", "question")), survey_id, question))
+dropped_questions <- setdiff(vbl_all$question, vbl_data$question)
+message(sprintf(
+  paste0("vbl_data: dropped %d (survey, question) combinations with no respondent data ",
+         "after weighting; %d question(s) removed entirely%s; %d survey(s) have no ",
+         "respondents at all."),
+  n_dropped_pairs, length(dropped_questions),
+  if (length(dropped_questions)) paste0(" (", paste(dropped_questions, collapse = ", "), ")") else "",
+  length(setdiff(vbl_all$survey_id, vbl_data$survey_id))
+))
+rm(resp_pairs, vbl_all)
 
 dbWriteTable(con, "vbl_data", vbl_data, overwrite = TRUE, temporary = FALSE)
 # No index here either - see the note above section 3. (The two CREATE INDEX
@@ -519,7 +546,23 @@ if (n_question_files != n_questions) {
   ))
 }
 
-parquet_bytes <- sum(file.info(list.files(parquet_dir, recursive = TRUE, full.names = TRUE))$size)
+# The check above only compares files against questions found in resp. Also
+# check the catalog against resp in both directions: a question listed in
+# vbl_data with no resp file 404s for every user of the app and the package
+# (this is how env_intd_045 slipped through), and a resp file with no
+# catalog entry can never be reached.
+catalog_questions <- dbGetQuery(con, "SELECT DISTINCT question FROM vbl_data")$question
+resp_questions    <- dbGetQuery(con, "SELECT DISTINCT question FROM resp")$question
+if (length(setdiff(catalog_questions, resp_questions)) > 0) {
+  warning("vbl_data lists question(s) with no respondent data (their resp file will 404): ",
+          paste(setdiff(catalog_questions, resp_questions), collapse = ", "))
+}
+if (length(setdiff(resp_questions, catalog_questions)) > 0) {
+  warning("resp has question(s) missing from vbl_data (unreachable from the catalog): ",
+          paste(setdiff(resp_questions, catalog_questions), collapse = ", "))
+}
+
+parquet_bytes <-sum(file.info(list.files(parquet_dir, recursive = TRUE, full.names = TRUE))$size)
 message(sprintf(
   "Wrote parquet_out/: resp (%d files) + vbl_data.parquet + code_labels.parquet, %.1f MB total.",
   n_question_files, parquet_bytes / 1e6

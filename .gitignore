@@ -52,3 +52,8 @@ rsconnect/
 /site/public/
 /site/resources/_gen/
 .hugo_build.lock
+
+# DuckDB files that are used to make the parquet files
+surveydb.duckdb
+surveydb.duckdb.wal
+

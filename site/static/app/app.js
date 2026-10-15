@@ -62,7 +62,7 @@ const DATA_BASE_URL = new URL("../cp3_parquet/", import.meta.url).href;
 // even across a hard refresh or a new GitHub Pages build. Appending this
 // to every data URL means a data refresh always hits a URL nothing has
 // cached before.
-const DATA_VERSION = "2026-09-10.1";
+const DATA_VERSION = "2026-10-15.1";
 const VBL_DATA_URL = `${DATA_BASE_URL}vbl_data.parquet?v=${DATA_VERSION}`;
 const CODE_LABELS_URL = `${DATA_BASE_URL}code_labels.parquet?v=${DATA_VERSION}`;
 function respUrlFor(question) {
@@ -248,7 +248,12 @@ async function loadCatalog() {
       any_value(domain)       AS domain,
       any_value(domain_label) AS domain_label,
       any_value(issue_label)  AS issue_label,
-      any_value(question_wording) AS wording  -- vbl_data's real column name
+      -- Two wordings (ces_dpin_016, env_intd_012) arrive from the source
+      -- codebook with each quotation mark repeated 4x; collapse any run of
+      -- 2+ quotes to one for display. Those are the only quotes in any
+      -- wording, so nothing legitimate is touched. No-op once the source
+      -- is fixed.
+      regexp_replace(any_value(question_wording), '"{2,}', '"', 'g') AS wording  -- vbl_data's real column name
     FROM vbl_data
     GROUP BY question
     ORDER BY domain, issue_label, question
