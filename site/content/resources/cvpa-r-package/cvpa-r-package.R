@@ -5,7 +5,7 @@
 
 # Run once to install:
 # install.packages("remotes")
-# remotes::install_github("davidaarmstrong/cvpa")
+# remotes::install_github("lucasjacklucas/cvpa_dataset", subdir = "rpkg")
 
 library(cvpa)
 library(tidyverse)

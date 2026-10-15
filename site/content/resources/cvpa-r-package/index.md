@@ -20,11 +20,11 @@ This tutorial provides a basic overview of how to install and load the package, 
 
 ## Installing and loading the package
 
-`cvpa` is hosted on GitHub. Install it with the `remotes` package (you only need to do this once):
+`cvpa` is hosted on GitHub, in the `rpkg` folder of the [CVPA repository](https://github.com/lucasjacklucas/cvpa_dataset). Install it with the `remotes` package (you only need to do this once):
 
 ``` r
 install.packages("remotes")
-remotes::install_github("davidaarmstrong/cvpa")
+remotes::install_github("lucasjacklucas/cvpa_dataset", subdir = "rpkg")
 ```
 
 Then load it, along with `tidyverse` and `ggplot2`, which we'll use for data handling and plotting:
