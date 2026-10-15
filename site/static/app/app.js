@@ -323,6 +323,11 @@ function populateQuestionPicker() {
     maxItems: 1,
     dropdownParent: "body",
     placeholder: "Choose a Policy Issue",
+    // Tom Select shows at most 50 options by default (and caps search
+    // results at 50 too), silently dropping the rest -- six of the eight
+    // domains have more questions than that (Economy and Taxation has 139).
+    // null = no cap; fine at these list sizes.
+    maxOptions: null,
     render: {
       option: (data, escape) =>
         `<div title="${escape(data.wording || data.text)}">${escape(data.text)}</div>`,
