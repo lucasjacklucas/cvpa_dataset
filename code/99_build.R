@@ -108,3 +108,6 @@ cat("\ndataset.parquet: ", format(nrow(dataset), big.mark = ","), " rows x ",
 cat("years: ", min(dataset$year), "-", max(dataset$year), "\n", sep = "")
 print(dataset %>% count(policy_domain_label, name = "rows"), n = Inf)
 cat("\nwritten to: ", dpath("3 Clean Data"), "\n", sep = "")
+
+
+
