@@ -7,9 +7,10 @@
 # rendered bundle:
 #   bash site/scripts/render_tutorials.sh
 # The tutorials download data with the cvpa package, so this needs cvpa
-# installed and an internet connection.
+# installed and an internet connection (raw-data.qmd also needs nanoparquet).
 set -euo pipefail
 
+repo=$(pwd)  # raw-data.qmd copies dataset.parquet from here instead of downloading
 src_dir="site/tutorials"
 out_dir="site/content/resources"
 work=$(mktemp -d)
@@ -18,7 +19,7 @@ trap 'rm -rf "$work"' EXIT
 for qmd in "$src_dir"/*.qmd; do
   name=$(basename "$qmd" .qmd)
   cp "$qmd" "$work/"
-  (cd "$work" && quarto render "$name.qmd" --to hugo-md)
+  (cd "$work" && CVPA_REPO="$repo" quarto render "$name.qmd" --to hugo-md)
 
   bundle="$out_dir/$name"
   rm -rf "$bundle"
