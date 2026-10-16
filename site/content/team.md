@@ -12,11 +12,11 @@ The Canadian Voting and Policy Attitudes (CVPA) project is led by a team of thre
 
 <img class="profile-picture" src="/images/team/armstrong.jpg" alt="Dave Armstrong">
 
-**[Dave Armstrong](https://www.quantoid.ca/)** is Professor and Canada Research Chair in Political Methodology in the Department of Political Science at Western University. His methodological research focuses on measurement and scaling, and he has taught at the ICPSR Summer Program since 2006. For CVPA, he leads the project's software: the [cvpa R package](/resources/cvpa-r-package/) and the [interactive app](/app/).
+**[Dave Armstrong](https://www.quantoid.ca/)** is Professor and Canada Research Chair in Political Methodology in the Department of Political Science at Western University. His methodological research focuses on measurement and scaling, and he has taught at the ICPSR Summer Program since 2006.
 
 <img class="profile-picture" src="/images/team/lucas.jpg" alt="Jack Lucas">
 
-**[Jack Lucas](https://lucasjacklucas.github.io/)** is the CVPA principal investigator. He is a Professor in the Department of Political Science at the University of Calgary. His research focuses on political representation, public opinion, and voting behaviour in Canadian politics, with a particular interest in local and urban politics. He also co-directs the [Canadian Municipal Barometer](http://www.cmb-bmc.ca) and is Canadian co-PI of [POLPOP-II](https://www.uantwerpen.be/en/research-groups/m2p/polpop/polpop_2/).
+**[Jack Lucas](https://lucasjacklucas.github.io/)** is a Professor in the Department of Political Science at the University of Calgary. His research focuses on political representation, public opinion, and voting behaviour in Canadian politics, with a particular interest in local and urban politics. He also co-directs the [Canadian Municipal Barometer](http://www.cmb-bmc.ca) and is Canadian co-PI of [POLPOP-II](https://www.uantwerpen.be/en/research-groups/m2p/polpop/polpop_2/).
 
 ## Acknowledgements
 
