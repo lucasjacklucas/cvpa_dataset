@@ -53,7 +53,7 @@ cached question catalog from earlier versions is out of date.
 
 * `update_cvpa_data()` now warns whenever `options(cvpa.data_url = ...)` is
   anything other than the official live data
-  (<https://policyattitudes.ca/cp3_parquet/>), and says how to switch back.
+  (`https://policyattitudes.ca/cp3_parquet/`), and says how to switch back.
   The functions that read the cache (`question_catalog()`, `question_data()`,
   `question_response_labels()`) also warn, once per session, if the cache
   was downloaded from an unofficial source; `update_cvpa_data()` records the

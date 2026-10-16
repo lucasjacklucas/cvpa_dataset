@@ -25,7 +25,7 @@
 #' different mirror (e.g. a local copy of the cvpa_dataset repo's
 #' `site/static/cp3_parquet/` during development, or the small bundled
 #' example data from [cvpa_example_url()]). Anything other than the official
-#' URL, <https://policyattitudes.ca/cp3_parquet/>, makes [update_cvpa_data()]
+#' URL, `https://policyattitudes.ca/cp3_parquet/`, makes [update_cvpa_data()]
 #' -- and the functions that read the data it cached -- warn. Reset with
 #' `options(cvpa.data_url = NULL)`.
 #' @keywords internal
@@ -235,7 +235,7 @@ cvpa_cache_dir <- function() {
 #'   the rest are still fetched.
 #'
 #'   Data comes from the official live data,
-#'   <https://policyattitudes.ca/cp3_parquet/>, unless you have changed
+#'   `https://policyattitudes.ca/cp3_parquet/`, unless you have changed
 #'   `options(cvpa.data_url = ...)` (for example to a local mirror, or to the
 #'   small example data from [cvpa_example_url()]). If you have, this warns on
 #'   every call and the functions that read the cache warn too, because the

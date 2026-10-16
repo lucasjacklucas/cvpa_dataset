@@ -49,7 +49,7 @@ Downloads are written to a temporary file and checked to be
   the rest are still fetched.
 
   Data comes from the official live data,
-  <https://policyattitudes.ca/cp3_parquet/>, unless you have changed
+  `https://policyattitudes.ca/cp3_parquet/`, unless you have changed
   `options(cvpa.data_url = ...)` (for example to a local mirror, or to the
   small example data from [cvpa_example_url()]). If you have, this warns on
   every call and the functions that read the cache warn too, because the
