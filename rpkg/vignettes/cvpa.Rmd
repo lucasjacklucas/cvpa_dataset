@@ -42,9 +42,8 @@ clear about which one you're on:
 * **The legacy vote path** (`vote_data`, `wtd_vote()`, `gap_analysis()`)
   is the original vote-choice/intention dataset and functions the package
   shipped with before 0.2.0, kept as-is for reproducing prior work (in
-  particular Lucas, Romualdi, Armstrong, and Goodyear-Grant's *Canadian
-  Journal of Political Science* piece on the Canadian Vote Intention
-  Dataset). `wtd_vote()`/`gap_analysis()` are, under the hood, thin
+  particular [Lucas, Romualdi, Armstrong, and Goodyear-Grant (2025)](https://doi.org/10.1017/S0008423925000241) on the Canadian Vote Intention
+  Dataset, *Canadian Journal of Political Science* 58 (3): 666-80). `wtd_vote()`/`gap_analysis()` are, under the hood, thin
   wrappers around the same general engine that powers the live data path,
   so their behavior hasn't changed -- see the last section of this
   vignette.
@@ -346,7 +345,7 @@ wtd_response(vc, grouping_vars = "gender")
 ## The legacy vote path
 
 If you're working with the original `vote_data` dataset -- for instance to
-reproduce results from the CJPS piece it was built for -- `wtd_vote()` and
+reproduce results from the paper it was built for ([Lucas, Romualdi, Armstrong, and Goodyear-Grant (2025)](https://doi.org/10.1017/S0008423925000241)) -- `wtd_vote()` and
 `gap_analysis()` are unchanged:
 
 

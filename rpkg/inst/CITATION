@@ -1,0 +1,23 @@
+bibentry(
+  "Article",
+  title   = "Demographic Divides in Canadian Voting, 1945\u20132023: The Canadian Vote Intention Dataset",
+  author  = c(
+    person("Jack", "Lucas"),
+    person("Tyler", "Romualdi"),
+    person("David A.", "Armstrong II"),
+    person("Elizabeth", "Goodyear-Grant")
+  ),
+  journal = "Canadian Journal of Political Science",
+  year    = "2025",
+  volume  = "58",
+  number  = "3",
+  pages   = "666--680",
+  doi     = "10.1017/S0008423925000241",
+  textVersion = paste(
+    "Lucas, Jack, Tyler Romualdi, David A. Armstrong II, and Elizabeth Goodyear-Grant. 2025.",
+    "\"Demographic Divides in Canadian Voting, 1945\u20132023: The Canadian Vote Intention Dataset.\"",
+    "Canadian Journal of Political Science 58 (3): 666\u201380.",
+    "https://doi.org/10.1017/S0008423925000241."
+  ),
+  header  = "To cite the vote data and the cvpa package in publications, please use:"
+)

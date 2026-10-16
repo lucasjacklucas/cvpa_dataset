@@ -36,6 +36,6 @@ table(vote_data$type)
 
 }
 \references{
-Lucas, Jack, Tyler Romualdi, David A. Armstrong II and Elizabeth Goodyear-Grant. "Demographic Divides in Canadian Voting, 1945-2023: The Canadian Vote Intention Dataset", Canadian Journal of Political Science, Forthcoming.
+Lucas, Jack, Tyler Romualdi, David A. Armstrong II, and Elizabeth Goodyear-Grant. 2025. "Demographic Divides in Canadian Voting, 1945–2023: The Canadian Vote Intention Dataset." \emph{Canadian Journal of Political Science} 58 (3): 666–80. \doi{10.1017/S0008423925000241}.
 }
 \keyword{datasets}
