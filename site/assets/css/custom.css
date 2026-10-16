@@ -152,12 +152,6 @@ body > .container.mt-5 {
 #content figure.home-figure svg text {
     font-family: Inconsolata, monospace;
 }
-#content figure.home-figure figcaption {
-    font-size: 0.75em;
-    color: #6b6b6b;
-    text-align: center;
-    padding-top: 4px;
-}
 
 /* Team page headshots, as on lucasjacklucas.github.io/group: a small round
    picture floated right of each bio. object-fit keeps a non-square source

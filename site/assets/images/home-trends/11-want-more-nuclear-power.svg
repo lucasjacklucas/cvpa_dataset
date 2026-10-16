@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='259.20pt' height='194.40pt' viewBox='0 0 259.20 194.40'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='259.20pt' height='205.20pt' viewBox='0 0 259.20 205.20'>
 <g id='want-more-nuclear-power' class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,45 +21,46 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='want-more-nuclear-power-cpMC4wMHwyNTkuMjB8MC4wMHwxOTQuNDA='>
-    <rect x='0.00' y='0.00' width='259.20' height='194.40' />
+  <clipPath id='want-more-nuclear-power-cpMC4wMHwyNTkuMjB8MC4wMHwyMDUuMjA='>
+    <rect x='0.00' y='0.00' width='259.20' height='205.20' />
   </clipPath>
 </defs>
-<g clip-path='url(#want-more-nuclear-power-cpMC4wMHwyNTkuMjB8MC4wMHwxOTQuNDA=)'>
-<rect x='0.00' y='-0.000000000000057' width='259.20' height='194.40' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='29.36,175.06 237.28,175.06 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
-<polyline points='29.36,140.27 237.28,140.27 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
-<polyline points='29.36,105.48 237.28,105.48 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
-<polyline points='29.36,70.69 237.28,70.69 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<g clip-path='url(#want-more-nuclear-power-cpMC4wMHwyNTkuMjB8MC4wMHwyMDUuMjA=)'>
+<rect x='0.00' y='0.00' width='259.20' height='205.20' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='29.36,170.70 237.28,170.70 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,137.00 237.28,137.00 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,103.30 237.28,103.30 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,69.60 237.28,69.60 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
 <polyline points='29.36,35.90 237.28,35.90 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
-<polyline points='110.09,99.19 112.53,111.19 114.98,112.08 119.87,125.32 122.32,121.29 124.76,143.49 127.21,136.86 134.55,154.10 139.44,149.96 232.39,99.28 ' style='stroke-width: 1.71; stroke: #0B3D91; stroke-linecap: butt;' />
-<circle cx='110.09' cy='99.19' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='112.53' cy='111.19' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='114.98' cy='112.08' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='119.87' cy='125.32' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='122.32' cy='121.29' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='124.76' cy='143.49' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='127.21' cy='136.86' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='134.55' cy='154.10' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='139.44' cy='149.96' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<circle cx='232.39' cy='99.28' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
-<text x='106.25' y='94.72' text-anchor='end' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>55%</text>
-<text x='236.22' y='94.81' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>54%</text>
-<text x='23.99' y='178.18' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>0%</text>
-<text x='23.99' y='143.39' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>25%</text>
-<text x='23.99' y='108.60' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>50%</text>
-<text x='23.99' y='73.81' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>75%</text>
+<polyline points='110.09,97.21 112.53,108.83 114.98,109.70 119.87,122.52 122.32,118.62 124.76,140.13 127.21,133.70 134.55,150.40 139.44,146.39 232.39,97.30 ' style='stroke-width: 1.71; stroke: #0B3D91; stroke-linecap: butt;' />
+<circle cx='110.09' cy='97.21' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='112.53' cy='108.83' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='114.98' cy='109.70' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='119.87' cy='122.52' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='122.32' cy='118.62' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='124.76' cy='140.13' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='127.21' cy='133.70' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='134.55' cy='150.40' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='139.44' cy='146.39' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='232.39' cy='97.30' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<text x='106.25' y='92.73' text-anchor='end' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>55%</text>
+<text x='236.22' y='92.83' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>54%</text>
+<text x='23.99' y='173.82' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>0%</text>
+<text x='23.99' y='140.12' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>25%</text>
+<text x='23.99' y='106.42' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>50%</text>
+<text x='23.99' y='72.72' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>75%</text>
 <text x='23.99' y='39.03' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>100%</text>
-<polyline points='70.95,177.05 70.95,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
-<polyline points='119.87,177.05 119.87,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
-<polyline points='168.79,177.05 168.79,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
-<polyline points='217.71,177.05 217.71,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
-<text x='70.95' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1960</text>
-<text x='119.87' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1980</text>
-<text x='168.79' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2000</text>
-<text x='217.71' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2020</text>
+<polyline points='70.95,172.69 70.95,170.70 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='119.87,172.69 119.87,170.70 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='168.79,172.69 168.79,170.70 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='217.71,172.69 217.71,170.70 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<text x='70.95' y='184.32' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1960</text>
+<text x='119.87' y='184.32' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1980</text>
+<text x='168.79' y='184.32' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2000</text>
+<text x='217.71' y='184.32' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2020</text>
 <text x='3.99' y='24.20' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>% of Canadians, 1976–2026 (weighted)</text>
 <text x='3.99' y='13.78' style='font-size: 12.50px; font-weight: 500;fill: #272727; font-family: "Inconsolata";'>Want more nuclear power</text>
+<text x='3.99' y='199.65' style='font-size: 9.00px;fill: #6B6B6B; font-family: "Inconsolata";'>Source: CVPA, policyattitudes.ca</text>
 </g>
 </g>
 </svg>

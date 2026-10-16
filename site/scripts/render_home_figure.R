@@ -121,7 +121,9 @@ draw_one <- function(dat, title, vote = FALSE) {
       subtitle = sprintf(
         if (vote) "%% of decided voters, %d–%d (weighted)" else "%% of Canadians, %d–%d (weighted)",
         span[1], span[2]
-      )
+      ),
+      # inside the SVG so it survives a screenshot of the chart alone
+      caption = "Source: CVPA, policyattitudes.ca"
     ) +
     theme_minimal(base_size = 12, base_family = font) +
     theme(
@@ -131,6 +133,8 @@ draw_one <- function(dat, title, vote = FALSE) {
       plot.title = element_text(colour = ink, size = 12.5, face = "bold", margin = margin(b = 2)),
       plot.subtitle = element_text(colour = muted, size = 10, margin = margin(b = 10)),
       plot.title.position = "plot",
+      plot.caption.position = "plot",
+      plot.caption = element_text(colour = muted, size = 9, hjust = 0, margin = margin(t = 8)),
       axis.text = element_text(colour = muted, size = 10),
       axis.text.x = element_text(margin = margin(t = 4)),
       axis.ticks.x = element_line(colour = "#cccccc", linewidth = 0.3),
@@ -157,10 +161,10 @@ for (i in seq_len(nrow(panels))) {
   slug <- gsub("^-|-$", "", slug)
   file <- file.path(out_dir, sprintf("%02d-%s.svg", i, slug))
   p <- draw_one(filter(trends, title == .env$title), title, vote = panels$question[i] == "vote_intention")
-  # 3.6in x 2.7in at 96 dpi is about 346 x 259 CSS px; the page scales it.
+  # 3.6in x 2.85in at 96 dpi is about 346 x 274 CSS px; the page scales it.
   # fix_text_size = FALSE leaves glyph spacing to the browser instead of
   # forcing R's measured widths with textLength, which would distort the type.
-  svglite::svglite(file, width = 3.6, height = 2.7, bg = "white", fix_text_size = FALSE, id = slug)
+  svglite::svglite(file, width = 3.6, height = 2.85, bg = "white", fix_text_size = FALSE, id = slug)
   print(p)
   invisible(dev.off())
   prefix_ids(file, slug)
