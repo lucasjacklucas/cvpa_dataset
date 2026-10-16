@@ -18,7 +18,7 @@ aliases: /tutorials/
 
 ### Data Analysis
 
-- [Raw Data: Download, Open, and Use]({{< relref "raw-data" >}}): download `dataset.parquet` from GitHub, open it in R, understand how it is organized, and pull out a single question for analysis.
 - [CVPA R Package: Getting Started]({{< relref "cvpa-r-package" >}}): install the `cvpa` R package, download data for a question, compute weighted responses by year and by group, and plot the results.
+- [Raw Data: Download, Open, and Use]({{< relref "raw-data" >}}): download `dataset.parquet` from GitHub, open it in R, understand how it is organized, and pull out a single question for analysis.
 - [Adding Variables from the Original Surveys]({{< relref "adding-variables" >}}): add a question CVPA doesn't include by downloading the original survey files and linking them to CVPA respondents with `response_id`.
 - [Rebuilding the Dataset from Scratch]({{< relref "rebuilding-the-dataset" >}}): for the (extremely rare and unlikely) case where you want to reproduce the entire CVPA dataset yourself by downloading the original survey files and running our build code.
