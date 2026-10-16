@@ -91,14 +91,15 @@ muted <- "#6b6b6b"
 
 draw_one <- function(dat, title, vote = FALSE) {
   # First and last values are labelled beside the point. A series that starts
-  # at the left edge (1945) gets its first label above and to the right of the
-  # point instead, so it doesn't run into the axis labels.
+  # at the left edge (1945) would run into the axis labels, so its first label
+  # goes to the right of the point instead: below it where there is room,
+  # above it when the series sits near the bottom of the panel.
   ends <- dat %>%
     filter(year == min(year) | year == max(year)) %>%
     mutate(
       first = year == min(year),
       hjust = case_when(!first ~ -0.25, year <= 1948 ~ 0, TRUE ~ 1.25),
-      vjust = if_else(first & year <= 1948, -1.1, -0.7),
+      vjust = case_when(!(first & year <= 1948) ~ -0.7, share > 0.15 ~ 1.7, TRUE ~ -1.1),
       label = scales::percent(share, accuracy = 1)
     )
   span <- range(dat$year)
