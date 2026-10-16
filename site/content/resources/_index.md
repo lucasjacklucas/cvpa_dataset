@@ -9,13 +9,13 @@ aliases: /tutorials/
 
 - [Demographic Divides: Where to Start]({{< relref "where-to-start" >}}): recommended questions to explore for each demographic group, with notable gaps between groups and how those gaps changed over time.
 - [Shifting Opinion: Where to Start]({{< relref "shifting-opinion" >}}): recommended questions for exploring how Canadian opinion has changed over time, including steady shifts, reversals, and sharp changes around particular events.
-- [Demographic Divides: Slides (PDF)](/resources/demographic-divides-slides.pdf): simple slides showing one question for each demographic group over time, for presentations and teaching.
-- [Shifting Opinion: Slides (PDF)](/resources/shifting-opinion-slides.pdf): simple slides showing how Canadian opinion on several questions changed over time, for presentations and teaching.
-- [Sample Teaching Assignment (PDF)](/resources/cvpa-sample-teaching-assignment.pdf): a sample assignment using the CVPA data, for instructors to adapt.
 
 ### Teaching
 
-- [Teaching Resources]({{< relref "teaching-resources" >}}): a sample assignment and sample slides for using the CVPA dataset in the classroom.
+- [Sample Assignment]({{< relref "sample-assignment" >}})
+- [Demographic Divides: Slides (PDF)](/resources/demographic-divides-slides.pdf): simple slides showing one question for each demographic group over time, for presentations and teaching.
+- [Shifting Opinion: Slides (PDF)](/resources/shifting-opinion-slides.pdf): simple slides showing how Canadian opinion on several questions changed over time, for presentations and teaching.
+- [Sample Teaching Assignment (PDF)](/resources/cvpa-sample-teaching-assignment.pdf): a sample assignment using the CVPA data, for instructors to adapt.
 
 ### Data Analysis
 
