@@ -177,12 +177,6 @@ body > .container.mt-5 {
     background-color: var(--cvpa-link);
     color: #fff;
 }
-#content p.app-cta span {
-    display: block;
-    margin-top: 6px;
-    color: #6b6b6b;
-    font-size: 0.9em;
-}
 
 /* Team page headshots, as on lucasjacklucas.github.io/group: a small round
    picture floated right of each bio. object-fit keeps a non-square source

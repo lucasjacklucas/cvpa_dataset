@@ -6,9 +6,9 @@
 
 Welcome to the Canadian Voting and Policy Attitudes (CVPA) project. This project integrates 9.2 million survey responses from more than 1 million Canadians across 672 surveys, fielded between 1945 and 2026. Drawing on five archives — Gallup Canada, the Canadian Election Study and C-DEM Democracy Checkup, Environics Focus Canada, Pollara, and the 2026 CVPA Bridge Survey — we have harmonized 629 distinct policy questions into a single long-format dataset, with vote intention and vote choice also included. The dataset also includes respondent demographics, allowing responses to be broken out by region, age, education, language, religion, union household and occupation. 
 
-<p class="app-cta"><a href="/app/">Explore the data in the interactive&nbsp;app&nbsp;&rarr;</a> <span>No code needed: pick a question and see how Canadian opinion has changed since 1945.</span></p>
-
 This website is designed to provide information about [our data]({{< relref "data" >}}), [our research team]({{< relref "team" >}}), and [research using the dataset]({{< relref "research" >}}), and to provide answers to questions and [useful resources]({{< relref "resources" >}}) for how you can use CVPA in your work.
+
+<p class="app-cta"><a href="/app/">Explore the data in the interactive app</a></p>
 
 **R Package.** If you are interested in the CVPA's R package, which allows users to easily generate weighted annual estimates for each policy attitude and voting variable, including sub-group breakdowns, please start with [this tutorial on how to download and use the package]({{< relref "resources/cvpa-r-package" >}}).
 
