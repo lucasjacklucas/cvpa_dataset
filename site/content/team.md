@@ -12,7 +12,7 @@ The Canadian Voting and Policy Attitudes (CVPA) project is led by a team of thre
 
 <img class="profile-picture" src="/images/team/armstrong.jpg" alt="Dave Armstrong">
 
-**[Dave Armstrong](https://www.quantoid.ca/)** is Professor and Canada Research Chair in Political Methodology in the Department of Political Science at Western University. His methodological research focuses on measurement and scaling, and he has taught at the ICPSR Summer Program since 2006.
+**[Dave Armstrong](https://www.quantoid.ca/)** is Professor and Canada Research Chair in Political Methodology in the Department of Political Science at Western University. His methodological research focuses on measurement and scaling, and he has taught at the ICPSR Summer Program since 2006. His work has been published in journals such as the *American Political Science Review*, the *American Journal of Political Science*, the *Journal of Politics*, and the *Canadian Journal of Political Science*.
 
 <img class="profile-picture" src="/images/team/lucas.jpg" alt="Jack Lucas">
 
