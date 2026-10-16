@@ -8,7 +8,7 @@ The Canadian Voting and Policy Attitudes (CVPA) project is led by a team of thre
 
 <img class="profile-picture" src="/images/team/romualdi.jpg" alt="Tyler Romualdi">
 
-**Tyler Romualdi** is the CVPA project director. He is a Ph.D. candidate in the Department of Political Science at Western University. His research focuses on Canadian and urban politics, with a particular emphasis on the welfare state and the historical development of individuals' policy attitudes. His work is published in journals such as the *Canadian Journal of Political Science*, the *Journal of Elections, Public Opinion, and Parties*, and the *European Journal of Political Research*.
+**Tyler Romualdi** is the CVPA project director. He is the Skelton-Clark Postdoctoral Fellow and Adjunct Professor in the Department of Political Studies at Queen's University. His research focuses on Canadian and urban politics, with a particular emphasis on the welfare state and the historical development of individuals' policy attitudes. His work is published in journals such as the *Canadian Journal of Political Science*, the *Journal of Elections, Public Opinion, and Parties*, and the *European Journal of Political Research*.
 
 <img class="profile-picture" src="/images/team/armstrong.jpg" alt="Dave Armstrong">
 
