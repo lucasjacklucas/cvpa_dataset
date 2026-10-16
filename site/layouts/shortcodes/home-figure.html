@@ -9,7 +9,7 @@
     <div class="home-figure-slide{{ if eq $i 0 }} is-active{{ end }}">{{ $chart.Content | safeHTML }}</div>
   {{- end }}
   </div>
-  <figcaption>One of 629 questions in the CVPA dataset. Click the chart for another.</figcaption>
+  <figcaption>One of {{ len $charts }} charts from the CVPA dataset. Click for the next.</figcaption>
 </figure>
 <script>
 (function () {
