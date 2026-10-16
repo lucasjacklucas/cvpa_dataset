@@ -107,3 +107,15 @@ body > .container.mt-5 {
 #content > pre {
     font-size: 0.85em;
 }
+
+/* Home page figure: boxed like the code blocks, full column width */
+#content img.home-figure {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 8px 6px;
+    margin: 0 0 1.5em;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    background-color: #fff;
+}

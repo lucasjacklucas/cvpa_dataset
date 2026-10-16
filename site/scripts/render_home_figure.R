@@ -5,7 +5,9 @@
 # Rerun from the repository root whenever the data change, then commit the PNG:
 #   Rscript site/scripts/render_home_figure.R
 # Needs the cvpa package and its data cache (cvpa::update_cvpa_data()), plus
-# ggplot2 and ragg.
+# ggplot2, ragg and systemfonts. The figure is set in Inconsolata, the site's
+# font; scripts/fonts/ holds the TTF (from google/fonts, OFL licence) so the
+# render doesn't depend on it being installed.
 
 suppressPackageStartupMessages({
   library(cvpa)
@@ -15,14 +17,17 @@ suppressPackageStartupMessages({
 
 out <- "site/static/images/home-trends.png"
 
+systemfonts::register_font("Inconsolata", plain = "site/scripts/fonts/Inconsolata.ttf")
+font <- "Inconsolata"
+
 # question, the response to plot, and the panel title (ordered by first year)
 panels <- tribble(
   ~question,      ~response,      ~title,
-  "bri_idim_001", "Larger",       "Want a larger population",
-  "bri_soim_002", "Favour",       "Favour capital punishment",
+  "bri_idim_001", "Larger",       "Want larger population",
+  "bri_soim_002", "Favour",       "Favour death penalty",
   "bri_idim_004", "Decrease",     "Want less immigration",
   "bri_soim_005", "Always legal", "Abortion always legal",
-  "bri_ener_001", "Increase",     "Want more nuclear power",
+  "bri_ener_001", "Increase",     "Favour nuclear power",
   "bri_econ_003", "Too much",     "Unions too powerful"
 )
 
@@ -56,7 +61,7 @@ p <- ggplot(trends, aes(year, share)) +
   geom_point(colour = blue, size = 1.5) +
   geom_text(
     data = ends, aes(label = label, hjust = hjust),
-    colour = muted, size = 2.8, family = "Helvetica Neue", vjust = -0.6
+    colour = muted, size = 3.3, family = font, vjust = -0.6
   ) +
   facet_wrap(~title, ncol = 3) +
   coord_cartesian(clip = "off") +
@@ -70,28 +75,28 @@ p <- ggplot(trends, aes(year, share)) +
   ) +
   labs(
     x = NULL, y = NULL,
-    caption = "Weighted share of Canadians giving each response, 1945–2026. Six of the 629 questions in the CVPA dataset."
+    caption = "Weighted share of Canadians giving each response, 1945–2026.\nSix of the 629 questions in the CVPA dataset."
   ) +
-  theme_minimal(base_size = 11, base_family = "Helvetica Neue") +
+  theme_minimal(base_size = 13, base_family = font) +
   theme(
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.major.y = element_line(colour = "#e6e6e6", linewidth = 0.3),
-    panel.spacing.x = unit(30, "pt"),
+    panel.spacing.x = unit(26, "pt"),
     panel.spacing.y = unit(14, "pt"),
-    strip.text = element_text(hjust = 0, colour = ink, size = 10, margin = margin(b = 4)),
-    axis.text = element_text(colour = muted, size = 8),
+    strip.text = element_text(hjust = 0, colour = ink, size = 12, margin = margin(b = 4)),
+    axis.text = element_text(colour = muted, size = 10),
     axis.text.x = element_text(margin = margin(t = 3)),
     axis.ticks.x = element_line(colour = "#cccccc", linewidth = 0.3),
     axis.ticks.length.x = unit(2, "pt"),
-    plot.caption = element_text(colour = muted, size = 8, hjust = 0, margin = margin(t = 10)),
+    plot.caption = element_text(colour = muted, size = 10, hjust = 0, lineheight = 1.15, margin = margin(t = 10)),
     plot.margin = margin(4, 24, 2, 4),
     plot.background = element_rect(fill = "white", colour = NA)
   )
 
 dir.create(dirname(out), showWarnings = FALSE, recursive = TRUE)
 # 700 CSS px wide (the text column), rendered at 2x for sharp display
-ragg::agg_png(out, width = 1400, height = 720, units = "px", res = 192, background = "white")
+ragg::agg_png(out, width = 1400, height = 780, units = "px", res = 192, background = "white")
 print(p)
 invisible(dev.off())
 message("Wrote ", out)
