@@ -29,25 +29,21 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/"
     weight = 1
   [[menu.main]]
-    name = "App"
-    url = "/app/"   # static page under static/app, not a content page
-    weight = 2
-  [[menu.main]]
     name = "Data"
     pageRef = "/data"
-    weight = 3
+    weight = 2
   [[menu.main]]
     name = "Team"
     pageRef = "/team"
-    weight = 4
+    weight = 3
   [[menu.main]]
     name = "Research"
     pageRef = "/research"
-    weight = 5
+    weight = 4
   [[menu.main]]
     name = "Resources"
     pageRef = "/resources"
-    weight = 6
+    weight = 5
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files, as on the personal site
