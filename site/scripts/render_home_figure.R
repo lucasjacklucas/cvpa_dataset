@@ -33,7 +33,7 @@ font <- "Inconsolata"
 
 # What to draw, in display order: the question (vote_intention for parties),
 # the response or party to plot, and the chart title. The file name slug is
-# built from the title. Issue and vote charts alternate.
+# built from the title. Vote charts are spread among the issue charts.
 panels <- tribble(
   ~question,        ~response,                  ~title,
   "bri_idim_004",   "Decrease",                 "Want less immigration",
@@ -44,16 +44,12 @@ panels <- tribble(
   "vote_intention", "CCF/NDP",                  "Would vote NDP",
   "bri_soim_005",   "Always legal",             "Abortion should always be legal",
   "bri_idim_002",   "In favour",                "Favour Quebec separation",
-  "vote_intention", "Bloc Quebecois",           "Would vote Bloc Qu\u00e9b\u00e9cois",
   "bri_idim_001",   "Larger",                   "Want a larger population",
   "bri_soim_011",   "Favour",                   "Favour same-sex marriage",
-  "vote_intention", "Reform/Alliance",          "Would vote Reform / Alliance",
   "bri_ener_001",   "Increase",                 "Want more nuclear power",
   "env_intd_003",   "Favourable",               "Favourable view of the US",
-  "vote_intention", "Green",                    "Would vote Green",
   "bri_econ_003",   "Too much",                 "Unions are too powerful",
   "gal_soim_004",   "Not harsh enough",         "Courts not harsh enough",
-  "vote_intention", "Social Credit/Creditiste", "Would vote Social Credit",
   "bri_soim_003",   "Should",                   "Doctors may end a patient's life",
   "bri_hwps_002",   "Should",                   "Workers should be able to strike",
   "bri_intd_008",   "Continue",                 "Keep the monarchy"
