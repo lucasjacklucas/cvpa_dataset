@@ -10,4 +10,4 @@ This website is designed to provide information about [our data]({{< relref "dat
 
 **R Package.** If you are interested in the CVPA's R package, which allows users to easily generate weighted annual estimates for each policy attitude and voting variable, including sub-group breakdowns, please start with [this tutorial on how to download and use the package]({{< relref "resources/cvpa-r-package" >}}).
 
-**Raw Data.** If you are interested in the CVPA's raw data, please [click here](https://github.com/lucasjacklucas/cvpa_dataset) to access the github repository where the dataset is stored and [click here]({{< relref "resources" >}}) for a tutorial on how to download, open, and use the data.
+**Raw Data.** If you are interested in the CVPA's raw data, please [click here](https://github.com/lucasjacklucas/cvpa_dataset) to access the github repository where the dataset is stored and [click here]({{< relref "resources/raw-data" >}}) for a tutorial on how to download, open, and use the data.
