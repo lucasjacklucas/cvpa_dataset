@@ -4,7 +4,7 @@ title: "Shifting Opinion: Where to Start"
 
 Canadian public opinion on some issues has barely moved in fifty years. On others it has shifted dramatically, sometimes steadily over decades and sometimes within a few years. The questions below are good places to look for change. Some changed steadily, some reversed direction, and some moved sharply around a particular event.
 
-These questions work well alongside our [interactive app](https://www.quantoid.ca/files/app-js-remote/), which lets you explore long-term changes in policy attitudes and voting without writing any code. In the app, you choose a policy domain first and then an issue within it. The headings below are the app's domains, and each question is listed by its issue name in the app.
+These questions work well alongside our [interactive app](https://policyattitudes.ca/app/), which lets you explore long-term changes in policy attitudes and voting without writing any code. In the app, you choose a policy domain first and then an issue within it. The headings below are the app's domains, and each question is listed by its issue name in the app.
 
 We also give each question's code (which you can look up on the [Data page](/data/) or pass to the [R package](/resources/cvpa-r-package/)), the years it's available, and a hint about what to look for. We leave the findings for you to discover!
 

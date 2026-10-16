@@ -2,7 +2,7 @@
 title: "Rebuilding the Dataset from Scratch"
 ---
 
-**You almost certainly don't need this.** The [published dataset](https://github.com/lucasjacklucas/cvpa_dataset) is exactly what the steps below produce, and the [R package](/resources/cvpa-r-package/) and the [interactive app](https://www.quantoid.ca/files/app-js-remote/) are built on it. If you want a question the dataset doesn't include, see [Adding Variables from the Original Surveys](/resources/adding-variables/), which doesn't require rebuilding anything.
+**You almost certainly don't need this.** The [published dataset](https://github.com/lucasjacklucas/cvpa_dataset) is exactly what the steps below produce, and the [R package](/resources/cvpa-r-package/) and the [interactive app](https://policyattitudes.ca/app/) are built on it. If you want a question the dataset doesn't include, see [Adding Variables from the Original Surveys](/resources/adding-variables/), which doesn't require rebuilding anything.
 
 This page is for anyone who wants to reproduce the dataset for themselves: to download the original survey files, run our code, and confirm that every value in CVPA comes from those files the way our documentation says it does.
 
