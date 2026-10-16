@@ -29,9 +29,19 @@ factors. Works identically for a policy question and for
 `"vote_choice"`/`"vote_intention"` -- vote is just one more question.
 }
 \examples{
-\dontrun{
-update_cvpa_data(questions = "bri_econ_013")
+# Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+# in a temporary cache, so this runs offline and leaves your own cache
+# alone. For real analysis, skip the options() call and use the default,
+# the official live data.
+old <- options(
+  cvpa.data_url = cvpa_example_url(),
+  cvpa.cache_dir = tempfile("cvpa-cache-")
+)
+update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)
 d <- question_data("bri_econ_013")
-wtd_response(d, grouping_vars = "gender")
-}
+head(d)
+table(d$year)
+
+unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+options(old)
 }

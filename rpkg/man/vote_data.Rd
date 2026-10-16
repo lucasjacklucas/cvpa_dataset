@@ -29,6 +29,12 @@ Data on vote choice and intention from several surveys. The data are in long for
 \details{
 Fill in some details
 }
+\examples{
+data(vote_data)
+head(vote_data)
+table(vote_data$type)
+
+}
 \references{
 Lucas, Jack, Tyler Romualdi, David A. Armstrong II and Elizabeth Goodyear-Grant. "Demographic Divides in Canadian Voting, 1945-2023: The Canadian Vote Intention Dataset", Canadian Journal of Political Science, Forthcoming.
 }

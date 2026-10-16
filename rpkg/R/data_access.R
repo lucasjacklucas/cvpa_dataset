@@ -17,14 +17,111 @@
 ## keep those three in sync if the hosted layout ever changes.
 ## -----------------------------------------------------------------------
 
+.cvpa_official_url <- "https://policyattitudes.ca/cp3_parquet/"
+
 #' Base URL for the hosted cp3 policy-attitude Parquet files
 #'
 #' Override with `options(cvpa.data_url = ...)` to point the package at a
 #' different mirror (e.g. a local copy of the cvpa_dataset repo's
-#' `site/static/cp3_parquet/` during development).
+#' `site/static/cp3_parquet/` during development, or the small bundled
+#' example data from [cvpa_example_url()]). Anything other than the official
+#' URL, <https://policyattitudes.ca/cp3_parquet/>, makes [update_cvpa_data()]
+#' -- and the functions that read the data it cached -- warn. Reset with
+#' `options(cvpa.data_url = NULL)`.
 #' @keywords internal
 .cvpa_data_base_url <- function() {
-  getOption("cvpa.data_url", "https://policyattitudes.ca/cp3_parquet/")
+  getOption("cvpa.data_url", .cvpa_official_url)
+}
+
+.cvpa_is_official <- function(url) {
+  identical(sub("/*$", "/", url), .cvpa_official_url)
+}
+
+# Per-session record of which unofficial sources have already been warned
+# about, so the functions that read the cache warn once, not on every call.
+.cvpa_state <- new.env(parent = emptyenv())
+.cvpa_state$warned <- list()
+
+# Warn when `url` is anything other than the official live data, and say how
+# to get back to it. update_cvpa_data() warns on every call; the readers of
+# the cache pass once = TRUE.
+.cvpa_warn_unofficial <- function(url, once = FALSE, cached = FALSE) {
+  if (.cvpa_is_official(url)) return(invisible(FALSE))
+  if (once) {
+    if (isTRUE(.cvpa_state$warned[[url]])) return(invisible(FALSE))
+    .cvpa_state$warned[[url]] <- TRUE
+  }
+  what <- if (cached) {
+    paste0("The cvpa data cached in ", cvpa_cache_dir(), " was downloaded from '", url, "'")
+  } else {
+    paste0("cvpa is using data from '", url, "'")
+  }
+  # Classed so it can be silenced on its own, without hiding other warnings:
+  #   withCallingHandlers(expr, cvpa_unofficial_data = function(w) invokeRestart("muffleWarning"))
+  rlang::warn(
+    paste0(what, ", not the official live data at ", .cvpa_official_url, ".\n",
+           "  It may be a subset or out of date, so don't report results from it as results from ",
+           "the Canadian Voting and Policy Attitudes data.\n",
+           "  To use the official data, run options(cvpa.data_url = NULL) and then update_cvpa_data()."),
+    class = "cvpa_unofficial_data"
+  )
+  invisible(TRUE)
+}
+
+# update_cvpa_data() records where the cache came from, so the functions that
+# only read the cache can warn if it holds anything but the official data.
+.cvpa_path_source <- function() file.path(cvpa_cache_dir(), "cvpa_source.txt")
+
+.cvpa_write_source <- function(url) {
+  tryCatch(writeLines(url, .cvpa_path_source()), error = function(e) NULL)
+}
+
+.cvpa_check_cache_source <- function() {
+  path <- .cvpa_path_source()
+  if (!file.exists(path)) return(invisible(FALSE))
+  url <- tryCatch(readLines(path, n = 1L, warn = FALSE), error = function(e) character(0))
+  if (length(url) == 1L && nzchar(url)) .cvpa_warn_unofficial(url, once = TRUE, cached = TRUE)
+  invisible(TRUE)
+}
+
+#' URL of the small example dataset bundled with cvpa
+#'
+#' cvpa ships a tiny copy of the hosted cp3 Parquet layout -- a handful of
+#' questions (`bri_econ_013`, `env_econ_027`, `vote_choice`,
+#' `vote_intention`) and a random sample of respondents from each survey
+#' year -- so that the examples in the help pages can run without a network
+#' connection. Point cvpa at it by setting the `cvpa.data_url` option to this
+#' URL (and, so you don't touch your real cache, `cvpa.cache_dir` to a
+#' temporary directory), then call [update_cvpa_data()] as usual.
+#'
+#' The example data is for illustration only: it is a subset, and estimates
+#' from it are not estimates from the full data. Because it is not the
+#' official data, [update_cvpa_data()] and the functions that read the cache
+#' warn while it is in use. Undo with `options(cvpa.data_url = NULL)`, or
+#' restore the options you saved.
+#'
+#' @return A `file://` URL (with a trailing slash) for the bundled example
+#'   data, suitable for `options(cvpa.data_url = ...)`.
+#' @examples
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)  # warns: example data
+#' head(question_catalog(domain = "econ"))
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
+#' @export
+cvpa_example_url <- function() {
+  dir <- system.file("extdata", "cp3_example", package = "cvpa")
+  if (!nzchar(dir)) {
+    stop("The bundled example data was not found; try reinstalling cvpa.", call. = FALSE)
+  }
+  dir <- normalizePath(dir, winslash = "/", mustWork = TRUE)
+  if (grepl("^[A-Za-z]:", dir)) dir <- paste0("/", dir)  # Windows drive letter
+  # No percent-encoding: R's file:// downloader doesn't decode it, so a path
+  # containing a space only works as-is.
+  paste0("file://", dir, "/")
 }
 
 #' Local cache directory used by cvpa
@@ -35,6 +132,13 @@
 #' `options(cvpa.cache_dir = ...)`.
 #'
 #' @return The cache directory path (created if it doesn't exist yet).
+#' @examples
+#' # Point the cache at a temporary directory (the default is a per-user
+#' # directory under tools::R_user_dir("cvpa", "cache")).
+#' old <- options(cvpa.cache_dir = tempfile("cvpa-cache-"))
+#' cvpa_cache_dir()
+#' unlink(cvpa_cache_dir(), recursive = TRUE)
+#' options(old)
 #' @export
 cvpa_cache_dir <- function() {
   dir <- getOption("cvpa.cache_dir", NULL)
@@ -129,17 +233,37 @@ cvpa_cache_dir <- function() {
 #'   that is listed in the catalog but has no respondent-level data
 #'   available -- it is skipped with a warning naming the question(s), and
 #'   the rest are still fetched.
+#'
+#'   Data comes from the official live data,
+#'   <https://policyattitudes.ca/cp3_parquet/>, unless you have changed
+#'   `options(cvpa.data_url = ...)` (for example to a local mirror, or to the
+#'   small example data from [cvpa_example_url()]). If you have, this warns on
+#'   every call and the functions that read the cache warn too, because the
+#'   data may be a subset or out of date; `options(cvpa.data_url = NULL)`
+#'   restores the official URL.
 #' @return Invisibly, `TRUE`, with an attribute `"skipped"` holding the
 #'   question codes (if any) that could not be downloaded.
 #' @examples
-#' \dontrun{
-#' update_cvpa_data()                                  # just the catalog
+#' # These examples use the tiny example data bundled with cvpa, in a
+#' # temporary cache, so they run offline and leave your own cache alone.
+#' # For real analysis, skip the options() lines: by default cvpa downloads
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#'
+#' update_cvpa_data()                                   # just the catalog
 #' update_cvpa_data(questions = "bri_econ_013")         # + one question
 #' update_cvpa_data(questions = c("vote_choice", "vote_intention"))
-#' }
+#' dir(cvpa_cache_dir(), recursive = TRUE)
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @export
 update_cvpa_data <- function(questions = NULL, force = FALSE, quiet = FALSE) {
   base <- .cvpa_data_base_url()
+  .cvpa_warn_unofficial(base)
 
   # The catalog and code labels are required for everything else, so a
   # failure here is fatal -- but because downloads go through a temp file,
@@ -157,6 +281,7 @@ update_cvpa_data <- function(questions = NULL, force = FALSE, quiet = FALSE) {
          "\n  Your cached data (if any) has been left unchanged. ",
          "Check your connection, or options(cvpa.data_url).", call. = FALSE)
   }
+  .cvpa_write_source(base)
 
   skipped <- character(0)
   if (!is.null(questions)) {
@@ -166,7 +291,7 @@ update_cvpa_data <- function(questions = NULL, force = FALSE, quiet = FALSE) {
            "dataset.parquet from https://github.com/lucasjacklucas/cvpa_dataset",
            call. = FALSE)
     }
-    cat_df <- .cvpa_catalog_raw()
+    cat_df <- .cvpa_catalog_raw(check_source = FALSE)
     bad <- setdiff(questions, unique(cat_df$question))
     if (length(bad) > 0) {
       stop("Unknown question code(s): ", paste(bad, collapse = ", "),
@@ -194,19 +319,24 @@ update_cvpa_data <- function(questions = NULL, force = FALSE, quiet = FALSE) {
   invisible(res)
 }
 
-.cvpa_require_cache <- function(path, what, hint) {
+# Every function that reads the cache goes through here, so this is also
+# where they warn (once per session) if the cache holds anything other than
+# the official live data.
+.cvpa_require_cache <- function(path, what, hint, check_source = TRUE) {
   if (!file.exists(path)) {
     stop(what, " is not cached yet. Run ", hint, " first (see ?update_cvpa_data).",
          call. = FALSE)
   }
+  if (check_source) .cvpa_check_cache_source()
 }
 
 # Full (un-deduplicated, one row per question x survey_id x type) catalog,
 # read fresh from the local cache every call -- it's small (a few thousand
 # rows) so there's no need for an in-memory cache on top of the file one.
-.cvpa_catalog_raw <- function() {
+.cvpa_catalog_raw <- function(check_source = TRUE) {
   path <- .cvpa_path_catalog()
-  .cvpa_require_cache(path, "The question catalog", "update_cvpa_data()")
+  .cvpa_require_cache(path, "The question catalog", "update_cvpa_data()",
+                      check_source = check_source)
   cat_df <- nanoparquet::read_parquet(path)
   # Two wordings in the published catalog (ces_dpin_016, env_intd_012) have
   # their quotation marks escaped repeatedly upstream, so each quote arrives

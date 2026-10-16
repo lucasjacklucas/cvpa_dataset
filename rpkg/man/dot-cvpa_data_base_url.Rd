@@ -9,6 +9,10 @@
 \description{
 Override with `options(cvpa.data_url = ...)` to point the package at a
 different mirror (e.g. a local copy of the cvpa_dataset repo's
-`site/static/cp3_parquet/` during development).
+`site/static/cp3_parquet/` during development, or the small bundled
+example data from [cvpa_example_url()]). Anything other than the official
+URL, <https://policyattitudes.ca/cp3_parquet/>, makes [update_cvpa_data()]
+-- and the functions that read the data it cached -- warn. Reset with
+`options(cvpa.data_url = NULL)`.
 }
 \keyword{internal}

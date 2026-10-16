@@ -16,6 +16,9 @@ is what lets you, say, break a policy question down by how people voted).
 Used to validate the `grouping_vars`/`grouping_var` argument in
 [wtd_response()] and [response_gap_analysis()].
 }
+\examples{
+cvpa_grouping_vars
+}
 \seealso{
 [demographic_vars], [question_data()]
 }

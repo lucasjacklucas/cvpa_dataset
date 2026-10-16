@@ -44,11 +44,20 @@ utils::globalVariables(c("int", "count", "cnt0", "cnt1", "n0", "n1",
 #'   category (named `response_var`), `count` (summed weight), and
 #'   `response_share` (that category's share of the year/group total).
 #' @examples
-#' \dontrun{
-#' update_cvpa_data(questions = "bri_econ_013")
+#' # Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+#' # in a temporary cache, so this runs offline and leaves your own cache
+#' # alone. For real analysis, skip the options() call and use the default,
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)
 #' d <- question_data("bri_econ_013")
 #' wtd_response(d, grouping_vars = "gender")
-#' }
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @importFrom dplyr `%>%` filter select mutate summarise group_by all_of rowwise across contains rename ungroup
 #' @importFrom stats na.omit
 #' @export
@@ -139,6 +148,10 @@ wtd_vote <- function(
 #' @importFrom tidyr pivot_wider unnest drop_na
 #' @importFrom dplyr if_any starts_with if_all
 #' @importFrom broom tidy
+# Column names used inside the dplyr calls in .cvpa_gap_stats(), declared so
+# R CMD check doesn't report them as undefined globals.
+utils::globalVariables(c("conf.low", "conf.high", ".lo", ".hi"))
+
 .cvpa_gap_stats <- function(res, category_col, share_col, group_col) {
   counts <- res %>%
     select(-dplyr::all_of(share_col)) %>%
@@ -156,9 +169,15 @@ wtd_vote <- function(
     mutate(flag = make_flag(c(cnt0, cnt1), c(n0,n1)),
            res = broom::tidy(suppressWarnings(prop.test(c(cnt0, cnt1), c(n0,n1))))) %>%
     unnest(res) %>%
+    # prop.test()'s interval is for p1 - p2; `diff` is p2 - p1, so the
+    # interval is negated AND its limits swapped (negating alone leaves
+    # conf.low > conf.high).
     mutate(diff = estimate2-estimate1,
-           across(contains("conf"), ~-.x)) %>%
-    select(-c(statistic, parameter, method, alternative))
+           .lo = -conf.high,
+           .hi = -conf.low,
+           conf.low = .lo,
+           conf.high = .hi) %>%
+    select(-c(statistic, parameter, method, alternative, .lo, .hi))
   names(counts)[3:6] <- gsub("0$", paste0("_", levs[1]), names(counts)[3:6])
   names(counts)[3:6] <- gsub("1$", paste0("_", levs[2]), names(counts)[3:6])
   counts
@@ -249,11 +268,20 @@ gap_analysis <- function(
 #'   proportions, a p-value, a confidence interval for the difference, and
 #'   `diff`.
 #' @examples
-#' \dontrun{
-#' update_cvpa_data(questions = "bri_econ_013")
+#' # Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+#' # in a temporary cache, so this runs offline and leaves your own cache
+#' # alone. For real analysis, skip the options() call and use the default,
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)
 #' d <- question_data("bri_econ_013")
 #' response_gap_analysis(d, grouping_var = "gender")
-#' }
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @importFrom tidyr pivot_wider unnest drop_na
 #' @importFrom dplyr if_any starts_with if_all
 #' @importFrom broom tidy
@@ -283,6 +311,11 @@ response_gap_analysis <- function(data, grouping_var, years = NULL, levels = NUL
 #' of proportions test is reliable (all expected counts greater than 5).
 #' @param x A vector of two values of category counts.
 #' @param n A vector of two values of sample sizes
+#' @return `"p-val reliable"` if every expected count is at least 5,
+#'   otherwise `"p-val unreliable"`.
+#' @examples
+#' make_flag(c(30, 40), c(100, 120))   # large counts: reliable
+#' make_flag(c(2, 3), c(10, 20))       # small counts: unreliable
 #' @export
 make_flag <- function(x, n){
   p <- sum(x)/sum(n)

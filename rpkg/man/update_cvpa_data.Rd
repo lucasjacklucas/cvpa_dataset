@@ -47,11 +47,30 @@ Downloads are written to a temporary file and checked to be
   that is listed in the catalog but has no respondent-level data
   available -- it is skipped with a warning naming the question(s), and
   the rest are still fetched.
+
+  Data comes from the official live data,
+  <https://policyattitudes.ca/cp3_parquet/>, unless you have changed
+  `options(cvpa.data_url = ...)` (for example to a local mirror, or to the
+  small example data from [cvpa_example_url()]). If you have, this warns on
+  every call and the functions that read the cache warn too, because the
+  data may be a subset or out of date; `options(cvpa.data_url = NULL)`
+  restores the official URL.
 }
 \examples{
-\dontrun{
-update_cvpa_data()                                  # just the catalog
+# These examples use the tiny example data bundled with cvpa, in a
+# temporary cache, so they run offline and leave your own cache alone.
+# For real analysis, skip the options() lines: by default cvpa downloads
+# the official live data.
+old <- options(
+  cvpa.data_url = cvpa_example_url(),
+  cvpa.cache_dir = tempfile("cvpa-cache-")
+)
+
+update_cvpa_data()                                   # just the catalog
 update_cvpa_data(questions = "bri_econ_013")         # + one question
 update_cvpa_data(questions = c("vote_choice", "vote_intention"))
-}
+dir(cvpa_cache_dir(), recursive = TRUE)
+
+unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+options(old)
 }

@@ -11,7 +11,15 @@ make_flag(x, n)
 
 \item{n}{A vector of two values of sample sizes}
 }
+\value{
+`"p-val reliable"` if every expected count is at least 5,
+  otherwise `"p-val unreliable"`.
+}
 \description{
 Makes a flag to identify if the p-value for the difference
 of proportions test is reliable (all expected counts greater than 5).
+}
+\examples{
+make_flag(c(30, 40), c(100, 120))   # large counts: reliable
+make_flag(c(2, 3), c(10, 20))       # small counts: unreliable
 }

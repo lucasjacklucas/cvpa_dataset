@@ -32,8 +32,18 @@ vote is just one more question, decoded and analyzed the same way as any
 policy question (see [question_data()], [wtd_response()]).
 }
 \examples{
-\dontrun{
-update_cvpa_data()
+# Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+# in a temporary cache, so this runs offline and leaves your own cache
+# alone. For real analysis, skip the options() call and use the default,
+# the official live data.
+old <- options(
+  cvpa.data_url = cvpa_example_url(),
+  cvpa.cache_dir = tempfile("cvpa-cache-")
+)
+update_cvpa_data(quiet = TRUE)
 question_catalog(domain = "econ")
-}
+question_catalog(type = "party")
+
+unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+options(old)
 }

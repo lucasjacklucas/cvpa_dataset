@@ -48,9 +48,18 @@ proportions test between two levels of `grouping_var`, for each response
 category, for each year.
 }
 \examples{
-\dontrun{
-update_cvpa_data(questions = "bri_econ_013")
+# Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+# in a temporary cache, so this runs offline and leaves your own cache
+# alone. For real analysis, skip the options() call and use the default,
+# the official live data.
+old <- options(
+  cvpa.data_url = cvpa_example_url(),
+  cvpa.cache_dir = tempfile("cvpa-cache-")
+)
+update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)
 d <- question_data("bri_econ_013")
 response_gap_analysis(d, grouping_var = "gender")
-}
+
+unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+options(old)
 }

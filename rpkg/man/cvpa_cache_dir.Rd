@@ -15,3 +15,11 @@ other cvpa function reads them from. Defaults to a per-user cache
 directory managed by R (see [tools::R_user_dir()]); override with
 `options(cvpa.cache_dir = ...)`.
 }
+\examples{
+# Point the cache at a temporary directory (the default is a per-user
+# directory under tools::R_user_dir("cvpa", "cache")).
+old <- options(cvpa.cache_dir = tempfile("cvpa-cache-"))
+cvpa_cache_dir()
+unlink(cvpa_cache_dir(), recursive = TRUE)
+options(old)
+}

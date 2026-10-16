@@ -35,7 +35,42 @@ cached question catalog from earlier versions is out of date.
   longer listed. Surveys with no region variable cannot be weighted and
   are not included.
 
+## Tests
+
+* cvpa now has a `testthat` suite (run offline against the bundled
+  example data) covering the data download and caching, the question
+  catalog, decoding, the weighted-share and gap-analysis functions, the
+  unofficial-data warnings and the legacy vote functions.
+
+## Examples and the example data
+
+* Every help page now has examples, and all of them run (none are wrapped in
+  `\dontrun{}` any more). The ones that need data use a small bundled
+  example dataset -- four questions, with a random sample of respondents from
+  each survey year -- through the new `cvpa_example_url()`, in a temporary
+  cache, so they run offline and never touch your own cache. The example
+  data is for illustration only.
+
+* `update_cvpa_data()` now warns whenever `options(cvpa.data_url = ...)` is
+  anything other than the official live data
+  (<https://policyattitudes.ca/cp3_parquet/>), and says how to switch back.
+  The functions that read the cache (`question_catalog()`, `question_data()`,
+  `question_response_labels()`) also warn, once per session, if the cache
+  was downloaded from an unofficial source; `update_cvpa_data()` records the
+  source in a small `cvpa_source.txt` file in the cache directory.
+
 ## Bug fixes
+
+* `gap_analysis()` and `response_gap_analysis()` reported `conf.low` and
+  `conf.high` the wrong way round: the confidence interval for `diff`
+  (group 2 minus group 1) was negated but its limits were not swapped, so
+  `conf.low` was always larger than `conf.high`. The interval itself was
+  right and plots that draw between the two values looked fine, but anything
+  that treated `conf.low` as the lower bound got the wrong number. `conf.low`
+  is now the lower limit and `diff` always lies between the two. If you
+  saved or published these two columns from an earlier version, they are
+  simply swapped: the old `conf.high` is the correct lower limit and the
+  old `conf.low` the correct upper limit.
 
 * `update_cvpa_data()` no longer leaves a corrupt file in the cache when a
   download fails. Downloads are written to a temporary file and checked to

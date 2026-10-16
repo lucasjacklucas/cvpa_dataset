@@ -16,6 +16,8 @@
 #' [wtd_response()] and [response_gap_analysis()].
 #'
 #' @seealso [demographic_vars], [question_data()]
+#' @examples
+#' cvpa_grouping_vars
 #' @export
 cvpa_grouping_vars <- c(
   "vote_intention", "vote_choice", "region", "province",
@@ -74,10 +76,20 @@ cvpa_grouping_vars <- c(
 #'   decoded, one-row-per-category version), `type`, and `n_waves` (how
 #'   many survey waves asked this question).
 #' @examples
-#' \dontrun{
-#' update_cvpa_data()
+#' # Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+#' # in a temporary cache, so this runs offline and leaves your own cache
+#' # alone. For real analysis, skip the options() call and use the default,
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(quiet = TRUE)
 #' question_catalog(domain = "econ")
-#' }
+#' question_catalog(type = "party")
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @export
 question_catalog <- function(domain = NULL, type = NULL) {
   cat_df <- .cvpa_catalog_raw()
@@ -138,11 +150,20 @@ question_catalog <- function(domain = NULL, type = NULL) {
 #' @return A data frame with `code`, `label`, and `sort_order`, ordered by
 #'   `sort_order`.
 #' @examples
-#' \dontrun{
-#' update_cvpa_data()
+#' # Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+#' # in a temporary cache, so this runs offline and leaves your own cache
+#' # alone. For real analysis, skip the options() call and use the default,
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(quiet = TRUE)
 #' question_response_labels("bri_econ_013")
 #' question_response_labels("vote_choice")
-#' }
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @export
 question_response_labels <- function(question) {
   cat_df <- .cvpa_catalog_raw()
@@ -196,11 +217,21 @@ question_response_labels <- function(question) {
 #'   `weight`, `year`, `response_id`, `survey_id`, and the columns in
 #'   [cvpa_grouping_vars].
 #' @examples
-#' \dontrun{
-#' update_cvpa_data(questions = "bri_econ_013")
+#' # Uses the small example data bundled with cvpa (see ?cvpa_example_url),
+#' # in a temporary cache, so this runs offline and leaves your own cache
+#' # alone. For real analysis, skip the options() call and use the default,
+#' # the official live data.
+#' old <- options(
+#'   cvpa.data_url = cvpa_example_url(),
+#'   cvpa.cache_dir = tempfile("cvpa-cache-")
+#' )
+#' update_cvpa_data(questions = "bri_econ_013", quiet = TRUE)
 #' d <- question_data("bri_econ_013")
-#' wtd_response(d, grouping_vars = "gender")
-#' }
+#' head(d)
+#' table(d$year)
+#'
+#' unlink(getOption("cvpa.cache_dir"), recursive = TRUE)
+#' options(old)
 #' @export
 question_data <- function(question, years = NULL, decode = TRUE) {
   path <- .cvpa_path_resp(question)
