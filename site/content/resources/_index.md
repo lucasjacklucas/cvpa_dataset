@@ -13,6 +13,10 @@ aliases: /tutorials/
 - [Shifting Opinion: Slides (PDF)](/resources/shifting-opinion-slides.pdf): simple slides showing how Canadian opinion on several questions changed over time, for presentations and teaching.
 - [Sample Teaching Assignment (PDF)](/resources/cvpa-sample-teaching-assignment.pdf): a sample assignment using the CVPA data, for instructors to adapt.
 
+### Teaching
+
+- [Teaching Resources]({{< relref "teaching-resources" >}}): a sample assignment and sample slides for using the CVPA dataset in the classroom.
+
 ### Data Analysis
 
 - [CVPA R Package: Getting Started]({{< relref "cvpa-r-package" >}}): install the `cvpa` R package, download data for a question, compute weighted responses by year and by group, and plot the results.
