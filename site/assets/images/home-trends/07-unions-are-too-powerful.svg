@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='259.20pt' height='194.40pt' viewBox='0 0 259.20 194.40'>
+<g id='unions-are-too-powerful' class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='unions-are-too-powerful-cpMC4wMHwyNTkuMjB8MC4wMHwxOTQuNDA='>
+    <rect x='0.00' y='0.00' width='259.20' height='194.40' />
+  </clipPath>
+</defs>
+<g clip-path='url(#unions-are-too-powerful-cpMC4wMHwyNTkuMjB8MC4wMHwxOTQuNDA=)'>
+<rect x='0.00' y='-0.000000000000057' width='259.20' height='194.40' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='29.36,175.06 237.28,175.06 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,140.27 237.28,140.27 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,105.48 237.28,105.48 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,70.69 237.28,70.69 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='29.36,35.90 237.28,35.90 ' style='stroke-width: 0.64; stroke: #E6E6E6; stroke-linecap: butt;' />
+<polyline points='117.42,74.78 119.87,75.86 124.76,71.03 129.65,85.73 141.88,113.89 232.39,125.41 ' style='stroke-width: 1.71; stroke: #0B3D91; stroke-linecap: butt;' />
+<circle cx='117.42' cy='74.78' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='119.87' cy='75.86' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='124.76' cy='71.03' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='129.65' cy='85.73' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='141.88' cy='113.89' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<circle cx='232.39' cy='125.41' r='2.52' style='stroke-width: 0.77; stroke: #0B3D91; fill: #0B3D91;' />
+<text x='113.59' y='70.31' text-anchor='end' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>72%</text>
+<text x='236.22' y='120.94' style='font-size: 10.24px;fill: #6B6B6B; font-family: "Inconsolata";'>36%</text>
+<text x='23.99' y='178.18' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>0%</text>
+<text x='23.99' y='143.39' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>25%</text>
+<text x='23.99' y='108.60' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>50%</text>
+<text x='23.99' y='73.81' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>75%</text>
+<text x='23.99' y='39.03' text-anchor='end' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>100%</text>
+<polyline points='70.95,177.05 70.95,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='119.87,177.05 119.87,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='168.79,177.05 168.79,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<polyline points='217.71,177.05 217.71,175.06 ' style='stroke-width: 0.64; stroke: #CCCCCC; stroke-linecap: butt;' />
+<text x='70.95' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1960</text>
+<text x='119.87' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>1980</text>
+<text x='168.79' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2000</text>
+<text x='217.71' y='188.67' text-anchor='middle' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>2020</text>
+<text x='3.99' y='24.20' style='font-size: 10.00px;fill: #6B6B6B; font-family: "Inconsolata";'>% of Canadians, 1979–2026 (weighted)</text>
+<text x='3.99' y='13.78' style='font-size: 12.50px; font-weight: 500;fill: #272727; font-family: "Inconsolata";'>Unions are too powerful</text>
+</g>
+</g>
+</svg>
