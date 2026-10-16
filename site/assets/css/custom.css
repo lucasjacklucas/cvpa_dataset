@@ -108,14 +108,23 @@ body > .container.mt-5 {
     font-size: 0.85em;
 }
 
-/* Home page figure: boxed like the code blocks, full column width */
-#content img.home-figure {
-    display: block;
-    width: 100%;
+/* Home page figure: an inline SVG (see layouts/shortcodes/home-figure.html),
+   boxed like the code blocks and scaled to the text column. The font rule
+   makes the SVG's text use the page font even if the SVG names another. */
+#content figure.home-figure {
     box-sizing: border-box;
-    padding: 10px 8px 6px;
+    width: 100%;
+    padding: 10px 8px 4px;
     margin: 0 0 1.5em;
     border: 1px solid #e1e4e8;
     border-radius: 4px;
     background-color: #fff;
+}
+#content figure.home-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+#content figure.home-figure svg text {
+    font-family: Inconsolata, monospace;
 }

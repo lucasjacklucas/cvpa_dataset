@@ -1,13 +1,18 @@
-# Draws the figure at the top of the home page, site/static/images/home-trends.png:
+# Draws the figure at the top of the home page, site/assets/images/home-trends.svg:
 # six long-running questions, each as the weighted share giving one response,
 # on a common 1945-2026 axis.
 #
 # Rerun from the repository root whenever the data change, then commit the PNG:
 #   Rscript site/scripts/render_home_figure.R
 # Needs the cvpa package and its data cache (cvpa::update_cvpa_data()), plus
-# ggplot2, ragg and systemfonts. The figure is set in Inconsolata, the site's
-# font; scripts/fonts/ holds the TTF (from google/fonts, OFL licence) so the
-# render doesn't depend on it being installed.
+# ggplot2, svglite and systemfonts.
+#
+# The output is an SVG that layouts/shortcodes/home-figure.html inlines into
+# the page, so the browser draws the text in the site's own web font
+# (Inconsolata) and the lines stay crisp at any size. scripts/fonts/ holds
+# static Inconsolata TTFs (googlefonts/Inconsolata, OFL licence) so that R
+# measures text with the same metrics the browser will use when it lays out
+# the labels.
 
 suppressPackageStartupMessages({
   library(cvpa)
@@ -15,9 +20,13 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-out <- "site/static/images/home-trends.png"
+out <- "site/assets/images/home-trends.svg"
 
-systemfonts::register_font("Inconsolata", plain = "site/scripts/fonts/Inconsolata.ttf")
+systemfonts::register_font(
+  "Inconsolata",
+  plain = "site/scripts/fonts/Inconsolata-Regular.ttf",
+  bold = "site/scripts/fonts/Inconsolata-Medium.ttf"
+)
 font <- "Inconsolata"
 
 # question, the response to plot, and the panel title (ordered by first year)
@@ -95,8 +104,10 @@ p <- ggplot(trends, aes(year, share)) +
   )
 
 dir.create(dirname(out), showWarnings = FALSE, recursive = TRUE)
-# 700 CSS px wide (the text column), rendered at 2x for sharp display
-ragg::agg_png(out, width = 1400, height = 780, units = "px", res = 192, background = "white")
+# 7in x 3.9in at 96 dpi is 672 x 374 CSS px; the page scales it to the column.
+# fix_text_size = FALSE leaves glyph spacing to the browser instead of forcing
+# R's measured widths with textLength, which would distort the type.
+svglite::svglite(out, width = 7, height = 3.9, bg = "white", fix_text_size = FALSE, id = "home-trends")
 print(p)
 invisible(dev.off())
 message("Wrote ", out)

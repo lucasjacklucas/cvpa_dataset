@@ -1,0 +1,3 @@
+{{- /* Inlines the home page figure (drawn by scripts/render_home_figure.R) so
+     its text is set in the page's web font and the lines stay crisp. */ -}}
+<figure class="home-figure">{{ (resources.Get "images/home-trends.svg").Content | safeHTML }}</figure>

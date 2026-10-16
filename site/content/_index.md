@@ -2,7 +2,7 @@
 # Home page. No title here, so the browser tab shows the site title.
 ---
 
-<img src="/images/home-trends.png" alt="Six long-running CVPA questions, each shown as the weighted share of Canadians giving one response, 1945 to 2026" class="home-figure">
+{{< home-figure >}}
 
 Welcome to the Canadian Voting and Policy Attitudes (CVPA) project. This project integrates 9.2 million survey responses from more than 1 million Canadians across 672 surveys, fielded between 1945 and 2026. Drawing on five archives — Gallup Canada, the Canadian Election Study and C-DEM Democracy Checkup, Environics Focus Canada, Pollara, and the 2026 CVPA Bridge Survey — we have harmonized 629 distinct policy questions into a single long-format dataset, with vote intention and vote choice also included. The dataset also includes respondent demographics, allowing responses to be broken out by region, age, education, language, religion, union household and occupation. 
 
