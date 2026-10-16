@@ -9,6 +9,7 @@
     <div class="home-figure-slide{{ if eq $i 0 }} is-active{{ end }}">{{ $chart.Content | safeHTML }}</div>
   {{- end }}
   </div>
+  <figcaption><a href="/app/">Explore more in the interactive&nbsp;app&nbsp;&rarr;</a></figcaption>
 </figure>
 <script>
 (function () {
@@ -27,7 +28,10 @@
     timer = setInterval(function () { show(current + 1); }, 6000);
   }
   function stop() { clearInterval(timer); timer = null; }
-  figure.addEventListener("click", function () { show(current + 1); stop(); start(); });
+  figure.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    show(current + 1); stop(); start();
+  });
   figure.addEventListener("mouseenter", stop);
   figure.addEventListener("mouseleave", start);
   document.addEventListener("visibilitychange", function () {

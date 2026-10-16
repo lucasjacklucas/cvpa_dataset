@@ -152,6 +152,37 @@ body > .container.mt-5 {
 #content figure.home-figure svg text {
     font-family: Inconsolata, monospace;
 }
+#content figure.home-figure figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 6px 0 4px;
+    border-top: 1px solid #e1e4e8;
+    margin-top: 4px;
+}
+
+/* Home page call-out for the interactive app: a button-style link */
+#content p.app-cta {
+    clear: none;
+    margin: 1.25em 0;
+}
+#content p.app-cta a {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid var(--cvpa-link);
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+}
+#content p.app-cta a:hover {
+    background-color: var(--cvpa-link);
+    color: #fff;
+}
+#content p.app-cta span {
+    display: block;
+    margin-top: 6px;
+    color: #6b6b6b;
+    font-size: 0.9em;
+}
 
 /* Team page headshots, as on lucasjacklucas.github.io/group: a small round
    picture floated right of each bio. object-fit keeps a non-square source
