@@ -17,7 +17,7 @@ The source for the project website (https://policyattitudes.ca/) lives in `site/
 
 ## The cvpa R package
 
-The R package for working with these data lives in `rpkg/`. It reads the same Parquet files that the [policy-attitudes app](https://policyattitudes.ca/app/) is built from, and is also released on CRAN. To install the development version from GitHub:
+The R package for working with these data lives in `rpkg/`. It reads the same Parquet files that the [policy-attitudes app](https://policyattitudes.ca/app/) is built from. It has been submitted to CRAN; once it is accepted you will be able to install it with `install.packages("cvpa")`. Until then, or to get the development version, install from GitHub:
 
 ```r
 # install.packages("remotes")
