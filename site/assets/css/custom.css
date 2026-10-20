@@ -164,6 +164,7 @@ body > .container.mt-5 {
 #content p.app-cta {
     clear: none;
     margin: 1.25em 0;
+    text-align: center;
 }
 #content p.app-cta a {
     display: inline-block;
