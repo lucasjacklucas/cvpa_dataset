@@ -118,13 +118,18 @@ body > .container.mt-5 {
 #content figure.home-figure {
     box-sizing: border-box;
     float: right;
-    width: 46%;
-    margin: 0.35em 0 0.75em 1.5em;
+    width: 44%;
+    margin: 0.35em 0 0.5em 1.5em;
     padding: 8px 6px 4px;
     border: 1px solid #e1e4e8;
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+}
+/* Only the opening paragraph wraps beside the figure; the next one starts
+   below it, so the figure never breaks a line of the site overview. */
+#content figure.home-figure ~ p:nth-of-type(2) {
+    clear: both;
 }
 @media (max-width: 575.98px) {
     #content figure.home-figure {
