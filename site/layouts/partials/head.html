@@ -1,6 +1,7 @@
 <head>
     {{/* Copy of themes/researcher/layouts/partials/head.html with one
-         addition: assets/css/custom.css, loaded after the theme's CSS. */}}
+         additions: assets/css/custom.css, loaded after the theme's CSS, and
+         the GoatCounter partial. */}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,6 +27,7 @@
 
     {{- if not hugo.IsServer -}}
         {{- partial "googleanalytics.html" . -}}
+        {{- partial "goatcounter.html" . -}}
     {{- end -}}
 
     {{ if .Params.noindex -}}

@@ -14,6 +14,9 @@ disableKinds = ["taxonomy", "term"]
   lang = "en"
   author = "Jack Lucas"
   description = "Canadian Voting and Policy Attitudes Project"
+  # GoatCounter code (the jacklucas.goatcounter.com site, shared with the
+  # personal site); see layouts/partials/goatcounter.html. Remove to disable.
+  goatcounter = "jacklucas"
   # Sized to match lucasjacklucas.github.io. Link colour and the remaining
   # personal-site tweaks live in assets/css/custom.css.
   [params.style]

@@ -1,0 +1,22 @@
+{{- with .Site.Params.goatcounter -}}
+{{/* GoatCounter page views, plus a click event for every outbound or
+     file-download link (app, GitHub repo, data files), so data use can be
+     reported alongside visits. Paths are prefixed with the host because the
+     GoatCounter site is shared with lucasjacklucas.github.io. */}}
+<script>
+  window.goatcounter = {path: function(p) { return location.host + p }};
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href]');
+    if (!a || !window.goatcounter.count) return;
+    var u = new URL(a.href, location.href);
+    var file = /\.(parquet|csv|zip|rds|rda|pdf|r|qmd|html)$/i.test(u.pathname) && u.host === location.host;
+    if (u.host === location.host && !file) return;
+    window.goatcounter.count({
+      path:  'click: ' + u.host + u.pathname,
+      title: (a.textContent || '').trim().slice(0, 100),
+      event: true
+    });
+  });
+</script>
+<script data-goatcounter="https://{{ . }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{{- end -}}

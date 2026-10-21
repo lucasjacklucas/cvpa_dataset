@@ -951,6 +951,10 @@ async function update() {
 
   if (question !== currentQuestion) {
     currentQuestion = question;
+    // One GoatCounter event per question opened, to report which items are used
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: "app question: " + question, event: true });
+    }
     await refreshYearBounds(question);
     if (isParty) await refreshPartyOptions(question);
   }
