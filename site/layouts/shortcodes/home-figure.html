@@ -1,0 +1,42 @@
+{{- /* The home page figure: the charts in assets/images/home-trends/ (drawn by
+     scripts/render_home_figure.R), inlined so their text is set in the page's
+     web font, shown one at a time. Without JavaScript only the first shows.
+     The figure floats beside the text on wide screens (see custom.css). */ -}}
+{{- $charts := resources.Match "images/home-trends/*.svg" -}}
+<figure class="home-figure" aria-label="Trends in Canadian opinion from the CVPA dataset">
+  <div class="home-figure-slides">
+  {{- range $i, $chart := $charts }}
+    <div class="home-figure-slide{{ if eq $i 0 }} is-active{{ end }}">{{ $chart.Content | safeHTML }}</div>
+  {{- end }}
+  </div>
+  <figcaption><a href="/app/">Explore more in the interactive app</a></figcaption>
+</figure>
+<script>
+(function () {
+  var slides = document.querySelectorAll(".home-figure-slide");
+  if (slides.length < 2) return;
+  var figure = document.querySelector(".home-figure");
+  var current = 0, timer = null;
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function show(next) {
+    slides[current].classList.remove("is-active");
+    current = (next + slides.length) % slides.length;
+    slides[current].classList.add("is-active");
+  }
+  function start() {
+    if (still || timer) return;
+    timer = setInterval(function () { show(current + 1); }, 6000);
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  figure.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    show(current + 1); stop(); start();
+  });
+  figure.addEventListener("mouseenter", stop);
+  figure.addEventListener("mouseleave", start);
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stop(); else start();
+  });
+  start();
+})();
+</script>

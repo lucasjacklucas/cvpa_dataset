@@ -107,3 +107,91 @@ body > .container.mt-5 {
 #content > pre {
     font-size: 0.85em;
 }
+
+/*
+ * Home page figure (layouts/shortcodes/home-figure.html): one small chart
+ * at a time, cycling. Floats to the right of the opening text on wide
+ * screens and sits full width above it on phones. The slides are stacked
+ * in one grid cell and crossfade. The font rule makes the SVG text use the
+ * page font even if the SVG names another.
+ */
+#content figure.home-figure {
+    box-sizing: border-box;
+    float: right;
+    width: 44%;
+    margin: 0.35em 0 0.5em 1.5em;
+    padding: 8px 6px 4px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+/* Only the opening paragraph wraps beside the figure; the next one starts
+   below it, so the figure never breaks a line of the site overview. */
+#content figure.home-figure ~ p:nth-of-type(2) {
+    clear: both;
+}
+@media (max-width: 575.98px) {
+    #content figure.home-figure {
+        float: none;
+        width: 100%;
+        margin: 0 0 1.25em;
+    }
+}
+#content .home-figure-slides {
+    display: grid;
+}
+#content .home-figure-slide {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+#content .home-figure-slide.is-active {
+    opacity: 1;
+}
+#content figure.home-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+#content figure.home-figure svg text {
+    font-family: Inconsolata, monospace;
+}
+#content figure.home-figure figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 6px 0 4px;
+    border-top: 1px solid #e1e4e8;
+    margin-top: 4px;
+}
+
+/* Home page call-out for the interactive app: a button-style link */
+#content p.app-cta {
+    clear: none;
+    margin: 1.25em 0;
+    text-align: center;
+}
+#content p.app-cta a {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid var(--cvpa-link);
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+}
+#content p.app-cta a:hover {
+    background-color: var(--cvpa-link);
+    color: #fff;
+}
+
+/* Team page headshots, as on lucasjacklucas.github.io/group: a small round
+   picture floated right of each bio. object-fit keeps a non-square source
+   round rather than oval. */
+#content img.profile-picture {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: right;
+    margin: 0 0 0 15px;
+}
