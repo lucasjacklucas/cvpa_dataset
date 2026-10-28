@@ -14,6 +14,9 @@
 #'   \item{description}{What the variable measures}
 #'   \item{categories}{Ordered category labels, separated by `"; "`}
 #' }
+#' @return A data frame with one row for each of the eleven demographic
+#'   variables and the columns `variable`, `description` and `categories`
+#'   (described under Format).
 #' @seealso [cvpa_grouping_vars], [question_data()]
 #' @examples
 #' demographic_vars

@@ -31,6 +31,19 @@ gap_analysis(
 
 \item{...}{Other arguments to be passed down, not implemented}
 }
+\value{
+A data frame (a tibble, grouped by `year`) with one row per year
+  and party for which both groups have enough respondents to test. The
+  columns are `year`; `vote`, the party; `cnt_<level>` and `n_<level>`
+  for each of the two groups (for example `cnt_Man` and `n_Woman`), the
+  weighted count of the group's respondents who chose that party and the
+  weighted count of the group's respondents in that year; `flag`
+  (`"p-val reliable"` or `"p-val unreliable"`, see [make_flag()]);
+  `estimate1` and `estimate2`, the party's weighted share in the first and
+  second group; `p.value`, from a two-sample test of equal proportions
+  ([stats::prop.test()]); `diff`, `estimate2 - estimate1`; and `conf.low`
+  and `conf.high`, the limits of the 95% confidence interval for `diff`.
+}
 \description{
 The function does a difference of proportions test for the
 two identified groups for each of the parties.  Note, for gender,

@@ -110,6 +110,15 @@ wtd_response <- function(data, years = NULL, grouping_vars = NULL,
 #'   [wtd_response()] engine that also powers policy-question analysis (see
 #'   [question_data()]) -- its inputs, outputs, and validation behavior are
 #'   unchanged from earlier versions.
+#' @return A data frame (a tibble) with one row per combination of year,
+#'   party and, if `grouping_vars` is given, each combination of the
+#'   grouping variables. Its columns are `year`; `vote`, the party (a
+#'   factor); one column for each of `grouping_vars`; `count`, the sum of the
+#'   survey weights of the respondents in that cell; and `party_support`,
+#'   that party's weighted share of the votes counted in the same year and
+#'   group, so the shares sum to 1 within each year and group. Respondents
+#'   with a missing vote are never counted, and undecided respondents are
+#'   left out unless `incl_undecided = TRUE`.
 #' @examples
 #' data(vote_data)
 #' wtd_vote(vote_data, "intention", years=2000:2022)
@@ -200,6 +209,17 @@ utils::globalVariables(c("conf.low", "conf.high", ".lo", ".hi"))
 #' @param ... Other arguments to be passed down, not implemented
 #' @details See [response_gap_analysis()] for the same test generalized to
 #'   any policy question, not just vote choice/intention.
+#' @return A data frame (a tibble, grouped by `year`) with one row per year
+#'   and party for which both groups have enough respondents to test. The
+#'   columns are `year`; `vote`, the party; `cnt_<level>` and `n_<level>`
+#'   for each of the two groups (for example `cnt_Man` and `n_Woman`), the
+#'   weighted count of the group's respondents who chose that party and the
+#'   weighted count of the group's respondents in that year; `flag`
+#'   (`"p-val reliable"` or `"p-val unreliable"`, see [make_flag()]);
+#'   `estimate1` and `estimate2`, the party's weighted share in the first and
+#'   second group; `p.value`, from a two-sample test of equal proportions
+#'   ([stats::prop.test()]); `diff`, `estimate2 - estimate1`; and `conf.low`
+#'   and `conf.high`, the limits of the 95% confidence interval for `diff`.
 #' @examples
 #' data(vote_data)
 #' gap_analysis(vote_data, "intention", years=2000:2022, grouping_var="gender")

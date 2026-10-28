@@ -14,6 +14,11 @@ A data frame with 11 rows and 3 variables:
 \usage{
 demographic_vars
 }
+\value{
+A data frame with one row for each of the eleven demographic
+  variables and the columns `variable`, `description` and `categories`
+  (described under Format).
+}
 \description{
 Every table [question_data()] returns carries these eleven demographic
 columns (denormalized onto each response row by cp3's data pipeline),

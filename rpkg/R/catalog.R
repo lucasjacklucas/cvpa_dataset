@@ -15,6 +15,9 @@
 #' Used to validate the `grouping_vars`/`grouping_var` argument in
 #' [wtd_response()] and [response_gap_analysis()].
 #'
+#' @return A character vector (13 elements) of the column names that can be
+#'   used as grouping variables: `vote_intention`, `vote_choice` and the
+#'   eleven demographic variables in [demographic_vars].
 #' @seealso [demographic_vars], [question_data()]
 #' @examples
 #' cvpa_grouping_vars

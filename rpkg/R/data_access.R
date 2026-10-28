@@ -28,6 +28,8 @@
 #' URL, `https://policyattitudes.ca/cp3_parquet/`, makes [update_cvpa_data()]
 #' -- and the functions that read the data it cached -- warn. Reset with
 #' `options(cvpa.data_url = NULL)`.
+#' @return A single character string: the base URL of the cp3 Parquet files
+#'   (the `cvpa.data_url` option if set, otherwise the official URL).
 #' @keywords internal
 .cvpa_data_base_url <- function() {
   getOption("cvpa.data_url", .cvpa_official_url)

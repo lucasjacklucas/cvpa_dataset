@@ -6,6 +6,10 @@
 \usage{
 .cvpa_data_base_url()
 }
+\value{
+A single character string: the base URL of the cp3 Parquet files
+  (the `cvpa.data_url` option if set, otherwise the official URL).
+}
 \description{
 Override with `options(cvpa.data_url = ...)` to point the package at a
 different mirror (e.g. a local copy of the cvpa_dataset repo's

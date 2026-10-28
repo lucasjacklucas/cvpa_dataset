@@ -27,6 +27,17 @@ wtd_vote(
 
 \item{...}{Other arguments to be passed down, not implemented}
 }
+\value{
+A data frame (a tibble) with one row per combination of year,
+  party and, if `grouping_vars` is given, each combination of the
+  grouping variables. Its columns are `year`; `vote`, the party (a
+  factor); one column for each of `grouping_vars`; `count`, the sum of the
+  survey weights of the respondents in that cell; and `party_support`,
+  that party's weighted share of the votes counted in the same year and
+  group, so the shares sum to 1 within each year and group. Respondents
+  with a missing vote are never counted, and undecided respondents are
+  left out unless `incl_undecided = TRUE`.
+}
 \description{
 Make weighted mean of vote intention/choice
 }

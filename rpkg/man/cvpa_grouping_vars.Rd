@@ -6,6 +6,11 @@
 \usage{
 cvpa_grouping_vars
 }
+\value{
+A character vector (13 elements) of the column names that can be
+  used as grouping variables: `vote_intention`, `vote_choice` and the
+  eleven demographic variables in [demographic_vars].
+}
 \description{
 Every table returned by [question_data()] carries these columns in
 addition to `response`, `weight`, and `year` -- eleven demographic
