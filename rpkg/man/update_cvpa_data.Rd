@@ -8,53 +8,53 @@ update_cvpa_data(questions = NULL, force = FALSE, quiet = FALSE)
 }
 \arguments{
 \item{questions}{Which questions' respondent-level data to fetch, in
-addition to the catalog: `NULL` (default) fetches none, or a character
-vector of specific question codes (see [question_catalog()]). There is
+addition to the catalog: \code{NULL} (default) fetches none, or a character
+vector of specific question codes (see \code{\link[=question_catalog]{question_catalog()}}). There is
 deliberately no "fetch everything" option -- if you want the full
-dataset, download `dataset.parquet` from
-<https://github.com/lucasjacklucas/cvpa_dataset> instead.}
+dataset, download \code{dataset.parquet} from
+\url{https://github.com/lucasjacklucas/cvpa_dataset} instead.}
 
-\item{force}{If `FALSE` (default), question files already in the cache
-are left alone. If `TRUE`, every requested file is re-downloaded.}
+\item{force}{If \code{FALSE} (default), question files already in the cache
+are left alone. If \code{TRUE}, every requested file is re-downloaded.}
 
 \item{quiet}{Suppress progress messages.}
 }
 \value{
-Invisibly, `TRUE`, with an attribute `"skipped"` holding the
-  question codes (if any) that could not be downloaded.
+Invisibly, \code{TRUE}, with an attribute \code{"skipped"} holding the
+question codes (if any) that could not be downloaded.
 }
 \description{
 cvpa reads policy-attitude and vote data from Parquet files hosted
 alongside the cp3 web app, not from data bundled in the package. Call
 this first (and again whenever you want the latest data) before using
-[question_catalog()], [question_data()], [wtd_response()], or
-[response_gap_analysis()].
+\code{\link[=question_catalog]{question_catalog()}}, \code{\link[=question_data]{question_data()}}, \code{\link[=wtd_response]{wtd_response()}}, or
+\code{\link[=response_gap_analysis]{response_gap_analysis()}}.
 }
 \details{
-The question catalog (`vbl_data.parquet`) and the demographic/party
-value-label table (`code_labels.parquet`) are small and are always
+The question catalog (\code{vbl_data.parquet}) and the demographic/party
+value-label table (\code{code_labels.parquet}) are small and are always
 refreshed. Per-question respondent-level data
-(`resp/question=<code>/data_0.parquet`) is only fetched for the
-questions you name in `questions` -- there are several hundred of these
+(\verb{resp/question=<code>/data_0.parquet}) is only fetched for the
+questions you name in \code{questions} -- there are several hundred of these
 across all domains, so nothing downloads them until you ask.
 
 Downloads are written to a temporary file and checked to be
-  valid Parquet before they replace anything in the cache, so a failed or
-  interrupted download never leaves a corrupt file behind or overwrites a
-  good one. If the catalog or the code labels can't be downloaded, this
-  stops with an error (and your existing cached copies are untouched). If
-  an individual *question* file can't be downloaded -- e.g. a question
-  that is listed in the catalog but has no respondent-level data
-  available -- it is skipped with a warning naming the question(s), and
-  the rest are still fetched.
+valid Parquet before they replace anything in the cache, so a failed or
+interrupted download never leaves a corrupt file behind or overwrites a
+good one. If the catalog or the code labels can't be downloaded, this
+stops with an error (and your existing cached copies are untouched). If
+an individual \emph{question} file can't be downloaded -- e.g. a question
+that is listed in the catalog but has no respondent-level data
+available -- it is skipped with a warning naming the question(s), and
+the rest are still fetched.
 
-  Data comes from the official live data,
-  `https://policyattitudes.ca/cp3_parquet/`, unless you have changed
-  `options(cvpa.data_url = ...)` (for example to a local mirror, or to the
-  small example data from [cvpa_example_url()]). If you have, this warns on
-  every call and the functions that read the cache warn too, because the
-  data may be a subset or out of date; `options(cvpa.data_url = NULL)`
-  restores the official URL.
+Data comes from the official live data,
+\verb{https://policyattitudes.ca/cp3_parquet/}, unless you have changed
+\code{options(cvpa.data_url = ...)} (for example to a local mirror, or to the
+small example data from \code{\link[=cvpa_example_url]{cvpa_example_url()}}). If you have, this warns on
+every call and the functions that read the cache warn too, because the
+data may be a subset or out of date; \code{options(cvpa.data_url = NULL)}
+restores the official URL.
 }
 \examples{
 # These examples use the tiny example data bundled with cvpa, in a

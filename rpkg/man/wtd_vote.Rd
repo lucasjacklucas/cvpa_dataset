@@ -20,8 +20,8 @@ wtd_vote(
 
 \item{incl_undecided}{If using vote intention, should undecided voters be included?}
 
-\item{years}{Select desired years. `NULL` (default) uses every year in
-`data` -- so newly added years are never silently dropped.}
+\item{years}{Select desired years. \code{NULL} (default) uses every year in
+\code{data} -- so newly added years are never silently dropped.}
 
 \item{grouping_vars}{For which groups do you want separate estimates (region or province, gender, age_cats, degree, religion, language, union_household, community_size)}
 
@@ -29,23 +29,23 @@ wtd_vote(
 }
 \value{
 A data frame (a tibble) with one row per combination of year,
-  party and, if `grouping_vars` is given, each combination of the
-  grouping variables. Its columns are `year`; `vote`, the party (a
-  factor); one column for each of `grouping_vars`; `count`, the sum of the
-  survey weights of the respondents in that cell; and `party_support`,
-  that party's weighted share of the votes counted in the same year and
-  group, so the shares sum to 1 within each year and group. Respondents
-  with a missing vote are never counted, and undecided respondents are
-  left out unless `incl_undecided = TRUE`.
+party and, if \code{grouping_vars} is given, each combination of the
+grouping variables. Its columns are \code{year}; \code{vote}, the party (a
+factor); one column for each of \code{grouping_vars}; \code{count}, the sum of the
+survey weights of the respondents in that cell; and \code{party_support},
+that party's weighted share of the votes counted in the same year and
+group, so the shares sum to 1 within each year and group. Respondents
+with a missing vote are never counted, and undecided respondents are
+left out unless \code{incl_undecided = TRUE}.
 }
 \description{
 Make weighted mean of vote intention/choice
 }
 \details{
 Since 0.2.0, this is a thin wrapper around the general
-  [wtd_response()] engine that also powers policy-question analysis (see
-  [question_data()]) -- its inputs, outputs, and validation behavior are
-  unchanged from earlier versions.
+\code{\link[=wtd_response]{wtd_response()}} engine that also powers policy-question analysis (see
+\code{\link[=question_data]{question_data()}}) -- its inputs, outputs, and validation behavior are
+unchanged from earlier versions.
 }
 \examples{
 data(vote_data)

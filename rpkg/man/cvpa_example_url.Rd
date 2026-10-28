@@ -7,23 +7,23 @@
 cvpa_example_url()
 }
 \value{
-A `file://` URL (with a trailing slash) for the bundled example
-  data, suitable for `options(cvpa.data_url = ...)`.
+A \verb{file://} URL (with a trailing slash) for the bundled example
+data, suitable for \code{options(cvpa.data_url = ...)}.
 }
 \description{
 cvpa ships a tiny copy of the hosted cp3 Parquet layout -- a handful of
-questions (`bri_econ_013`, `env_econ_027`, `vote_choice`,
-`vote_intention`) and a random sample of respondents from each survey
+questions (\code{bri_econ_013}, \code{env_econ_027}, \code{vote_choice},
+\code{vote_intention}) and a random sample of respondents from each survey
 year -- so that the examples in the help pages can run without a network
-connection. Point cvpa at it by setting the `cvpa.data_url` option to this
-URL (and, so you don't touch your real cache, `cvpa.cache_dir` to a
-temporary directory), then call [update_cvpa_data()] as usual.
+connection. Point cvpa at it by setting the \code{cvpa.data_url} option to this
+URL (and, so you don't touch your real cache, \code{cvpa.cache_dir} to a
+temporary directory), then call \code{\link[=update_cvpa_data]{update_cvpa_data()}} as usual.
 }
 \details{
 The example data is for illustration only: it is a subset, and estimates
 from it are not estimates from the full data. Because it is not the
-official data, [update_cvpa_data()] and the functions that read the cache
-warn while it is in use. Undo with `options(cvpa.data_url = NULL)`, or
+official data, \code{\link[=update_cvpa_data]{update_cvpa_data()}} and the functions that read the cache
+warn while it is in use. Undo with \code{options(cvpa.data_url = NULL)}, or
 restore the options you saved.
 }
 \examples{

@@ -12,8 +12,8 @@ make_flag(x, n)
 \item{n}{A vector of two values of sample sizes}
 }
 \value{
-`"p-val reliable"` if every expected count is at least 5,
-  otherwise `"p-val unreliable"`.
+\code{"p-val reliable"} if every expected count is at least 5,
+otherwise \code{"p-val unreliable"}.
 }
 \description{
 Makes a flag to identify if the p-value for the difference

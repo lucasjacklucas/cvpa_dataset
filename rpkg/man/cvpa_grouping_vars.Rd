@@ -8,22 +8,22 @@ cvpa_grouping_vars
 }
 \value{
 A character vector (13 elements) of the column names that can be
-  used as grouping variables: `vote_intention`, `vote_choice` and the
-  eleven demographic variables in [demographic_vars].
+used as grouping variables: \code{vote_intention}, \code{vote_choice} and the
+eleven demographic variables in \link{demographic_vars}.
 }
 \description{
-Every table returned by [question_data()] carries these columns in
-addition to `response`, `weight`, and `year` -- eleven demographic
-variables (see [demographic_vars] for what each one measures) plus
-`vote_intention` and `vote_choice`, which travel with every question's
+Every table returned by \code{\link[=question_data]{question_data()}} carries these columns in
+addition to \code{response}, \code{weight}, and \code{year} -- eleven demographic
+variables (see \link{demographic_vars} for what each one measures) plus
+\code{vote_intention} and \code{vote_choice}, which travel with every question's
 data and can be used as grouping variables just like a demographic (this
 is what lets you, say, break a policy question down by how people voted).
-Used to validate the `grouping_vars`/`grouping_var` argument in
-[wtd_response()] and [response_gap_analysis()].
+Used to validate the \code{grouping_vars}/\code{grouping_var} argument in
+\code{\link[=wtd_response]{wtd_response()}} and \code{\link[=response_gap_analysis]{response_gap_analysis()}}.
 }
 \examples{
 cvpa_grouping_vars
 }
 \seealso{
-[demographic_vars], [question_data()]
+\link{demographic_vars}, \code{\link[=question_data]{question_data()}}
 }

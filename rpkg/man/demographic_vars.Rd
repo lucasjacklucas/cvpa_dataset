@@ -6,9 +6,9 @@
 \format{
 A data frame with 11 rows and 3 variables:
 \describe{
-  \item{variable}{Column name as it appears in [question_data()]'s output}
-  \item{description}{What the variable measures}
-  \item{categories}{Ordered category labels, separated by `"; "`}
+\item{variable}{Column name as it appears in \code{\link[=question_data]{question_data()}}'s output}
+\item{description}{What the variable measures}
+\item{categories}{Ordered category labels, separated by \code{"; "}}
 }
 }
 \usage{
@@ -16,21 +16,21 @@ demographic_vars
 }
 \value{
 A data frame with one row for each of the eleven demographic
-  variables and the columns `variable`, `description` and `categories`
-  (described under Format).
+variables and the columns \code{variable}, \code{description} and \code{categories}
+(described under Format).
 }
 \description{
-Every table [question_data()] returns carries these eleven demographic
+Every table \code{\link[=question_data]{question_data()}} returns carries these eleven demographic
 columns (denormalized onto each response row by cp3's data pipeline),
-in addition to `vote_intention` and `vote_choice`, which are also always
+in addition to \code{vote_intention} and \code{vote_choice}, which are also always
 present and usable as grouping variables in their own right (see
-[cvpa_grouping_vars]). Category lists are given in the order the
-underlying `code_labels` table sorts them, which is also the factor
-level order [question_data()] applies.
+\link{cvpa_grouping_vars}). Category lists are given in the order the
+underlying \code{code_labels} table sorts them, which is also the factor
+level order \code{\link[=question_data]{question_data()}} applies.
 }
 \examples{
 demographic_vars
 }
 \seealso{
-[cvpa_grouping_vars], [question_data()]
+\link{cvpa_grouping_vars}, \code{\link[=question_data]{question_data()}}
 }

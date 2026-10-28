@@ -22,27 +22,27 @@ gap_analysis(
 
 \item{incl_undecided}{If using vote intention, should undecided voters be included?}
 
-\item{years}{Select desired years. `NULL` (default) uses every year in
-`data` -- so newly added years are never silently dropped.}
+\item{years}{Select desired years. \code{NULL} (default) uses every year in
+\code{data} -- so newly added years are never silently dropped.}
 
 \item{grouping_var}{For which group do you want separate estimates (gender, degree, union_household, community_size)}
 
-\item{levels}{Character vector of length 2 giving values of `grouping_var` to use for comparison.  `NULL` is valid if `grouping_var` only has two valid values.  Otherwise, values must be specified.}
+\item{levels}{Character vector of length 2 giving values of \code{grouping_var} to use for comparison.  \code{NULL} is valid if \code{grouping_var} only has two valid values.  Otherwise, values must be specified.}
 
 \item{...}{Other arguments to be passed down, not implemented}
 }
 \value{
-A data frame (a tibble, grouped by `year`) with one row per year
-  and party for which both groups have enough respondents to test. The
-  columns are `year`; `vote`, the party; `cnt_<level>` and `n_<level>`
-  for each of the two groups (for example `cnt_Man` and `n_Woman`), the
-  weighted count of the group's respondents who chose that party and the
-  weighted count of the group's respondents in that year; `flag`
-  (`"p-val reliable"` or `"p-val unreliable"`, see [make_flag()]);
-  `estimate1` and `estimate2`, the party's weighted share in the first and
-  second group; `p.value`, from a two-sample test of equal proportions
-  ([stats::prop.test()]); `diff`, `estimate2 - estimate1`; and `conf.low`
-  and `conf.high`, the limits of the 95% confidence interval for `diff`.
+A data frame (a tibble, grouped by \code{year}) with one row per year
+and party for which both groups have enough respondents to test. The
+columns are \code{year}; \code{vote}, the party; \verb{cnt_<level>} and \verb{n_<level>}
+for each of the two groups (for example \code{cnt_Man} and \code{n_Woman}), the
+weighted count of the group's respondents who chose that party and the
+weighted count of the group's respondents in that year; \code{flag}
+(\code{"p-val reliable"} or \code{"p-val unreliable"}, see \code{\link[=make_flag]{make_flag()}});
+\code{estimate1} and \code{estimate2}, the party's weighted share in the first and
+second group; \code{p.value}, from a two-sample test of equal proportions
+(\code{\link[stats:prop.test]{stats::prop.test()}}); \code{diff}, \code{estimate2 - estimate1}; and \code{conf.low}
+and \code{conf.high}, the limits of the 95\% confidence interval for \code{diff}.
 }
 \description{
 The function does a difference of proportions test for the
@@ -51,8 +51,8 @@ there are not many surveys with non-binary/other response options
 so those are removed from consideration here.
 }
 \details{
-See [response_gap_analysis()] for the same test generalized to
-  any policy question, not just vote choice/intention.
+See \code{\link[=response_gap_analysis]{response_gap_analysis()}} for the same test generalized to
+any policy question, not just vote choice/intention.
 }
 \examples{
 data(vote_data)

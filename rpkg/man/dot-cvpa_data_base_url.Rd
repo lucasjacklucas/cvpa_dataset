@@ -8,15 +8,15 @@
 }
 \value{
 A single character string: the base URL of the cp3 Parquet files
-  (the `cvpa.data_url` option if set, otherwise the official URL).
+(the \code{cvpa.data_url} option if set, otherwise the official URL).
 }
 \description{
-Override with `options(cvpa.data_url = ...)` to point the package at a
+Override with \code{options(cvpa.data_url = ...)} to point the package at a
 different mirror (e.g. a local copy of the cvpa_dataset repo's
-`site/static/cp3_parquet/` during development, or the small bundled
-example data from [cvpa_example_url()]). Anything other than the official
-URL, `https://policyattitudes.ca/cp3_parquet/`, makes [update_cvpa_data()]
+\verb{site/static/cp3_parquet/} during development, or the small bundled
+example data from \code{\link[=cvpa_example_url]{cvpa_example_url()}}). Anything other than the official
+URL, \verb{https://policyattitudes.ca/cp3_parquet/}, makes \code{\link[=update_cvpa_data]{update_cvpa_data()}}
 -- and the functions that read the data it cached -- warn. Reset with
-`options(cvpa.data_url = NULL)`.
+\code{options(cvpa.data_url = NULL)}.
 }
 \keyword{internal}
